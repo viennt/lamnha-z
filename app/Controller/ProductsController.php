@@ -62,7 +62,7 @@ class ProductsController extends AppController {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}
 		}
-		$productCategories = $this->Product->ProductCategory->find('list');
+		$productCategories = $this->Product->ProductCategory->generateTreeList(null, null, null, '___');
 		$this->set(compact('productCategories'));
 	}
 
@@ -88,7 +88,7 @@ class ProductsController extends AppController {
 			$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
 			$this->request->data = $this->Product->find('first', $options);
 		}
-		$productCategories = $this->Product->ProductCategory->find('list');
+		$productCategories = $this->Product->ProductCategory->generateTreeList(null, null, null, '___');
 		$this->set(compact('productCategories'));
 	}
 

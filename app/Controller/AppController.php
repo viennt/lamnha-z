@@ -65,6 +65,30 @@ class AppController extends Controller {
         if($this->request->prefix == 'manage'):
             $this->layout = 'admin';
         endif;
-        $this->Auth->allow('index');
+        $this->Auth->allow('display');
+
+        ///////////////////////////////////////////////////////////////////////////
+        $this->loadModel('ProjectCategory');
+        $ProjectCategories = $this->ProjectCategory->find('all');
+        foreach ($ProjectCategories as $Category) {
+            $Projectdata[$Category['ProjectCategory']['parent_id']][] = $Category;
+        }
+        $this->set('menuHorizontal_projects', $Projectdata);
+
+        ///////////////////////////////////////////////////////////////////////////
+        $this->loadModel('ProductCategory');
+        $ProductCategories = $this->ProductCategory->find('all');
+        foreach ($ProductCategories as $Category) {
+            $Productdata[$Category['ProductCategory']['parent_id']][] = $Category;
+        }
+        $this->set('menuHorizontal_products', $Productdata);
+
+        ///////////////////////////////////////////////////////////////////////////
+        $this->loadModel('ServiceCategory');
+        $ServiceCategories = $this->ServiceCategory->find('all');
+        foreach ($ServiceCategories as $Category) {
+            $Servicedata[$Category['ServiceCategory']['parent_id']][] = $Category;
+        }
+        $this->set('menuHorizontal_services', $Servicedata);
     }
 }

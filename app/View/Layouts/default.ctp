@@ -97,18 +97,13 @@
 						<div class="left-sidebar">
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">Dự án mẫu</h3>
+									<h3 class="panel-title">Dự án mẫu</h3>
 								</div>
 								<div class="panel-body">
 									<div id='cssmenu'>
-										<ul>
-										   <li><a href='#'>Nhà ở</a></li>
-										   <li><a href='#'>Biệt thự</a></li>
-										   <li><a href='#'>Nhà công nghiệp</a></li>
-										   <li><a href='#'>Nhà hàng, bar, cafe</a></li>
-										   <li><a href='#'>Nhà nghỉ, khách sạn</a></li>
-										   <li><a href='#'>Công trình văn hóa</a></li>
-										</ul>
+										<?php
+											echo $this->Common->create_menu($menuHorizontal_projects, 'ProjectCategory','projectCategories', 'view');
+										?>
 									</div>
 								</div>
 							</div>
@@ -120,28 +115,23 @@
 								</div>
 								<div class="panel-body">
 									<div id='cssmenu'>
-										<ul>
-										   <li><a href='#'>Cung cấp công trường</a></li>
-										   <li><a href='#'>Vật liệu kết cấu xây dựng</a></li>
-										   <li class='has-sub'><a href='#'>Vật liệu hoàn thiện</a>
-										      <ul>
-										         <li class='has-sub'><a href='#'>Product 1</a>
-										            <ul>
-										               <li><a href='#'>Sub Product</a></li>
-										               <li><a href='#'>Sub Product</a></li>
-										            </ul>
-										         </li>
-										         <li class='has-sub'><a href='#'>Product 2</a>
-										            <ul>
-										               <li><a href='#'>Sub Product</a></li>
-										               <li><a href='#'>Sub Product</a></li>
-										            </ul>
-										         </li>
-										      </ul>
-										   </li>
-										   <li><a href='#'>Hệ thống ống – phụ kiện</a></li>
-										   <li><a href='#'>Các loại vật liệu đặc biệt</a></li>
-										</ul>
+										<?php
+											echo $this->Common->create_menu($menuHorizontal_products, 'ProductCategory','productCategories', 'view');
+										?>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="left-sidebar">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Dịch vụ - Thầu</h3>
+								</div>
+								<div class="panel-body">
+									<div id='cssmenu'>
+										<?php
+											echo $this->Common->create_menu($menuHorizontal_services, 'ServiceCategory','serviceCategories', 'view');
+										?>
 									</div>
 								</div>
 							</div>

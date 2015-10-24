@@ -68,7 +68,16 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('Invalid username or password, try again'));
 		}
 	}
-	
+
+/**
+ * manage_login method
+ *
+ * @return void
+ */
+	public function manage_login() {
+		$this->redirect('/login.html');
+	}
+
 /**
  * logout method
  *
