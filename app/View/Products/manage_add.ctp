@@ -1,4 +1,4 @@
-<script src=<?php echo $this->webroot.'plugins/ckeditor/ckeditor.js'; ?>></script>
+<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'; ?>>
 <div class="products box box-primary">
 	<div class="box-header with-border">
 		<h3 class="box-title"><?php echo __('Add Product'); ?></h3>
@@ -7,23 +7,22 @@
 		'inputDefaults' => array('div' => 'form-group')
 		)); ?>
 		<div class="box-body"><?php
-			echo $this->Form->input('name', array('class'=>'form-control'));
-			echo $this->Form->input('description', array('class'=>'form-control'));
-			echo $this->Form->input('specification', array('class'=>'form-control'));
-			echo $this->Form->input('unit', array('class'=>'form-control'));
+			echo $this->Form->input('name', array('class' => 'form-control'));
+			echo $this->Form->input('description', array('class' => 'form-control', 'id' => 'description-textarea'));
+			echo $this->Form->input('specification', array('class' => 'form-control'));
+			echo $this->Form->input('unit', array('class' => 'form-control'));
 			echo $this->Form->input('published');
 			echo $this->Form->input('opened');
-			echo $this->Form->input('product_category_id', array('class'=>'form-control'));
+			echo $this->Form->input('product_category_id', array('class' => 'form-control'));
 		?></div>
 	<?php $options = array('label' => 'Submit', 'div' => array('class' => 'box-footer'), 'class' => array('input' => 'btn btn-primary btn-flat btn-sm col-lg-12'));
 	echo $this->Form->end($options); ?>
 </div>
 
-<script>
-CKEDITOR.replace( 'data[Product][description]' );
-</script>
+<script src=<?php echo $this->webroot.'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'; ?>></script>
 <script type="text/javascript">
 $(document).ready(function () {
+	$('#description-textarea').wysihtml5();
 	var actions = '<li class=\"header\">';
 	actions += '<?php echo __("ACTIONS"); ?>';
 

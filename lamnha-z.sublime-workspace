@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"ma",
+				"mainImg"
+			],
+			[
+				"sub",
+				"subImg1"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"c",
+				"controller"
+			],
+			[
 				"back",
 				"background-color"
 			],
@@ -50,10 +70,6 @@
 			[
 				"tex",
 				"text-decoration"
-			],
-			[
-				"ma",
-				"margin-left"
 			],
 			[
 				"z",
@@ -108,66 +124,34 @@
 	"buffers":
 	[
 		{
-			"file": "app/Controller/ProductsController.php",
+			"file": "app/View/Products/view.ctp",
 			"settings":
 			{
-				"buffer_size": 2944,
+				"buffer_size": 7330,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/View/Pages/manage_display.ctp",
+			"file": "app/webroot/js/public-script.js",
 			"settings":
 			{
-				"buffer_size": 9014,
+				"buffer_size": 1331,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Controller/AppController.php",
+			"file": "app/webroot/css/public-style.css",
 			"settings":
 			{
-				"buffer_size": 2218,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/View/Layouts/default.ctp",
-			"settings":
-			{
-				"buffer_size": 8553,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Config/routes.php",
-			"settings":
-			{
-				"buffer_size": 2202,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/View/Products/manage_edit.ctp",
-			"settings":
-			{
-				"buffer_size": 3453,
+				"buffer_size": 5810,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/View/Products/manage_add.ctp",
+			"file": "app/View/Layouts/admin.ctp",
 			"settings":
 			{
-				"buffer_size": 3059,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/View/Products/manage_index.ctp",
-			"settings":
-			{
-				"buffer_size": 4897,
+				"buffer_size": 10280,
 				"line_ending": "Windows"
 			}
 		}
@@ -205,23 +189,44 @@
 	"expanded_folders":
 	[
 		"/C/xampp/htdocs/lamnha-z/app",
-		"/C/xampp/htdocs/lamnha-z/app/Config",
 		"/C/xampp/htdocs/lamnha-z/app/Controller",
 		"/C/xampp/htdocs/lamnha-z/app/View",
-		"/C/xampp/htdocs/lamnha-z/app/View/Helper",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts",
-		"/C/xampp/htdocs/lamnha-z/app/View/Pages"
+		"/C/xampp/htdocs/lamnha-z/app/webroot",
+		"/C/xampp/htdocs/lamnha-z/app/webroot/css"
 	],
 	"file_history":
 	[
-		"/C/Users/thevi/Desktop/database.php",
-		"/C/Users/thevi/Desktop/bootstrap.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/account-bar.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/default.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Pages/display.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/webroot/load.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/home.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/admin.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/webroot/css/public-style.css",
+		"/C/Users/thevi/Desktop/AdminLTE-2.3.0/plugins/ionslider/ion.rangeSlider.skinFlat.css",
+		"/C/xampp/htdocs/lamnha-z/app/webroot/js/public-script.js",
+		"/C/xampp/htdocs/lamnha-z/app/Config/routes.php",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/PagesController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_add.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_edit.ctp",
+		"/C/Users/thevi/Desktop/database.php",
+		"/C/xampp/htdocs/lamnha-z/CONTRIBUTING.md",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_index.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductsController.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/view.ctp",
+		"/C/xampp/htdocs/lease-products/webcode/app/Controller/ProductsController.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/blank.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/main.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Pages/manage_display.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/AppController.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Helper/CommonHelper.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/left-bar.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/MenusController.php",
+		"/C/Users/thevi/Desktop/bootstrap.php",
 		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductCategoriesController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/ProductCategories/manage_add.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductsController.php",
 		"/C/xampp/htdocs/lamnha-z/app/Controller/ContractorCategoriesController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_edit.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_add.ctp",
@@ -249,9 +254,6 @@
 		"/C/xampp/htdocs/lamnha-z/app/Controller/GroupsController.php",
 		"/C/xampp/htdocs/lamnha-z/app/Controller/ProfilesController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/ProductCategories/manage_edit.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/webroot/css/public-style.css",
-		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/default.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/webroot/js/public-script.js",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/js/vertical-menu.js",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/css/public-custom-style.css",
 		"/C/xampp/htdocs/lamnha-z/app/View/Emails/html/default.ctp",
@@ -259,11 +261,9 @@
 		"/C/Users/thevi/Desktop/Pages.html",
 		"/C/Users/thevi/Desktop/Pages_files/public-custom-style.css",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/css/vertical-menu.css",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/AppController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/test.ctp",
 		"/C/Users/thevi/Desktop/styles.css",
 		"/C/Users/thevi/Desktop/index.html",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/PagesController.php",
 		"/C/Users/thevi/Desktop/script.js",
 		"/C/Users/thevi/Desktop/public/index.html",
 		"/C/xampp/htdocs/Service-AZ/app/View/Layouts/default.ctp",
@@ -271,10 +271,8 @@
 		"/C/xampp/htdocs/lamnha-z/app/webroot/js/vertical-menu-hover.js",
 		"/C/xampp/htdocs/Service-AZ/app/webroot/css/Vertical_menu.css",
 		"/C/xampp/htdocs/Service-AZ/app/Controller/ViewersController.php",
-		"/C/xampp/htdocs/lamnha-z/app/Config/routes.php",
 		"/C/xampp/htdocs/lamnha-z/app/Config/core.php",
 		"/C/Users/thevi/Desktop/SQLQuery1.sql",
-		"/C/xampp/htdocs/lamnha-z/app/View/Pages/manage_display.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Helper/MenuHelper.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/Profiles/detail.ctp",
 		"/C/xampp/htdocs/lamnha-z/lib/Cake/Config/routes.php",
@@ -295,7 +293,6 @@
 		"/C/xampp/htdocs/lamnha-z/app/webroot/js/dashboard2.js",
 		"/C/xampp/htdocs/lamnha-z/app/View/Pages/logs.ctp",
 		"/C/Users/thevi/Desktop/AdminLTE-2.3.0/pages/examples/login.html",
-		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/blank.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Groups/index.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/Console/Templates/adminlte/views/index.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Products/index.ctp",
@@ -328,20 +325,7 @@
 		"/C/Users/thevi/Desktop/app/Test/Case/Controller/CategoriesControllerTest.php",
 		"/C/Users/thevi/Desktop/Controller/ProductsController.php",
 		"/C/Users/thevi/Desktop/Controller/CategoriesController.php",
-		"/C/xampp/htdocs/lamnha-z/app/View/Categories/admin_add.ctp",
-		"/C/Users/thevi/AppData/Local/Temp/TempResults/Report/Results.xml",
-		"/C/xampp/htdocs/lamnha-z/app/View/Groups/view.ctp",
-		"/C/Users/thevi/Desktop/view.ctp",
-		"/C/Users/thevi/Desktop/index.ctp",
-		"/C/Users/thevi/Desktop/form.ctp",
-		"/C/xampp/htdocs/lamnha-z/lib/Cake/Console/Templates/default/views/view.ctp",
-		"/C/xampp/htdocs/lamnha-z/lib/Cake/Console/Templates/default/views/index.ctp",
-		"/C/xampp/htdocs/lamnha-z/lib/Cake/Console/Templates/default/classes/controller.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/CategoriesController.php",
-		"/C/xampp/htdocs/lamnha-z/lib/Cake/Console/Templates/default/actions/controller_actions.ctp",
-		"/C/xampp/htdocs/lamnha-z/lib/Cake/Console/Templates/skel/View/Helper/AppHelper.php",
-		"/C/xampp/htdocs/lamnha-z/lib/Cake/Console/Templates/skel/Controller/PagesController.php",
-		"/C/Users/thevi/Desktop/View/Products/admin_add.ctp"
+		"/C/xampp/htdocs/lamnha-z/app/View/Categories/admin_add.ctp"
 	],
 	"find":
 	{
@@ -359,6 +343,56 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"banner.jpg",
+			"'alt' => '', 'class'",
+			"'class' => ",
+			"dashed #E5E",
+			"8",
+			"4",
+			".detail ",
+			"10",
+			"4",
+			"8",
+			"4",
+			"8",
+			"4",
+			"7",
+			"5",
+			"line",
+			" col-sm-4 col-md-4 col-lg-4",
+			"col-sx-4 col-sm-4 col-md-4 col-lg-4",
+			"<br/>",
+			"span",
+			"3",
+			"col-l",
+			"col-lg-2",
+			"productImage",
+			"col-lg-2",
+			"no-border",
+			"thumbnail",
+			"figure",
+			"3",
+			"div",
+			"figure",
+			"\"",
+			"solid",
+			"2",
+			"0.1s",
+			"bottom",
+			".bottom",
+			"'=>'",
+			"=>",
+			"9",
+			"parent_id",
+			"Product",
+			"product",
+			"'ProductCategory'",
+			"$model",
+			"ProductCategory",
+			"productCategory",
+			"ProductCategory'",
+			"ProductCategory",
+			"Category",
 			"pull-left-",
 			", array('class'=>'form-control')",
 			"5",
@@ -436,57 +470,7 @@
 			"width: 72px; ",
 			"jpg",
 			"logo",
-			"FFE7CA",
-			"FFBF72",
-			"fixed",
-			"INSERT",
-			"admin_",
-			"($id = null)",
-			"index",
-			"options));",
-			"\n		$this->render('index');",
-			"myprofile",
-			"mine",
-			"lamnha-z",
-			"\n		$id = $this->Auth->User('id');\n		if (!$this->Profile->exists($id)) {\n			throw new NotFoundException(__('Invalid profile'));\n		}\n		$options = array('conditions' => array('Profile.' . $this->Profile->primaryKey => $id));\n		$this->set('profile', $this->Profile->find('first', $options));",
-			"$id",
-			"\n		$this->Profile->recursive = 0;\n		$this->set('profiles', $this->Paginator->paginate());",
-			"public $layout",
-			"sparkpie",
-			"sparkline",
-			", $prefix => true",
-			"'.DS.'",
-			"/",
-			"]",
-			"[",
-			"well",
-			"lass=\"col-xs-6",
-			"col-md-3",
-			"col-sx-2",
-			"6",
-			"red",
-			"\\';\\n",
-			"= \\'<",
-			"\\'<li",
-			"'",
-			"\\\";\\n",
-			"\\n\";",
-			"\";",
-			"= \\\"",
-			"'",
-			"\"",
-			"'",
-			"\"",
-			"'",
-			"\"",
-			"\\li",
-			"...",
-			"\"",
-			"ul",
-			"tree",
-			"jqxTree",
-			"checkedItemsBtn",
-			"demo-iframe"
+			"FFE7CA"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -510,86 +494,90 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/Controller/ProductsController.php",
+					"file": "app/View/Products/view.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2944,
+						"buffer_size": 7330,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2263,
-								2278
+								2745,
+								2745
+							],
+							[
+								3249,
+								3249
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1650.0,
+						"translation.y": 1496.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/View/Pages/manage_display.ctp",
+					"file": "app/webroot/js/public-script.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9014,
+						"buffer_size": 1331,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5542,
-								5542
+								708,
+								708
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 484.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Controller/AppController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2164,
-								2164
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1297.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/webroot/css/public-style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5620,
+								5620
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1320.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -597,147 +585,30 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/View/Layouts/default.ctp",
+					"file": "app/View/Layouts/admin.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8553,
+						"buffer_size": 10280,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3756,
-								3770
+								1472,
+								1472
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2200.0,
+						"translation.y": 1188.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/Config/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2202,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1166,
-								1173
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 330.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/View/Products/manage_edit.ctp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3453,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								82,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/View/Products/manage_add.ctp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3059,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								82,
-								82
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/View/Products/manage_index.ctp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4897,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1261,
-								1259
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

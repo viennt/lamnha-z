@@ -50,34 +50,21 @@
 				<div class="cover" align="center">
 					<div class="container">
 						<figure class="logo-panel col-sx-12 col-sm-12 col-md-12 col-lg-3">
-							<?php echo $this->Html->image('logo.png', array('alt' => 'CakePHP', 'style' => 'border: 2px solid #FFF; max-width: 90%')); ?>
+							<?php echo $this->Html->image('logo.png', array('alt' => 'CakePHP', 'url' => array('controller' => 'home.html'), 'style' => 'border: 2px solid #FFF; max-width: 90%')); ?>
 						</figure>
 						<div class="nav-panel col-sx-12 col-sm-12 col-md-12 col-lg-9">
 							<div class="rec hidden-xs hidden-sm hidden-md"></div>
 							<div class="top">
 								<div class="account-bar">
 									<nav>
-									<ul class="nav">
-										<li><a href="#" class="item"><span class="glyphicon glyphicon-stats"></span> Manage Page</a></li>
-										<li><a href="#" class="item">										<span class="glyphicon glyphicon-user"></span> Account</a></li>
-										<li><a href="#" class="item">										<span class="glyphicon glyphicon-lock"></span> Login</a></li>
-										<li><a href="#" class="item">										<span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-										<li><a href="#" class="item">	<span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-									</ul>
+									<?php echo $this->element('menus/account-bar'); ?>
 									</nav>
 								</div>
 							</div>
 							<div class="bottom">
 								<div class="main-menu">
 									<nav>
-									<ul class="nav">
-										<li class=" active"><a href="#">Home</a></li>
-										<li><a href="#">News</a></li>
-										<li><a href="#">Projects</a></li>
-										<li><a href="#">Products</a></li>
-										<li><a href="#">Services</a></li>
-										<li class=" active"><a href="#">Cart [5]</a></li>
-									</ul>
+									<?php echo $this->element('menus/main'); ?>
 									</nav>
 								</div>
 							</div>
@@ -85,142 +72,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="banner hidden-xs hidden-sm hidden-md" align="center">
-				<div class="container">
-				</div>
-			</div>
 		</header>
 		<section class="contain">
 			<div class="cover">
 				<div class="container">
-					<section id="left-sidebar-container" class="col-sx-12 col-sm-12 col-md-3 col-lg-3 non-left non-right">
-						<div class="left-sidebar">
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Dự án mẫu</h3>
-								</div>
-								<div class="panel-body">
-									<div id='cssmenu'>
-										<?php
-											echo $this->Common->create_menu($menuHorizontal_projects, 'ProjectCategory','projectCategories', 'view');
-										?>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="left-sidebar">
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Vật liệu - Thiết bị</h3>
-								</div>
-								<div class="panel-body">
-									<div id='cssmenu'>
-										<?php
-											echo $this->Common->create_menu($menuHorizontal_products, 'ProductCategory','productCategories', 'view');
-										?>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="left-sidebar">
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Dịch vụ - Thầu</h3>
-								</div>
-								<div class="panel-body">
-									<div id='cssmenu'>
-										<?php
-											echo $this->Common->create_menu($menuHorizontal_services, 'ServiceCategory','serviceCategories', 'view');
-										?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
+					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-12 col-lg-12 non-right non-left">
 						<div class="content-sidebar">
-							<div class="panel">
-								<?php //echo $this->Session->flash(); ?>
-								<?php //echo $this->fetch('content'); ?>
-
-<!-- Products -->
-<div class="list-items">
-	<div class="row">
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<a href="#" class=""><img src="img/product.jpg" alt=""></a>
-				<div class="detail">
-					<h5><strong>Brown Wood Chair</strong></h5>
-					<h5><small>Suplier's name</small></h5>
-					<span>244.000 VNĐ</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
+							<div class="panel" style="border: 2px solid #E5E5E5">
+								<?php echo $this->Session->flash(); ?>
+								<?php echo $this->fetch('content'); ?>
 							</div>
 						</div>
 					</article>

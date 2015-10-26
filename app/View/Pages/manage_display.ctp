@@ -154,14 +154,6 @@
 	</div><!-- /.box -->
 	</div><!-- /.col -->
 </div>
-<div id="newsfeed"></div>
-	<script type="text/javascript">
-		$(window).scroll(function () {
-			$.get('/', function(data) {
-				$('#newsfeed').append(data);
-			});
-		});
-	</script>
 
 <script src=<?php echo $this->webroot.'plugins/chartjs/Chart.min.js';?> ></script>
 <script type="text/javascript">

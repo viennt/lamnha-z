@@ -24,16 +24,18 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-
 	Router::connect(
 		'/', 
+		array('controller' => 'pages', 'action' => 'display')
+	);
+	Router::connect(
+		'/home.html', 
 		array('controller' => 'pages', 'action' => 'display')
 	);
 	Router::connect(
 		"/manage.html", 
 		array('controller' => 'pages', 'action' => 'display', 'prefix' => 'manage')
 	);
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'logs'));
 
 /**
  * Users page
@@ -46,6 +48,30 @@
 		"/manage/profile.html", 
 		array('controller' => 'profiles', 'action' => 'detail', 'prefix' => 'manage')
 	);
+
+/**
+ * ...and connect to product with slug.
+ */
+    Router::connect(
+        '/:slug-:id.html',
+        array('controller' => 'products', 'action' => 'view'),
+        array(
+            'pass' => array('id'),
+            "parent_id"=>"[0-9]+", // chỉ là số
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+/**
+ * ...and connect to category with slug.
+ */
+    Router::connect(
+        '/:id/:slug.html',
+        array('controller' => 'categories', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

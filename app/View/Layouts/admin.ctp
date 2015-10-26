@@ -38,6 +38,7 @@
 
 	<!-- AdminLTE -->
 	<?php echo $this->Html->css('AdminLTE.min'); ?>
+	
 	<!-- jQuery 2.1.4 -->
 	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
 
