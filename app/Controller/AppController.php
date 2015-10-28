@@ -65,6 +65,6 @@ class AppController extends Controller {
         if($this->request->prefix == 'manage'):
             $this->layout = 'admin';
         endif;
-        $this->Auth->allow('display');
+        $this->Auth->allow();
     }
 }

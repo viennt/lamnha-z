@@ -4,95 +4,112 @@
 	<div class="col-lg-12"><h3><?php echo h($product['Product']['name']); ?></h3></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
-			<div class="detail col-sx-2 col-sm-12 col-md-5 col-lg-5">
+			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
 				<figure class="thumbnail productImage">
 					<?php echo $this->Html->image(
 						'product.jpg', 
 						array('alt' => '', 'id' => 'mainImg')
 					); ?>
 				</figure>
-			</div>
-			<div class="info col-sx-2 col-sm-12 col-md-7 col-lg-7">
-				<div class="price col-sx-12">200.000đ</div>
-				<div class="row">
-					<div class="line col-sx-5 col-sm-5 col-md-5 col-lg-5">Nhà cung cấp:</div>
-					<div class="line col-sx-7 col-sm-7 col-md-7 col-lg-7">Công ty ABC</div>
-				</div>
-				<div class="row">
-					<div class="line col-sx-5 col-sm-5 col-md-5 col-lg-5">Danh mục:</div>
-					<div class="line col-sx-7 col-sm-7 col-md-7 col-lg-7">
-						<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="line col-sx-5 col-sm-5 col-md-5 col-lg-5">Đặc điểm:</div>
-					<div class="line col-sx-7 col-sm-7 col-md-7 col-lg-7">
-						<?php echo h($product['Product']['specification']); ?>
-					</div>
-				</div>
-				<div class="row">
-					<div class="line col-sx-5 col-sm-5 col-md-5 col-lg-5">Đánh giá:</div>
-					<div class="line col-sx-7 col-sm-7 col-md-7 col-lg-7">* * * * *</div>
-				</div>
-				<div class="row">
-					<div class="line col-sx-5 col-sm-5 col-md-5 col-lg-5">S.lượng (<?php echo h($product['Product']['unit']); ?>):</div>
-					<div class="line col-sx-7 col-sm-7 col-md-7 col-lg-7 row">
-						<div class="col-sx-9 col-sm-9 col-md-9 col-lg-9">
-							<input type="single" id="example_id" name="example_name" value="" />
-						</div>
-						<input class="col-sx-3 col-sm-3 col-md-3 col-lg-3 non-left non-right" type="number" name="quantity" min="1" max="5" value="1">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sx-2 col-sm-12 col-md-5 col-lg-5">
 				<div class="moreImages row" style="margin: 0" align="center">
-					<div class="thumbnail non-border pointer col-sx-2 col-sm-2 col-md-2 col-lg-2">
+					<div class="thumbnail non-border pointer col-all-2">
 						<span class="glyphicon glyphicon-chevron-left"></span>
 					</div>
-					<figure class="thumbnail non-border pointer col-sx-2 col-sm-2 col-md-2 col-lg-2">
+					<figure class="thumbnail non-border non-padding pointer col-all-2">
 						<?php echo $this->Html->image(
 							'product.jpg', 
 							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
 						); ?>
 					</figure>
-					<figure class="thumbnail non-border pointer col-sx-2 col-sm-2 col-md-2 col-lg-2">
+					<figure class="thumbnail non-border non-padding pointer col-all-2">
 						<?php echo $this->Html->image(
 							'product.jpg', 
 							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
 						); ?>
 					</figure>
-					<figure class="thumbnail non-border pointer col-sx-2 col-sm-2 col-md-2 col-lg-2">
+					<figure class="thumbnail non-border non-padding pointer col-all-2">
 						<?php echo $this->Html->image(
 							'product.jpg', 
 							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
 						); ?>
 					</figure>
-					<figure class="thumbnail non-border pointer col-sx-2 col-sm-2 col-md-2 col-lg-2">
+					<figure class="thumbnail non-border non-padding pointer col-all-2">
 						<?php echo $this->Html->image(
 							'product.jpg', 
 							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
 						); ?>
 					</figure>
-					<div class="thumbnail non-border pointer col-sx-2 col-sm-2 col-md-2 col-lg-2">
+					<div class="thumbnail non-border non-padding pointer col-all-2">
 						<span class="glyphicon glyphicon-chevron-right"></span>
 					</div>
 				</div>
 			</div>
-			<div class="col-sx-2 col-sm-12 col-md-7 col-lg-7">
-				<button class="btn btn-block btn-flat btn-warning">Thêm vào dự án</button>
+			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
+				<div class="info">
+					<div class="price col-sx-12">200.000đ</div>
+					<div class="row">
+						<div class="line col-all-5">Nhà cung cấp:</div>
+						<div class="line col-all-7">Công ty ABC</div>
+					</div>
+					<div class="row">
+						<div class="line col-all-5">Danh mục:</div>
+						<div class="line col-all-7">
+							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="line col-all-5">Đặc điểm:</div>
+						<div class="line col-all-7">
+							<?php echo h($product['Product']['specification']); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="line col-all-5">Đánh giá:</div>
+						<div class="line col-all-7">* * * * *</div>
+					</div>
+					<div class="row">
+						<div class="line col-all-5">S.lượng (<?php echo h($product['Product']['unit']); ?>):</div>
+						<div class="line row col-all-7">
+							<div class="col-all-9">
+								<input type="single" id="example_id" name="example_name" value="" />
+							</div>
+							<input class="form-control non-left non-right col-all-3" type="number" name="quantity" min="1" max="5" value="1">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-all-12">
+						<button class="btn btn-block btn-flat btn-warning">Thêm vào dự án</button>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-sx-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-all-12">
 				<?php echo $product['Product']['description']; ?>
 			</div>
 		</div>
+		<div class="row">
+		</div>
 	</div>
 	<div class="col-lg-4" style="border-left: 1px dashed #E5E5E5;">
-		a
+		<div class="comment">
+			<div class="row">
+				<div class="form-group col-all-12" align="center">
+					<span class="glyphicon glyphicon-star star-rating" align="center"></span> 
+					<span class="glyphicon glyphicon-star star-rating" align="center"></span> 
+					<span class="glyphicon glyphicon-star star-rating" align="center"></span> 
+					<span class="glyphicon glyphicon-star-empty star-rating" align="center"></span> 
+					<span class="glyphicon glyphicon-star-empty star-rating" align="center"></span> 
+					<textarea class="form-control content" rows="3" placeholder="Nhận xét của bạn"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-all-12">
+					<input type="text" class="form-control col-all-6" placeholder="Tên">
+					<button class="btn btn-flat btn-warning submit col-all-5">Thêm bình luận</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
