@@ -1,48 +1,86 @@
-<div class="products view">
-<h2><?php echo __('Product'); ?></h2>
-	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Name'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['name']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Description'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['description']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Specification'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['specification']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Unit'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['unit']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Published'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['published']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Opened'); ?></dt>
-		<dd>
-			<?php echo h($product['Product']['opened']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Product Category'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
-			&nbsp;
-		</dd>
-	</dl>
+<div class="products box" style="margin: 0">
+	<div class="row">
+		<div class="col-all-12" style="border-right: 1px dashed #E5E5E5">
+			<div class="row">
+				<div class="images col-sx-12 col-sm-12 col-md-12 col-lg-3">
+					<figure class="thumbnail productImage" align="center">
+						<?php echo $this->Html->image(
+							'product.jpg', 
+							array('alt' => '', 'id' => 'mainImg', 'data-magnify-src' => '/lamnha-z/img/product.jpg')
+						); ?>
+					</figure>
+					<div class="moreImages row" style="margin: 0" align="center">
+						<div class="thumbnail non-border pointer col-all-2">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</div>
+						<figure class="thumbnail non-border non-padding pointer col-all-2">
+							<?php echo $this->Html->image(
+								'product.jpg', 
+								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
+							); ?>
+						</figure>
+						<figure class="thumbnail non-border non-padding pointer col-all-2">
+							<?php echo $this->Html->image(
+								'product.jpg', 
+								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
+							); ?>
+						</figure>
+						<figure class="thumbnail non-border non-padding pointer col-all-2">
+							<?php echo $this->Html->image(
+								'product.jpg', 
+								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
+							); ?>
+						</figure>
+						<figure class="thumbnail non-border non-padding pointer col-all-2">
+							<?php echo $this->Html->image(
+								'product.jpg', 
+								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
+							); ?>
+						</figure>
+						<div class="thumbnail non-border non-padding pointer col-all-2">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</div>
+					</div>
+				</div>
+				<div class="detail col-sx-12 col-sm-12 col-md-12 col-lg-4">
+					<div class="row">
+						<div class="col-all-5">Tên:</div>
+						<div class="col-all-7"><?php echo h($product['Product']['name']); ?></div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Giá:</div>
+						<div class="col-all-7">200.000đ</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Nhà cung cấp:</div>
+						<div class="col-all-7">Công ty ABC</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Danh mục:</div>
+						<div class="col-all-7">
+							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-all-5">Đặc điểm:</div>
+						<div class="col-all-7">
+							<?php echo h($product['Product']['specification']); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Đánh giá:</div>
+						<div class="col-all-7">* * * * *</div>
+					</div>
+				</div>
+				<div class=" col-sx-12 col-sm-12 col-md-12 col-lg-5">
+					<?php echo $product['Product']['description']; ?>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
 <div class="related">
 	<h3><?php echo __('Related Product Images'); ?></h3>
 	<?php if (!empty($product['ProductImage'])): ?>

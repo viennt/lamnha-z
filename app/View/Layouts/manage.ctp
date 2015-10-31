@@ -38,6 +38,9 @@
 
 	<!-- AdminLTE -->
 	<?php echo $this->Html->css('AdminLTE.min'); ?>
+
+	<!-- Custom style -->
+	<?php echo $this->Html->css("manage-style"); ?>
 	
 	<!-- jQuery 2.1.4 -->
 	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
@@ -52,7 +55,7 @@
 	<header class="main-header">
 	  <a href="#" class="logo">
 	    <!-- LOGO -->
-	    LamNha Admin
+	    LamNha Manage
 	  </a>
 	  <!-- Header Navbar: style can be found in header.less -->
 	  <nav class="navbar navbar-static-top" role="navigation">

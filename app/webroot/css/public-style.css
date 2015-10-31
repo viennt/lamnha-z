@@ -1,10 +1,11 @@
-body{ height: 1000px; font-family: "Proxima Nova Dribbble", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+body{font-family: "Proxima Nova Dribbble", "Helvetica Neue", Helvetica, Arial, sans-serif;}
 a:link{ text-decoration: none;}
 .non-left{ padding-left: 0!important; margin-left: 0!important;}
 .non-right{ padding-right: 0!important; margin-right: 0!important;}
 .non-border{ border: 0!important;}
 .non-padding{ padding: 0!important;}
 .pointer{ cursor: pointer!important;}
+::selection { color: #FFF; background-color: #000000;}
 
 /*********************** CUSTOM BOOTSTRAP ***********************/
 /****************************************************************/
@@ -79,7 +80,6 @@ a:link{ text-decoration: none;}
 .list-items .item .inner .detail{  background: #F5F5F5; text-align: left; border: 1px solid #E5E5E5; border-top: 0px; padding: 10px 10px; -webkit-transition: background-color 0.4s; -moz-transition: background-color 0.4s; -o-transition: background-color 0.4s; -ms-transition: background-color 0.4s;}
 .list-items .item .inner .detail span{ color: #FFC13C; font-size: 14px; font-weight: bold; margin-bottom: 5px;}
 .list-items .item .detail h4{ margin-bottom: 5px;}
-
 
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
