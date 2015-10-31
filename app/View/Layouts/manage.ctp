@@ -22,7 +22,7 @@
     <meta name="author" content="viennt">
 	<meta name="description" content="Website lease products">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title><?php echo $this->fetch('title'); ?></title>
+	<title>MyHomeBuilder - <?php echo $title_for_layout; ?></title>
 
 	<?php echo $this->Html->meta('icon');?>
 	<?php echo $this->fetch('meta');?>
@@ -48,7 +48,7 @@
 	<?php echo $this->fetch('css');?>
 
 </head>
-<body class="skin-black-light">
+<body class="skin-blue">
 	<header class="main-header">
 	  <a href="#" class="logo">
 	    <!-- LOGO -->
@@ -169,16 +169,6 @@
 	<aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="<?php echo $this->webroot; ?>/img/user9-128x128.jpg" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-              <p>Nguyen The Vien</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
           <!-- search form -->
           <form action="#" method="get" class="sidebar-form">
             <div class="input-group">

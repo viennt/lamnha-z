@@ -10,7 +10,7 @@ a:link{ text-decoration: none;}
 /****************************************************************/
 .btn-warning{ background-color: #FFC31C; border-color: #eea236;}
 .btn.btn-flat{ border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border-width: 1px;}
-.thumbnail{border-radius: 0;}
+.thumbnail{border-radius: 0; border: 0;}
 .col-all-1{ width:8.33333333%}
 .col-all-2{ width:16.66666667%}
 .col-all-3{ width: 25%;}
@@ -33,7 +33,7 @@ a:link{ text-decoration: none;}
 .nav-bar .cover{ position: absolute; width: 100%; height: 108px;}
 .nav-bar .cover .container{ max-width: 1170px; min-width: 768px; height: 108px; padding: 0px!important;}
 .logo-panel{ float: left; height: 108px; padding-top: 18px; background-color: #FFC13C;}
-.logo-panel > img{ -webkit-transition: 0.1s; -moz-transition: 0.1s; -o-transition: 0.1s; -ms-transition: 0.1s;}
+.logo-panel > a> img{ border: 2px solid #FFF; max-width: 90%; -webkit-transition: 0.1s; -moz-transition: 0.1s; -o-transition: 0.1s; -ms-transition: 0.1s;}
 .nav-panel{ float: right; height: 108px; background-color: #FFFFFF; padding: 0px!important;}
 .rec{ position: absolute; float: left; width: 0; height: 0; border-top: 108px solid #FFC13C; border-left: 0px solid transparent; border-right: 72px solid transparent; border-bottom: 0px solid transparent;}
 .top{ width: 100%; height: 36px; min-width: 768px; background-color: #343434;}
@@ -83,20 +83,21 @@ a:link{ text-decoration: none;}
 
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
-.products .images .productImage > img{ height: 150px;}
+.products .images .productImage .magnify > img{ height: 150px;}
 .products .images .moreImages .thumbnail{ height: 40px;}
 .products .images .moreImages .thumbnail > img{ max-height: 40px;}
 .products .detail .info{ height: 180px;}
 .products .detail .info .price{ font-size: 25px; color: #FFC31C;}
 .products .detail .info .line{ font-size: 17px; color: #000000;}
-.products .detail .info .line input{ font-size: 12px;}
+.products .detail .info .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}
+.slider-handle{background-color: #FFC31C!important;}
 .comment .star-rating{ font-size: 30px; color: #FFC31C;}
 .comment .content{ height: 120px;}
 .comment .row{ height: 180px; }
 .comment .submit{ float: right;}
 
 @media (max-width: 1200px){
-	.nav-bar{ height: 190px;}
+	.nav-bar{ height: 190px!important;}
 	.logo-panel{ padding: 0; min-width: 768px;}
 	.nav-panel .main-menu{ float: none;}
 	#content-sidebar-container{ padding-left: 0;}

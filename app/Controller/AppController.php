@@ -63,7 +63,7 @@ class AppController extends Controller {
  */
     public function beforeFilter() {
         if($this->request->prefix == 'manage'):
-            $this->layout = 'admin';
+            $this->layout = 'manage';
         endif;
         $this->Auth->allow();
     }

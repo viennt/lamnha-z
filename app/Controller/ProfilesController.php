@@ -30,7 +30,6 @@ class ProfilesController extends AppController {
 	public function detail($id = null) {
 		if(is_null($id))
 			$id = $this->Auth->User('id');
-
 		$options = array('conditions' => array('Profile.user_id' => $id));
 		$this->set('profile', $this->Profile->find('first', $options));
 	}
@@ -41,8 +40,6 @@ class ProfilesController extends AppController {
 
 		$options = array('conditions' => array('Profile.user_id' => $id));
 		$this->set('profile', $this->Profile->find('first', $options));
-
-		$this->render('admin_detail');
 	}
 
 /**
@@ -50,18 +47,19 @@ class ProfilesController extends AppController {
  *
  * @return void
  */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Profile->create();
-			if ($this->Profile->save($this->request->data)) {
-				$this->Session->setFlash(__('The profile has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The profile could not be saved. Please, try again.'));
-			}
-		}
-		$users = $this->Profile->User->find('list');
-		$this->set(compact('users'));
+	public function add() { 
+		return $this->redirect($this->referer());
+		// if ($this->request->is('post')) {
+		// 	$this->Profile->create();
+		// 	if ($this->Profile->save($this->request->data)) {
+		// 		$this->Session->setFlash(__('The profile has been saved.'));
+		// 		return $this->redirect(array('action' => 'index'));
+		// 	} else {
+		// 		$this->Session->setFlash(__('The profile could not be saved. Please, try again.'));
+		// 	}
+		// }
+		// $users = $this->Profile->User->find('list');
+		// $this->set(compact('users'));
 	}
 
 /**

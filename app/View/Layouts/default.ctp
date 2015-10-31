@@ -22,7 +22,7 @@
     <meta name="author" content="viennt">
 	<meta name="description" content="Website lease products">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title><?php echo $this->fetch('title'); ?></title>
+	<title><?php echo $title_for_layout; ?> - MyHomeBuilder</title>
 
 	<?php echo $this->Html->meta('icon');?>
 	<?php echo $this->fetch('meta');?>
@@ -45,12 +45,12 @@
 <body>
 	<div id="container">
 		<header>
-			<div class="nav-alias"></div>
-			<div class="nav-bar" align="center">
+			<div class="nav-alias" style="height: 142px"></div>
+			<div class="nav-bar" align="center" style="height: 142px">
 				<div class="cover" align="center">
 					<div class="container">
 						<figure class="logo-panel col-sx-12 col-sm-12 col-md-12 col-lg-3">
-							<?php echo $this->Html->image('logo.png', array('alt' => 'CakePHP', 'url' => array('controller' => 'home.html'), 'style' => 'border: 2px solid #FFF; max-width: 90%')); ?>
+							<?php echo $this->Html->image('logo.png', array('alt' => 'CakePHP', 'url' => array('controller' => 'home.html'))); ?>
 						</figure>
 						<div class="nav-panel col-sx-12 col-sm-12 col-md-12 col-lg-9">
 							<div class="rec hidden-xs hidden-sm hidden-md"></div>
@@ -68,6 +68,9 @@
 									</nav>
 								</div>
 							</div>
+						</div>
+						<div class="hidden-sx hidden-sm hidden-md col-all-12" style="height: 36px; background-color: #FFF; z-index: 10" id="bottom">
+							
 						</div>
 					</div>
 				</div>
@@ -105,9 +108,6 @@
 	</div>
 	<!-- Bootstrap 3.3.5 -->
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
-
-	<!-- FastClick -->
-	<script src="<?php echo $this->webroot; ?>/plugins/fastclick/fastclick.min.js"></script>
 
 	<!-- Public page -->
 	<?php echo $this->Html->script('public-script'); ?>

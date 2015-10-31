@@ -1,14 +1,14 @@
-<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/ionslider/ion.rangeSlider.skinNice.css'; ?>>
-<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/ionslider/ion.rangeSlider.css'; ?>>
+<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/bootstrap-slider/slider.css'; ?>>
+<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?>>
 <div class="products row" style="margin: 0">
-	<div class="col-lg-12"><h3><?php echo h($product['Product']['name']); ?></h3></div>
+	<div class="col-all-12" align="center"><h3><?php echo h($product['Product']['name']); ?></h3></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
-				<figure class="thumbnail productImage">
+				<figure class="thumbnail productImage" align="center">
 					<?php echo $this->Html->image(
 						'product.jpg', 
-						array('alt' => '', 'id' => 'mainImg')
+						array('alt' => '', 'id' => 'mainImg', 'data-magnify-src' => '/lamnha-z/img/product.jpg')
 					); ?>
 				</figure>
 				<div class="moreImages row" style="margin: 0" align="center">
@@ -72,9 +72,9 @@
 						<div class="line col-all-5">S.lượng (<?php echo h($product['Product']['unit']); ?>):</div>
 						<div class="line row col-all-7">
 							<div class="col-all-9">
-								<input type="single" id="example_id" name="example_name" value="" />
+								<input id="quantity" type="text" data-slider-min="1" data-slider-max="20" data-slider-step="1" data-slider-value="1" data-slider-tooltip="hide">
 							</div>
-							<input class="form-control non-left non-right col-all-3" type="number" name="quantity" min="1" max="5" value="1">
+							<input id="quantityVal" class="form-control non-left non-right col-all-3" type="number" name="quantity" min="1" max="20" value="1">
 						</div>
 					</div>
 				</div>
@@ -114,14 +114,21 @@
 </div>
 
 
-<script src=<?php echo $this->webroot.'plugins/ionslider/ion.rangeSlider.min.js'; ?>></script>
+<script src=<?php echo $this->webroot.'plugins/bootstrap-slider/bootstrap-slider.js'; ?>></script>
+<script src=<?php echo $this->webroot.'js/jquery.magnify.js'; ?>></script>
 <script type="text/javascript">
 $(document).ready(function () {
-	$("#example_id").ionRangeSlider();
+	$("#quantity").slider();
+	$("#quantity").on("slide", function(slideEvt) {
+		$("#quantityVal").val(slideEvt.value);
+	});
+
+	$('#mainImg').magnify();
+
+	function changeImage(subImg) {
+		$('#mainImg').attr('src', $(subImg).attr('src'));
+	}
 });
-function changeImage(subImg) {
-	$('#mainImg').attr('src', $(subImg).attr('src'));
-}
 </script>
 
 

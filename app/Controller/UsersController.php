@@ -39,7 +39,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function register() {
-		$this->layout = 'blank';
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -59,7 +59,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function login() {
-		$this->layout = 'blank';
+		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
 				//var_dump($this->Auth->redirectUrl()); die;

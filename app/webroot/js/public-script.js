@@ -8,7 +8,7 @@ $(function(){
                     $('.top').css('display', 'none');
                     $('.rec').css({'border-top-width': '72px', 'border-right-width': '48px'});
                     $('.logo-panel>a>img').css('height', '48px');
-                    $('.nav-panel>.bottom').css('border-bottom', '2px solid #E5E5E5');
+                    $('#bottom').css('border-bottom', '2px solid #E5E5E5');
                 } else {
                 	$('.nav-bar').removeClass("fixed-nav");
                     $('.nav-alias').css('display', 'none');
@@ -17,7 +17,7 @@ $(function(){
                     $('.top').css('display', 'block');
                     $('.rec').css({'border-top-width': '108px', 'border-right-width': '72px'});
                     $('.logo-panel>a>img').css('height', '72px');
-                    $('.nav-panel>.bottom').css('border-bottom', '0px');
+                    $('#bottom').css('border-bottom', '0px');
                 }
         });
   });
