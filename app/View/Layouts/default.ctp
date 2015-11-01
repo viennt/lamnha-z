@@ -38,7 +38,6 @@
 
 	<!-- Vertical Menu -->
 	<?php echo $this->Html->css("vertical-menu"); ?>
-
 	<?php echo $this->fetch('css');?>
 
 </head>
@@ -57,20 +56,20 @@
 							<div class="top">
 								<div class="account-bar">
 									<nav>
-									<?php echo $this->element('menus/account-bar'); ?>
+									<?php echo $this->element('menus/public-account-bar'); ?>
 									</nav>
 								</div>
 							</div>
-							<div class="bottom">
+							<div class="bottom" id="bottom">
 								<div class="main-menu">
 									<nav>
-									<?php echo $this->element('menus/main'); ?>
+									<?php echo $this->element('menus/public-main'); ?>
 									</nav>
 								</div>
 							</div>
 						</div>
-						<div class="hidden-sx hidden-sm hidden-md col-all-12" style="height: 36px; background-color: #FFF; z-index: 10" id="bottom">
-							
+						<div class="hidden-sx hidden-sm hidden-md col-all-12 non-padding" style="height: 36px; z-index: 10">
+							<div class="col-lg-3 btn btn-flat btn-warning">A</div>
 						</div>
 					</div>
 				</div>
@@ -92,12 +91,8 @@
 		</section>
 		<footer class="contain">
 			<div class="cover">
-					<div class="sponsor">
-						<div class="container"> Sponsor</div>
-					</div>
-					<div class="about-company">
-						<div class="container"> About Company</div>
-					</div>
+					<?php echo $this->element('footer/sponsor'); ?>
+					<?php echo $this->element('footer/about'); ?>
 					<div class="copyright">
 						<div class="container">
 							<span><strong>Copyright © 2014-2015.</strong> All rights reserved.</span>

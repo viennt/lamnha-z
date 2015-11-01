@@ -21,24 +21,24 @@ $(document).ready(function () {
 	actions += '<?php echo __("ACTIONS"); ?>';
 
 	actions += '<li>';
-	actions += '<?php echo $this->Form->postLink("<i class=\"fa fa-circle-o text-red\"></i> <span>Delete</span>", array("action" => "delete", $this->Form->value("NewsCategory.id")), array("escape" => false), __("Are you sure you want to delete # %s?", $this->Form->value("NewsCategory.id"))); ?>';
+	actions += '<?php echo $this->Form->postLink("<span>Delete</span>", array("action" => "delete", $this->Form->value("NewsCategory.id")), array("escape" => false), __("Are you sure you want to delete # %s?", $this->Form->value("NewsCategory.id"))); ?>';
 	actions += '</li>';
 
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List News Categories</span>", array("action" => "index"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>List News Categories</span>", array("action" => "index"), array("escape" => false)); ?>';
 	actions += '</li>';
 
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List News Categories</span>", array("controller" => "news_categories", "action" => "index"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>List News Categories</span>", array("controller" => "news_categories", "action" => "index"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Parent News Category</span>", array("controller" => "news_categories", "action" => "add"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>New Parent News Category</span>", array("controller" => "news_categories", "action" => "add"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List News</span>", array("controller" => "news", "action" => "index"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>List News</span>", array("controller" => "news", "action" => "index"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New News</span>", array("controller" => "news", "action" => "add"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>New News</span>", array("controller" => "news", "action" => "add"), array("escape" => false)); ?>';
 	actions += '</li>';
 	$("li#action")
 		.after(actions);

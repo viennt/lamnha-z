@@ -56,8 +56,7 @@
         '/:slug-:id.html',
         array('controller' => 'products', 'action' => 'view'),
         array(
-            'pass' => array('id'),
-            "parent_id"=>"[0-9]+", // chỉ là số
+            'pass' => array('id', 'slug'),
             "id"=>"[0-9]+", // chỉ là số
         )
     );

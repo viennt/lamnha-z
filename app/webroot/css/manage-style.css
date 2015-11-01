@@ -4,6 +4,7 @@ a:link{ text-decoration: none;}
 .non-right{ padding-right: 0!important; margin-right: 0!important;}
 .non-border{ border: 0!important;}
 .non-padding{ padding: 0!important;}
+.non-margin{ margin: 0!important;}
 .pointer{ cursor: pointer!important;}
 ::selection { color: #FFF; background-color: #000000;}
 
@@ -26,11 +27,13 @@ a:link{ text-decoration: none;}
 .col-all-12{ width: 100%;}
 .col-all-1, .col-all-2, .col-all-3, .col-all-4, .col-all-5, .col-all-6, .col-all-7, .col-all-8, .col-all-9, .col-all-10, .col-all-11, .col-all-12{ float: left; position: relative; min-height: 1px;  padding-right: 15px; padding-left: 15px;}
 
+
+/************************ CUSTOM AdminTLE ***********************/
+/****************************************************************/
+.main-header .sidebar-toggle:before { content: none;}
+
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
-.products .images .productImage .magnify > img{ height: 150px;}
-.products .images .moreImages .thumbnail{ height: 40px;}
-.products .images .moreImages .thumbnail > img{ max-height: 40px;}
 .products .detail .price{ font-size: 25px; color: #FFC31C;}
 .products .detail .line{ font-size: 17px; color: #000000;}
 .products .detail .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}

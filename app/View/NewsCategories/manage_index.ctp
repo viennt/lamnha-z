@@ -59,19 +59,19 @@ $(document).ready(function () {
 	var actions = '<li class=\"header\">';
 	actions += '<?php echo __("ACTIONS"); ?>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New News Category</span>", array("action" => "add"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>New News Category</span>", array("action" => "add"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List News Categories</span>", array("controller" => "news_categories", "action" => "index"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>List News Categories</span>", array("controller" => "news_categories", "action" => "index"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Parent News Category</span>", array("controller" => "news_categories", "action" => "add"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>New Parent News Category</span>", array("controller" => "news_categories", "action" => "add"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List News</span>", array("controller" => "news", "action" => "index"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>List News</span>", array("controller" => "news", "action" => "index"), array("escape" => false)); ?>';
 	actions += '</li>';
 	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New News</span>", array("controller" => "news", "action" => "add"), array("escape" => false)); ?>';
+	actions += '<?php echo $this->Html->link("<span>New News</span>", array("controller" => "news", "action" => "add"), array("escape" => false)); ?>';
 	actions += '</li>';
 	$("li#action")
 		.after(actions);

@@ -53,9 +53,9 @@
 			}
 
 			echo "\t\t<td class=\"actions\">\n";
-			echo "\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn tn-block btn-xs btn-info btn-flat')); ?>\n";
-			echo "\t\t\t<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn tn-block btn-xs btn-success btn-flat')); ?>\n";
-			echo "\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn tn-block btn-xs btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}']))); ?>\n";
+			echo "\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-block btn-xs btn-info btn-flat')); ?>\n";
+			echo "\t\t\t<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-block btn-xs btn-success btn-flat')); ?>\n";
+			echo "\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}']))); ?>\n";
 			echo "\t\t</td>\n";
 		echo "\t</tr>\n";
 
@@ -81,32 +81,3 @@
 		?>
 	</div>
 </div>
-<script type="text/javascript">
-$(document).ready(function () {
-	<?php echo "var actions = '<li class=\\\"header\\\">';\n"; ?>
-	<?php echo "actions += '<?php echo __(\"ACTIONS\"); ?>';\n"; ?>
-	<?php echo "actions += '<li>';\n"; ?>
-	<?php echo "actions += '<?php echo \$this->Html->link(\"<i class=\\\"fa fa-circle-o text-aqua\\\"></i> <span>New " . $singularHumanName . "</span>\", array(\"action\" => \"add\"), array(\"escape\" => false)); ?>';\n"; ?>
-	<?php echo "actions += '</li>';\n"; ?>
-<?php
-	$done = array();
-	foreach ($associations as $type => $data) {
-		foreach ($data as $alias => $details) {
-			if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-				echo "\tactions += '<li>';\n";
-				echo "\tactions += '<?php echo \$this->Html->link(\"<i class=\\\"fa fa-circle-o text-aqua\\\"></i> <span>List " . Inflector::humanize($details['controller']) . "</span>\", array(\"controller\" => \"{$details['controller']}\", \"action\" => \"index\"), array(\"escape\" => false)); ?>';\n";
-				echo "\tactions += '</li>';\n";
-
-				echo "\tactions += '<li>';\n";
-				echo "\tactions += '<?php echo \$this->Html->link(\"<i class=\\\"fa fa-circle-o text-aqua\\\"></i> <span>New " . Inflector::humanize(Inflector::underscore($alias)) . "</span>\", array(\"controller\" => \"{$details['controller']}\", \"action\" => \"add\"), array(\"escape\" => false)); ?>';\n";
-				echo "\tactions += '</li>';\n";
-				$done[] = $details['controller'];
-			}
-		}
-	}
-?>
-	$("li#action")
-		.after(actions);
-
-});
-</script>

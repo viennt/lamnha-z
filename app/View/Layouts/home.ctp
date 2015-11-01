@@ -57,14 +57,14 @@
 							<div class="top">
 								<div class="account-bar">
 									<nav>
-									<?php echo $this->element('menus/account-bar'); ?>
+									<?php echo $this->element('menus/public-account-bar'); ?>
 									</nav>
 								</div>
 							</div>
 							<div class="bottom" id="bottom">
 								<div class="main-menu">
 									<nav>
-									<?php echo $this->element('menus/main'); ?>
+									<?php echo $this->element('menus/public-main'); ?>
 									</nav>
 								</div>
 							</div>
@@ -81,7 +81,7 @@
 			<div class="cover">
 				<div class="container">
 					<section id="left-sidebar-container" class="col-sx-12 col-sm-12 col-md-3 col-lg-3 non-left non-right">
-						<?php echo $this->element('menus/left-bar'); ?>
+						<?php echo $this->element('menus/public-left-bar'); ?>
 					</section>
 					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
 						<div class="content-sidebar">
@@ -96,12 +96,8 @@
 		</section>
 		<footer class="contain">
 			<div class="cover">
-					<div class="sponsor">
-						<div class="container"> Sponsor</div>
-					</div>
-					<div class="about-company">
-						<div class="container"> About Company</div>
-					</div>
+					<?php echo $this->element('footer/sponsor'); ?>
+					<?php echo $this->element('footer/about'); ?>
 					<div class="copyright">
 						<div class="container">
 							<span><strong>Copyright © 2014-2015.</strong> All rights reserved.</span>
@@ -118,5 +114,8 @@
 
 	<!-- Vertical menu -->
 	<?php echo $this->Html->script('vertical-menu'); ?>
+	<script type="text/javascript">
+
+	</script>
 </body>
 </html>

@@ -1,52 +1,34 @@
-<div class="products box" style="margin: 0">
-	<div class="row">
-		<div class="col-all-12" style="border-right: 1px dashed #E5E5E5">
-			<div class="row">
-				<div class="images col-sx-12 col-sm-12 col-md-12 col-lg-3">
-					<figure class="thumbnail productImage" align="center">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => '', 'id' => 'mainImg', 'data-magnify-src' => '/lamnha-z/img/product.jpg')
-						); ?>
-					</figure>
-					<div class="moreImages row" style="margin: 0" align="center">
-						<div class="thumbnail non-border pointer col-all-2">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</div>
-						<figure class="thumbnail non-border non-padding pointer col-all-2">
-							<?php echo $this->Html->image(
-								'product.jpg', 
-								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-							); ?>
-						</figure>
-						<figure class="thumbnail non-border non-padding pointer col-all-2">
-							<?php echo $this->Html->image(
-								'product.jpg', 
-								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-							); ?>
-						</figure>
-						<figure class="thumbnail non-border non-padding pointer col-all-2">
-							<?php echo $this->Html->image(
-								'product.jpg', 
-								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-							); ?>
-						</figure>
-						<figure class="thumbnail non-border non-padding pointer col-all-2">
-							<?php echo $this->Html->image(
-								'product.jpg', 
-								array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-							); ?>
-						</figure>
-						<div class="thumbnail non-border non-padding pointer col-all-2">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</div>
-					</div>
-				</div>
-				<div class="detail col-sx-12 col-sm-12 col-md-12 col-lg-4">
-					<div class="row">
-						<div class="col-all-5">Tên:</div>
-						<div class="col-all-7"><?php echo h($product['Product']['name']); ?></div>
-					</div>
+<div class="products box box-primary flat" style="margin: 0">
+	<div class="box-header with-border">
+		<h3 class="box-title">Sản phẩm: <?php echo h($product['Product']['name']); ?></h3>
+		<div class="pull-right box-tools">
+			<?php echo $this->Html->link(
+				'<span class="glyphicon glyphicon-list-alt"></span>',
+				array('controller'=> 'products', 'action' => 'index'),
+				array('class' => 'btn btn-sm btn-default btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+				);?>
+			<?php echo $this->Html->link(
+				'<span class="glyphicon glyphicon-eye-open"></span>',
+				array('controller'=> 'products', 'action' => 'view', 'slug' => $product['Product']['name'], 'id' => $product['Product']['id'], 'manage' => false),
+				array('class' => 'btn btn-sm btn-warning btn-flat', 'target' => '_blank', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Xem lại')
+				);?>
+			<?php echo $this->Html->link(
+				'<span class="glyphicon glyphicon-edit"></span>',
+				array('action' => 'edit', $product['Product']['id']),
+				array('class' => 'btn btn-sm btn-success btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Chỉnh sửa')
+				);?>
+			<?php echo $this->Form->postLink(
+				'<span class="glyphicon glyphicon-remove"></span>',
+				array('action' => 'delete', $product['Product']['id']),
+				array('class' => 'btn btn-sm btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $product['Product']['id']), 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Xóa')
+				);?>
+		</div>
+	</div>
+	<div class="row non-margin">
+		<div class="col-sx-12 col-sm-12 col-md-12 col-lg-6">
+			<div class="row non-margin">
+				<div class="detail col-all-12">
+					<h4>THÔNG TIN SẢN PHẨM: </h4>
 					<div class="row">
 						<div class="col-all-5">Giá:</div>
 						<div class="col-all-7">200.000đ</div>
@@ -73,11 +55,52 @@
 						<div class="col-all-7">* * * * *</div>
 					</div>
 				</div>
-				<div class=" col-sx-12 col-sm-12 col-md-12 col-lg-5">
+				<div class="col-all-12">
+					<h4>CHI TIẾT SẢN PHẨM: </h4>
 					<?php echo $product['Product']['description']; ?>
 				</div>
 			</div>
 		</div>
+		<figure class="col-sx-12 col-sm-12 col-md-12 col-lg-6">
+			<div class="row non-margin">
+				<div class="col-all-12">
+					<h4>HÌNH ẢNH SẢN PHẨM: </h4>
+					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
+						<?php echo $this->Html->image(
+							'product.jpg', 
+							array('alt' => 'name')
+						); ?>
+					</div>
+					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
+						<?php echo $this->Html->image(
+							'product.jpg', 
+							array('alt' => 'name')
+						); ?>
+					</div>
+					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
+						<?php echo $this->Html->image(
+							'product.jpg', 
+							array('alt' => 'name')
+						); ?>
+					</div>
+					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
+						<?php echo $this->Html->image(
+							'product.jpg', 
+							array('alt' => 'name')
+						); ?>
+					</div>
+					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
+						<?php echo $this->Html->image(
+							'product.jpg', 
+							array('alt' => 'name')
+						); ?>
+					</div>
+				</div>
+				<div class="col-all-12">
+					<h4>VIDEO SẢN PHẨM: </h4>
+				</div>
+			</div>
+		</figure>
 	</div>
 </div>
 

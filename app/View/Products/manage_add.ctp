@@ -2,6 +2,13 @@
 <div class="products box box-primary">
 	<div class="box-header with-border">
 		<h3 class="box-title"><?php echo __('Add Product'); ?></h3>
+		<div class="pull-right box-tools">
+			<?php echo $this->Html->link(
+				'<span class="glyphicon glyphicon-list-alt"></span>',
+				array('controller'=> 'products', 'action' => 'index'),
+				array('class' => 'btn btn-default btn-sm btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+				);?>
+		</div>
 	</div>
 	<?php echo $this->Form->create('Product', array(
 		'inputDefaults' => array('div' => 'form-group')
@@ -23,33 +30,5 @@
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#description-textarea').wysihtml5();
-	var actions = '<li class=\"header\">';
-	actions += '<?php echo __("ACTIONS"); ?>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Products</span>", array("action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Product Categories</span>", array("controller" => "product_categories", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Product Category</span>", array("controller" => "product_categories", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Product Images</span>", array("controller" => "product_images", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Product Image</span>", array("controller" => "product_images", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Product Videos</span>", array("controller" => "product_videos", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Product Video</span>", array("controller" => "product_videos", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	$("li#action")
-		.after(actions);
-
 });
 </script>

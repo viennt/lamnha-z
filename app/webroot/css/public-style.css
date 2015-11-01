@@ -6,10 +6,11 @@ a:link{ text-decoration: none;}
 .non-padding{ padding: 0!important;}
 .pointer{ cursor: pointer!important;}
 ::selection { color: #FFF; background-color: #000000;}
+:root {--main-color: #F7B74C;}
 
 /*********************** CUSTOM BOOTSTRAP ***********************/
 /****************************************************************/
-.btn-warning{ background-color: #FFC31C; border-color: #eea236;}
+.btn-warning{ background-color: #F7B74C; border-color: #eea236;}
 .btn.btn-flat{ border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; border-width: 1px;}
 .thumbnail{border-radius: 0; border: 0;}
 .col-all-1{ width:8.33333333%}
@@ -33,10 +34,10 @@ a:link{ text-decoration: none;}
 .nav-bar{ top: 0; z-index: 99; width: 100%; height: 108px; background-color: #FFFFFF;}
 .nav-bar .cover{ position: absolute; width: 100%; height: 108px;}
 .nav-bar .cover .container{ max-width: 1170px; min-width: 768px; height: 108px; padding: 0px!important;}
-.logo-panel{ float: left; height: 108px; padding-top: 18px; background-color: #FFC13C;}
+.logo-panel{ float: left; height: 108px; padding-top: 18px; background-color: #F7B74C;}
 .logo-panel > a> img{ border: 2px solid #FFF; max-width: 90%; -webkit-transition: 0.1s; -moz-transition: 0.1s; -o-transition: 0.1s; -ms-transition: 0.1s;}
 .nav-panel{ float: right; height: 108px; background-color: #FFFFFF; padding: 0px!important;}
-.rec{ position: absolute; float: left; width: 0; height: 0; border-top: 108px solid #FFC13C; border-left: 0px solid transparent; border-right: 72px solid transparent; border-bottom: 0px solid transparent;}
+.rec{ position: absolute; float: left; width: 0; height: 0; border-top: 108px solid #F7B74C; border-left: 0px solid transparent; border-right: 72px solid transparent; border-bottom: 0px solid transparent;}
 .top{ width: 100%; height: 36px; min-width: 768px; background-color: #343434;}
 .bottom{ width: 100%; height: 72px; min-width: 768px; background-color: #FFFFFF;}
 .nav-panel .account-bar{ float: right; width: auto; display: inline-block;}
@@ -45,9 +46,9 @@ a:link{ text-decoration: none;}
 .nav-panel .account-bar .nav > li:hover > a{ background-color: #343434; color: #FFFFFF;}
 .nav-panel .main-menu{ float: right; width: auto; display: inline-block; padding-top: 18px;}
 .nav-panel .main-menu .nav > li{ float: left; height: 36px; padding: 8px; margin-left: 9px; color: #202E31; text-transform: uppercase; background-color: #FFFFFF;}
-.nav-panel .main-menu .nav > li:hover, .nav-panel .main-menu .nav > li.active{ background-color: #FFC13C;}
+.nav-panel .main-menu .nav > li:hover, .nav-panel .main-menu .nav > li.active{ background-color: #F7B74C;}
 .nav-panel .main-menu .nav > li > a{ color: #343434; padding: 0;}
-.nav-panel .main-menu .nav > li:hover > a, .nav-panel .main-menu .nav > li.active > a{ color: #FFFFFF; background-color: #FFC13C;}
+.nav-panel .main-menu .nav > li:hover > a, .nav-panel .main-menu .nav > li.active > a{ color: #FFFFFF; background-color: #F7B74C;}
 .banner{ width: 100%; height: 252px;}
 .banner .container{ max-width: 1170px; min-width: 768px; height: 100%; padding: 0px!important; background-image: url(../img/banner.jpg); background-position: 0px 0px;}
 
@@ -58,14 +59,14 @@ a:link{ text-decoration: none;}
 .contain .cover .container{ max-width: 1170px; min-width: 768px; padding: 0px!important;}
 .left-sidebar{ border: 1px solid #E5E5E5; background-color: #FFFFFF; margin-bottom: 18px;}
 .left-sidebar .panel{ border: none; box-shadow: none; margin: 0;}
-.left-sidebar .panel .panel-heading{ border-radius: 0; color: #000; background-color: #FFFFFF;  border: 2px solid #FFC13C;}
+.left-sidebar .panel .panel-heading{ border-radius: 0; color: #000; background-color: #FFFFFF;  border: 2px solid #F7B74C;}
 .left-sidebar .panel .panel-body{ padding: 0;}
 .content-sidebar{ background-color: #FFFFFF;}
 .content-sidebar .panel{ width: 100%; border: 0; box-shadow: none;  border-radius: 0;}
 
 /**************************** FOOTER ****************************/
 /****************************************************************/
-.sponsor{ height: 144px; border-top: 5px solid #FFC31C; background-color: #FFFFFF;}
+.sponsor{ height: 144px; border-top: 5px solid #F7B74C; background-color: #FFFFFF;}
 .about-company{ height: 180px; background-color: #E5E5E5;}
 .copyright{ height: 36px; background-color: #343434;}
 .container > span{ float: left; color: #E5E5E5; margin-top: 9px;}
@@ -73,12 +74,12 @@ a:link{ text-decoration: none;}
 /************************ LIST PRODICTS *************************/
 /****************************************************************/
 .list-items .item{ margin-bottom: 30px;}
-.list-items .item .inner{ background: #FFC31C; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s; }
+.list-items .item .inner{ background: #F7B74C; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s; }
 .list-items .item .inner:hover{ box-shadow: 0px 0px 10px #FFEBB5;}
 .list-items .item .inner a > img{  width: 100%; border: 1px solid #E5E5E5; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s;}
 .list-items .item .inner:hover a > img{ opacity: 0.9;}
 .list-items .item .inner .detail{  background: #F5F5F5; text-align: left; border: 1px solid #E5E5E5; border-top: 0px; padding: 10px 10px; -webkit-transition: background-color 0.4s; -moz-transition: background-color 0.4s; -o-transition: background-color 0.4s; -ms-transition: background-color 0.4s;}
-.list-items .item .inner .detail span{ color: #FFC13C; font-size: 14px; font-weight: bold; margin-bottom: 5px;}
+.list-items .item .inner .detail span{ color: #F7B74C; font-size: 14px; font-weight: bold; margin-bottom: 5px;}
 .list-items .item .detail h4{ margin-bottom: 5px;}
 
 /************************ PRODUCT DETAIL ************************/
@@ -87,11 +88,11 @@ a:link{ text-decoration: none;}
 .products .images .moreImages .thumbnail{ height: 40px;}
 .products .images .moreImages .thumbnail > img{ max-height: 40px;}
 .products .detail .info{ height: 180px;}
-.products .detail .info .price{ font-size: 25px; color: #FFC31C;}
+.products .detail .info .price{ font-size: 25px; color: #F7B74C;}
 .products .detail .info .line{ font-size: 17px; color: #000000;}
 .products .detail .info .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}
-.slider-handle{background-color: #FFC31C!important;}
-.comment .star-rating{ font-size: 30px; color: #FFC31C;}
+.slider-handle{background-color: #F7B74C!important;}
+.comment .star-rating{ font-size: 30px; color: #F7B74C;}
 .comment .content{ height: 120px;}
 .comment .row{ height: 180px; }
 .comment .submit{ float: right;}

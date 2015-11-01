@@ -54,27 +54,3 @@
 	?>
 	</div>
 </div>
-<script type="text/javascript">
-$(document).ready(function () {
-	var actions = '<li class=\"header\">';
-	actions += '<?php echo __("ACTIONS"); ?>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Contractor Category</span>", array("action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Contractor Categories</span>", array("controller" => "contractor_categories", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Parent Contractor Category</span>", array("controller" => "contractor_categories", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Contractors</span>", array("controller" => "contractors", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Contractor</span>", array("controller" => "contractors", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	$("li#action")
-		.after(actions);
-
-});
-</script>

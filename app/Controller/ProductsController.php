@@ -39,7 +39,7 @@ class ProductsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function manage_view($id = null) {
+	public function manage_view($id = null, $slug = null) {
 		if (!$this->Product->exists($id)) {
 			throw new NotFoundException(__('Invalid product'));
 		}
@@ -120,7 +120,7 @@ class ProductsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function view($id = null, $slug = null) {
 		if (!$this->Product->exists($id)) {
 			throw new NotFoundException(__('Invalid product'));
 		}
