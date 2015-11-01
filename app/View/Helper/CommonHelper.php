@@ -11,7 +11,10 @@ class CommonHelper extends AppHelper {
         if(isset($data[$parent])) {
             $str .= "<ul>";
             foreach($data[$parent] as $rs) {
-                $str .= '<li class='.$value.'>';
+                if(($rs[$model]['rght'] - $rs[$model]['lft']) == 1)
+                    $str .= '<li>';
+                else
+                    $str .= '<li class='.$value.'>';
                 $str .= $this->Html->link(
                         $rs[$model]['name'],
                         array(

@@ -72,16 +72,27 @@
 					</div>
 				</div>
 			</div>
+			<?php if(strtolower($this->request->params['controller']) == 'pages'): ?>
 			<div class="banner hidden-xs hidden-sm hidden-md" align="center">
-				<div class="container">
-				</div>
+				<div class="container"></div>
 			</div>
+			<?php endif; ?>
 		</header>
 		<section class="contain">
 			<div class="cover">
 				<div class="container">
 					<section id="left-sidebar-container" class="col-sx-12 col-sm-12 col-md-3 col-lg-3 non-left non-right">
-						<?php echo $this->element('menus/public-left-bar'); ?>
+						<?php 
+						if(strtolower($this->request->params['controller']) == 'projectcategories'
+							|| strtolower($this->request->params['controller']) == 'pages')
+							echo $this->element('menus/public-left-project');
+						if(strtolower($this->request->params['controller']) == 'productcategories'
+							|| strtolower($this->request->params['controller']) == 'pages')
+							echo $this->element('menus/public-left-product');
+						if(strtolower($this->request->params['controller']) == 'servicecategories'
+							|| strtolower($this->request->params['controller']) == 'pages')
+							echo $this->element('menus/public-left-service');
+						?>
 					</section>
 					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
 						<div class="content-sidebar">

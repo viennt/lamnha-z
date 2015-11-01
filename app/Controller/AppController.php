@@ -55,7 +55,7 @@ class AppController extends Controller {
             )
         )
     );
-	
+    
 /**
  * beforeFilter method
  *
@@ -64,6 +64,8 @@ class AppController extends Controller {
     public function beforeFilter() {
         if($this->request->prefix == 'manage'):
             $this->layout = 'manage';
+        else:
+            $this->layout = 'one-column';
         endif;
         $this->Auth->allow();
     }

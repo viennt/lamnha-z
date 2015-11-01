@@ -64,8 +64,8 @@
  * ...and connect to category with slug.
  */
     Router::connect(
-        '/:id/:slug.html',
-        array('controller' => 'categories', 'action' => 'view'),
+        '/san-pham/:slug-:id.html',
+        array('controller' => 'productCategories', 'action' => 'view'),
         array(
             'pass' => array('id', 'slug'),
             "id"=>"[0-9]+", // chỉ là số

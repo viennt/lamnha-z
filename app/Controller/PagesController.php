@@ -44,7 +44,7 @@ class PagesController extends AppController {
  * @return void
  */
 	public function display() {
-		$this->layout = "home";
+		$this->layout = "two-column";
 	}
 
 /**

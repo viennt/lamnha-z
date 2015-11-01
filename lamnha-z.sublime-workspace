@@ -132,19 +132,35 @@
 	"buffers":
 	[
 		{
-			"file": "app/View/Layouts/default.ctp",
+			"file": "app/View/Elements/menus/public-left-project.ctp",
 			"settings":
 			{
-				"buffer_size": 3750,
+				"buffer_size": 415,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/View/Layouts/two-column.ctp",
+			"settings":
+			{
+				"buffer_size": 4426,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/View/Helper/CommonHelper.php",
+			"settings":
+			{
+				"buffer_size": 9303,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Config/database.php",
+			"file": "app/Controller/ProductCategoriesController.php",
 			"settings":
 			{
-				"buffer_size": 3166,
-				"line_ending": "Unix"
+				"buffer_size": 3780,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -181,20 +197,44 @@
 	"expanded_folders":
 	[
 		"/C/xampp/htdocs/lamnha-z/app",
-		"/C/xampp/htdocs/lamnha-z/app/Config",
 		"/C/xampp/htdocs/lamnha-z/app/View",
-		"/C/xampp/htdocs/lamnha-z/app/View/Layouts"
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus",
+		"/C/xampp/htdocs/lamnha-z/app/View/Pages",
+		"/C/xampp/htdocs/lamnha-z/app/webroot"
 	],
 	"file_history":
 	[
-		"/C/Users/thevi/Desktop/lamnha-z.sql",
+		"/C/xampp/htdocs/lamnha-z/app/View/Pages/display.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/one-column.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/AppController.php",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/PagesController.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/public-left-service.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/public-left-product.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductCategoriesController.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Helper/CommonHelper.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_view.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/manage.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/webroot/css/manage-style.css",
+		"/C/xampp/htdocs/lamnha-z/app/Config/routes.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/public-left-bar.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/home.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_index.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_edit.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_add.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_edit.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_add.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_index.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/footer/about.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductsController.php",
+		"/C/xampp/htdocs/lamnha-z/app/Console/Templates/adminlte/views/index.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/Config/database.php",
+		"/C/xampp/htdocs/lamnha-z/app/View/Elements/footer/sponsor.ctp",
+		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/default.ctp",
+		"/C/Users/thevi/Desktop/lamnha-z.sql",
 		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/admin-top.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/js/app.min.js",
 		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/admin-left.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/Console/Templates/adminlte/views/form.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Console/Templates/adminlte/views/index.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/ProductCategories/manage_index.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/ProductCategories/manage_edit.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/ProductCategories/manage_add.ctp",
@@ -203,21 +243,9 @@
 		"/C/xampp/htdocs/lamnha-z/app/View/NewsCategories/manage_add.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Groups/manage_add.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Groups/manage_edit.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_add.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_edit.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/ContractorCategories/manage_index.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_index.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_add.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_edit.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Config/routes.php",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductsController.php",
-		"/C/xampp/htdocs/lamnha-z/app/webroot/css/manage-style.css",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/ajax.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Products/manage_view.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/public-main.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/AppController.php",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/css/public-style.css",
-		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/default.ctp",
 		"/C/Users/thevi/Desktop/AdminLTE-2.3.0/pages/examples/invoice-print.html",
 		"/C/xampp/htdocs/lamnha-z/app/Config/core.php",
 		"/C/Users/thevi/Desktop/.htaccess",
@@ -239,21 +267,17 @@
 		"/C/Users/thevi/AppData/Local/Temp/Rar$DIa0.922/complete.js",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/css/bootstrap.custom.min.css",
 		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/account-bar.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Pages/display.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/load.php",
 		"/C/Users/thevi/Desktop/AdminLTE-2.3.0/plugins/ionslider/ion.rangeSlider.skinFlat.css",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/PagesController.php",
 		"/C/Users/thevi/Desktop/database.php",
 		"/C/xampp/htdocs/lamnha-z/CONTRIBUTING.md",
 		"/C/xampp/htdocs/lease-products/webcode/app/Controller/ProductsController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/Layouts/blank.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/main.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Pages/manage_display.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Helper/CommonHelper.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/Elements/menus/left-bar.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/Controller/MenusController.php",
 		"/C/Users/thevi/Desktop/bootstrap.php",
-		"/C/xampp/htdocs/lamnha-z/app/Controller/ProductCategoriesController.php",
 		"/C/xampp/htdocs/lamnha-z/app/Controller/NewsCategoriesController.php",
 		"/C/xampp/htdocs/lamnha-z/app/View/NewsCategories/manage_view.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/Controller/ProjectCategoriesController.php",
@@ -298,7 +322,6 @@
 		"/C/xampp/htdocs/lamnha-z/app/View/Users/register.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Users/admin_index.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/View/Users/login.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Config/database.php",
 		"/C/xampp/htdocs/lamnha-z/app/Model/User.php",
 		"/C/Users/thevi/Desktop/profiles.sql",
 		"/C/xampp/htdocs/lamnha-z/app/View/Profiles/view.ctp",
@@ -308,13 +331,7 @@
 		"/C/xampp/htdocs/lamnha-z/app/View/Pages/admin_display.ctp",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/js/demo.js",
 		"/C/xampp/htdocs/lamnha-z/app/webroot/js/dashboard2.js",
-		"/C/xampp/htdocs/lamnha-z/app/View/Pages/logs.ctp",
-		"/C/Users/thevi/Desktop/AdminLTE-2.3.0/pages/examples/login.html",
-		"/C/xampp/htdocs/lamnha-z/app/View/Groups/index.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Products/index.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/View/Products/manager_view.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Console/Templates/adminlte/actions/controller_actions.ctp",
-		"/C/xampp/htdocs/lamnha-z/app/Config/email.php.default"
+		"/C/xampp/htdocs/lamnha-z/app/View/Pages/logs.ctp"
 	],
 	"find":
 	{
@@ -332,6 +349,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"	|| str",
+			"home",
+			"); ?>",
+			"<em>",
+			" btn-primary",
+			" btn-warning",
+			" ?>",
+			"btn btn-block btn-xs btn-info btn-flat",
+			"</h4>",
+			"h3",
+			"l-sx-6 col-s",
+			"col-sx-12 col-sm-12 col-md-6 col-lg-3",
+			"col-sx-12 col-sm-12 col-md-6 col-lg-6",
+			"figure",
+			"div",
+			"h2",
 			"lamnha-z",
 			"<i class=\\\"fa fa-circle-o text-aqua\\\"></i> ",
 			"<i class=\\\"fa fa-circle-o text-red\\\"></i> ",
@@ -443,23 +476,7 @@
 			".control-panel .menu .nav",
 			" class=\"item\"",
 			"class=\"item\"",
-			"\n.control-panel .menu .nav{\n	display: inline-block;\n}\n.control-panel .menu .nav > li{\n	float: left;\n}",
-			"header",
-			"\n					<hr style=\"margin-top: 0; margin-bottom: 0\">",
-			"\n					<span>$244.00</span>",
-			"\n					<h5>Brown Wood Chair</h5>",
-			"\n					<span>$244.00</span>\n					<h5>Brown Wood Chair</h5>",
-			"\n					<div class=\"icon\">\n						<a href=\"#\" class=\"one\"></a>\n						<a href=\"#\" class=\"two \"></a>\n						<a href=\"#\" class=\"three\"></a>\n					</div>",
-			"5",
-			"col-sm-6 col-md-6 col-lg-4",
-			"4",
-			"0.4",
-			"0.5s",
-			" {",
-			" tooltip",
-			"col-md-6 col-lg-4",
-			"mg/product.png",
-			"images/product.png"
+			"\n.control-panel .menu .nav{\n	display: inline-block;\n}\n.control-panel .menu .nav > li{\n	float: left;\n}"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -479,24 +496,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/View/Layouts/default.ctp",
+					"file": "app/View/Elements/menus/public-left-project.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3750,
+						"buffer_size": 415,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2319,
-								2319
+								415,
+								415
 							]
 						],
 						"settings":
@@ -505,27 +522,86 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/Config/database.php",
+					"file": "app/View/Layouts/two-column.ctp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3166,
+						"buffer_size": 4426,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2895,
-								2895
+								2544,
+								2544
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1914.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/View/Helper/CommonHelper.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								464,
+								464
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/Controller/ProductCategoriesController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3780,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3470,
+								3470
 							]
 						],
 						"settings":
@@ -533,11 +609,11 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 1254.0,
+						"translation.x": 0.0,
+						"translation.y": 1122.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

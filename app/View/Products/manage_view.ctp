@@ -9,7 +9,7 @@
 				);?>
 			<?php echo $this->Html->link(
 				'<span class="glyphicon glyphicon-eye-open"></span>',
-				array('controller'=> 'products', 'action' => 'view', 'slug' => $product['Product']['name'], 'id' => $product['Product']['id'], 'manage' => false),
+				array('controller'=> 'products', 'action' => 'view', 'slug' => $this->Common->convertViToEn($product['Product']['name'],true), 'id' => $product['Product']['id'], 'manage' => false),
 				array('class' => 'btn btn-sm btn-warning btn-flat', 'target' => '_blank', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Xem lại')
 				);?>
 			<?php echo $this->Html->link(

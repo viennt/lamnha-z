@@ -21,7 +21,7 @@ class ProductCategoriesController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-
+    
 /**
  * index method
  *
@@ -113,4 +113,21 @@ class ProductCategoriesController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		$this->layout = "two-column";
+		if (!$this->ProductCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid product category'));
+		}
+		$options = array('conditions' => array('ProductCategory.' . $this->ProductCategory->primaryKey => $id));
+		$this->set('productCategory', $this->ProductCategory->find('first', $options));
+	}
+
 }
