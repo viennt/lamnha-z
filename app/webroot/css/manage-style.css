@@ -37,3 +37,4 @@ a:link{ text-decoration: none;}
 .products .detail .price{ font-size: 25px; color: #FFC31C;}
 .products .detail .line{ font-size: 17px; color: #000000;}
 .products .detail .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}
+.products .image .thumbnail>img { height: 100px;}

@@ -40,12 +40,11 @@ class ProductCategoriesController extends AppController {
  * @return void
  */
 	public function manage_view($id = null) { 
-		return $this->redirect($this->referer());
-		// if (!$this->ProductCategory->exists($id)) {
-		// 	throw new NotFoundException(__('Invalid product category'));
-		// }
-		// $options = array('conditions' => array('ProductCategory.' . $this->ProductCategory->primaryKey => $id));
-		// $this->set('productCategory', $this->ProductCategory->find('first', $options));
+		if (!$this->ProductCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid product category'));
+		}
+		$options = array('conditions' => array('ProductCategory.' . $this->ProductCategory->primaryKey => $id));
+		$this->set('productCategory', $this->ProductCategory->find('first', $options));
 	}
 
 /**

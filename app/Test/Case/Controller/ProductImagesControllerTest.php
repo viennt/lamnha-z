@@ -15,16 +15,7 @@ class ProductImagesControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.product_image',
 		'app.product',
-		'app.category',
-		'app.category_type',
-		'app.news',
-		'app.user',
-		'app.group',
-		'app.profile',
-		'app.project',
-		'app.project_image',
-		'app.service',
-		'app.service_price',
+		'app.product_category',
 		'app.product_video'
 	);
 

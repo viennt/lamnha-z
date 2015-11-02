@@ -2,7 +2,7 @@
 	<div class="box-header with-border">
 		<?php echo $this->Html->link(__(' Thêm sản phẩm mới '),
 			array('controller' => 'products', 'action' => 'add'),
-			array('class'=>'btn btn-primary btn-flat btn-xs col-lg-12')
+			array('class'=>'btn btn-xm btn-primary btn-flat col-lg-12')
 			); ?>
 	</div>
 	<div class="box-body table-responsive no-padding">

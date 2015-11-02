@@ -99,7 +99,7 @@
 		
 		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
-				<b>Version</b> 2.3.0
+				<b>Version</b> 2.3.0 | <?php echo WWW_ROOT; ?>
 			</div>
 			<strong>Copyright © 2014-2015.</strong> All rights reserved.
 		</footer>

@@ -63,38 +63,38 @@
 		</div>
 		<figure class="col-sx-12 col-sm-12 col-md-12 col-lg-6">
 			<div class="row non-margin">
-				<div class="col-all-12">
+				<div class="image col-all-12">
 					<h4>HÌNH ẢNH SẢN PHẨM: </h4>
-					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => 'name')
-						); ?>
+					<div class="row">
+						<?php foreach($product['ProductImage'] as $image): ?>
+						<div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
+							<div class="thumbnail">
+								<?php echo $this->Html->image(
+									'uploads/products/'.$image['name'], 
+									array('alt' => 'name')
+									); ?>
+								<div class="caption">
+									<p>
+									<?php echo $this->Html->link(
+										'<span class="glyphicon glyphicon-edit"></span>',
+										array('controller'=> 'productImages', 'action' => 'edit', $image['id']),
+										array('class' => 'btn col-all-6 btn-success btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+										);?>
+									<?php echo $this->Html->link(
+										'<span class="glyphicon glyphicon-remove"></span>',
+										array('controller'=> 'productImages', 'action' => 'delete', $image['id']),
+										array('class' => 'btn col-all-6 btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $image['id']), 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+										);?>
+									</p>
+								</div>
+							</div>
+						</div>
+						<?php endforeach; ?>
 					</div>
-					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => 'name')
+					<?php echo $this->Html->link(__(' Thêm hình ảnh '),
+						array('controller' => 'productImages', 'action' => 'add', $product['Product']['id']),
+						array('class'=>'btn btn-sm btn-primary btn-flat col-lg-12')
 						); ?>
-					</div>
-					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => 'name')
-						); ?>
-					</div>
-					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => 'name')
-						); ?>
-					</div>
-					<div class="thumbnail col-sx-6 col-sm-4 col-md-3 col-lg-3" align="center">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => 'name')
-						); ?>
-					</div>
 				</div>
 				<div class="col-all-12">
 					<h4>VIDEO SẢN PHẨM: </h4>
@@ -104,39 +104,6 @@
 	</div>
 </div>
 
-<div class="related">
-	<h3><?php echo __('Related Product Images'); ?></h3>
-	<?php if (!empty($product['ProductImage'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Name'); ?></th>
-		<th><?php echo __('Description'); ?></th>
-		<th><?php echo __('Product Id'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($product['ProductImage'] as $productImage): ?>
-		<tr>
-			<td><?php echo $productImage['id']; ?></td>
-			<td><?php echo $productImage['name']; ?></td>
-			<td><?php echo $productImage['description']; ?></td>
-			<td><?php echo $productImage['product_id']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'product_images', 'action' => 'view', $productImage['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'product_images', 'action' => 'edit', $productImage['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'product_images', 'action' => 'delete', $productImage['id']), array(), __('Are you sure you want to delete # %s?', $productImage['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Product Image'), array('controller' => 'product_images', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
-</div>
 <div class="related">
 	<h3><?php echo __('Related Product Videos'); ?></h3>
 	<?php if (!empty($product['ProductVideo'])): ?>
