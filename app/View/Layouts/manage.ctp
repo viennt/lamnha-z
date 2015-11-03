@@ -16,13 +16,18 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+	<meta charset="UTF-8">
+    <meta property="og:locale" content="vn_VN">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá thành phù hợp nhất.">
     <meta name="author" content="viennt">
-	<meta name="description" content="Website lease products">
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title>MyHomeBuilder - <?php echo $title_for_layout; ?></title>
+	<link rel="canonical" href="http://www.lamnha-z.com/"/>
+	<link rel="alternate" href="http://www.lamnha-z.com/" hreflang="vi-vn" />
+	<title>Home Builder - Xây nhà Trực tuyến Giá rẻ</title>
 
 	<?php echo $this->Html->meta('icon');?>
 	<?php echo $this->fetch('meta');?>
@@ -53,7 +58,7 @@
 				<?php echo $this->element('menus/admin-top'); ?>
 			</nav>
 		</header>
-
+		
 		<!-- Left side column. contains the logo and sidebar -->
 		<aside class="main-sidebar">
 			<!-- sidebar: style can be found in sidebar.less -->

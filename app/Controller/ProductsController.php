@@ -126,5 +126,6 @@ class ProductsController extends AppController {
 		}
 		$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
 		$this->set('product', $this->Product->find('first', $options));
+		$this->set('title_for_layout', $slug);
 	}
 }

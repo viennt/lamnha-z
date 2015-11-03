@@ -1,7 +1,7 @@
-<li class="treeview">
+<li class="treeview active">
     <a href="#">
         <span class="glyphicon glyphicon-dashboard"></span>
-        <span>Dashboard</span>
+        <span>Bảng điều khiển</span>
         <span class="glyphicon glyphicon-option-horizontal pull-right"></span>
     </a>
     <ul class="treeview-menu">
@@ -24,9 +24,6 @@
         </a></li>
         <li><a href="#">
             <span class="glyphicon glyphicon-user"></span> Quản lý người dùng
-        </a></li>
-        <li><a href="#">
-            <span class="glyphicon glyphicon-user"></span> Quản lý nhóm người dùng
         </a></li>
         <li><a href="#">
             <span class="glyphicon glyphicon-check"></span> Phân quyền

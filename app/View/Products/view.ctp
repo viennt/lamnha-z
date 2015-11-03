@@ -1,11 +1,12 @@
-<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/bootstrap-slider/slider.css'; ?>>
-<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?>>
+<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/bootstrap-slider/slider.css'; ?> media='all'>
+<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?> media='all'>
 <div class="products row" style="margin: 0">
-	<div class="col-all-12" align="center"><h3><?php echo h($product['Product']['name']); ?></h3></div>
+	<h1><?php echo h($product['Product']['name']); ?></h1>
+	<div class="product-name col-all-12"><h3><?php echo h($product['Product']['name']); ?></h3></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
-				<figure class="thumbnail productImage" align="center">
+				<figure class="thumbnail productImage">
 					<?php
 					if(isset($product['ProductImage'][0]['name']))
 						echo $this->Html->image(
@@ -22,7 +23,7 @@
 						<figure class="thumbnail non-border pointer col-all-4">
 							<?php echo $this->Html->image(
 								'uploads/products/'.$productImage['name'], 
-								array('alt' => $productImage['description'], 'id' => 'subImg', 'onclick' => 'changeImage(this)')
+								array('alt' => $productImage['description'], 'id' => 'subImg-'.$productImage['id'], 'onclick' => 'changeImage(this)')
 							); ?>
 						</figure>
 					<?php endforeach; ?>
@@ -82,12 +83,12 @@
 	<div class="col-lg-4" style="border-left: 1px dashed #E5E5E5;">
 		<div class="comment">
 			<div class="row">
-				<div class="form-group col-all-12" align="center">
-					<span class="glyphicon glyphicon-star star-rating" align="center"></span> 
-					<span class="glyphicon glyphicon-star star-rating" align="center"></span> 
-					<span class="glyphicon glyphicon-star star-rating" align="center"></span> 
-					<span class="glyphicon glyphicon-star-empty star-rating" align="center"></span> 
-					<span class="glyphicon glyphicon-star-empty star-rating" align="center"></span> 
+				<div class="form-group col-all-12">
+					<span class="glyphicon glyphicon-star star-rating"></span> 
+					<span class="glyphicon glyphicon-star star-rating"></span> 
+					<span class="glyphicon glyphicon-star star-rating"></span> 
+					<span class="glyphicon glyphicon-star-empty star-rating"></span> 
+					<span class="glyphicon glyphicon-star-empty star-rating"></span> 
 					<textarea class="form-control content" rows="3" placeholder="Nhận xét của bạn"></textarea>
 				</div>
 			</div>

@@ -16,13 +16,18 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+	<meta charset="UTF-8">
+    <meta property="og:locale" content="vn_VN">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá rẻ và phù hợp nhất.">
     <meta name="author" content="viennt">
-	<meta name="description" content="Website lease products">
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title><?php echo $title_for_layout; ?> - MyHomeBuilder</title>
+	<link rel="canonical" href="http://www.lamnha-z.com/"/>
+	<link rel="alternate" href="http://www.lamnha-z.com/" hreflang="vi-vn" />
+	<title>Home Builder - Xây nhà Trực tuyến Giá rẻ</title>
 
 	<?php echo $this->Html->meta('icon');?>
 	<?php echo $this->fetch('meta');?>
@@ -46,11 +51,11 @@
 	<div id="container">
 		<header>
 			<div class="nav-alias" style="height: 142px"></div>
-			<div class="nav-bar" align="center" style="height: 142px">
-				<div class="cover" align="center">
+			<div class="nav-bar" style="height: 142px">
+				<div class="cover">
 					<div class="container">
 						<figure class="logo-panel col-sx-12 col-sm-12 col-md-12 col-lg-3">
-							<?php echo $this->Html->image('logo.png', array('alt' => 'CakePHP', 'url' => array('controller' => 'home.html'))); ?>
+							<?php echo $this->Html->image('logo.png', array('alt' => 'My home builder', 'url' => array('controller' => 'home.html'))); ?>
 						</figure>
 						<div class="nav-panel col-sx-12 col-sm-12 col-md-12 col-lg-9">
 							<div class="rec hidden-xs hidden-sm hidden-md"></div>
@@ -76,20 +81,20 @@
 				</div>
 			</div>
 		</header>
-		<section class="contain">
+		<article class="contain">
 			<div class="cover">
 				<div class="container">
-					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-12 col-lg-12 non-right non-left">
+					<div id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-12 col-lg-12 non-right non-left">
 						<div class="content-sidebar">
 							<div class="panel" style="border: 2px solid #E5E5E5">
 								<?php echo $this->Session->flash(); ?>
 								<?php echo $this->fetch('content'); ?>
 							</div>
 						</div>
-					</article>
+					</div>
 				</div>
 			</div>
-		</section>
+		</article>
 		<footer class="contain">
 			<div class="cover">
 					<?php echo $this->element('footer/sponsor'); ?>

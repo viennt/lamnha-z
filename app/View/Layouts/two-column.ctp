@@ -16,13 +16,18 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+	<meta charset="UTF-8">
+    <meta property="og:locale" content="vn_VN">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá thành phù hợp nhất.">
     <meta name="author" content="viennt">
-	<meta name="description" content="Website lease products">
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<title>Xây nhà Trực tuyến Giá rẻ - MyHomeBuilder</title>
+	<link rel="canonical" href="http://www.lamnha-z.com/"/>
+	<link rel="alternate" href="http://www.lamnha-z.com/" hreflang="vi-vn" />
+	<title>Home Builder - Xây nhà Trực tuyến Giá rẻ</title>
 
 	<?php echo $this->Html->meta('icon');?>
 	<?php echo $this->fetch('meta');?>
@@ -46,11 +51,11 @@
 	<div id="container">
 		<header>
 			<div class="nav-alias"></div>
-			<div class="nav-bar" align="center">
-				<div class="cover" align="center">
+			<div class="nav-bar">
+				<div class="cover">
 					<div class="container">
 						<figure class="logo-panel col-sx-12 col-sm-12 col-md-12 col-lg-3">
-							<?php echo $this->Html->image('logo.png', array('alt' => 'CakePHP', 'url' => array('controller' => 'home.html'))); ?>
+							<?php echo $this->Html->image('logo.png', array('alt' => 'My home builder', 'url' => array('controller' => 'home.html'))); ?>
 						</figure>
 						<div class="nav-panel col-sx-12 col-sm-12 col-md-12 col-lg-9">
 							<div class="rec hidden-xs hidden-sm hidden-md"></div>
@@ -73,12 +78,12 @@
 				</div>
 			</div>
 			<?php if(strtolower($this->request->params['controller']) == 'pages'): ?>
-			<div class="banner hidden-xs hidden-sm hidden-md" align="center">
+			<div class="banner hidden-xs hidden-sm hidden-md">
 				<div class="container"></div>
 			</div>
 			<?php endif; ?>
 		</header>
-		<section class="contain">
+		<article class="contain">
 			<div class="cover">
 				<div class="container">
 					<section id="left-sidebar-container" class="col-sx-12 col-sm-12 col-md-3 col-lg-3 non-left non-right">
@@ -104,7 +109,7 @@
 					</article>
 				</div>
 			</div>
-		</section>
+		</article>
 		<footer class="contain">
 			<div class="cover">
 					<?php echo $this->element('footer/sponsor'); ?>
@@ -126,8 +131,5 @@
 
 	<!-- Vertical menu -->
 	<?php echo $this->Html->script('vertical-menu'); ?>
-	<script type="text/javascript">
-
-	</script>
 </body>
 </html>
