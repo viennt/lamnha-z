@@ -26,12 +26,13 @@ a:link{ text-decoration: none;}
 .col-all-11{ width:91.66666667%}
 .col-all-12{ width: 100%;}
 .col-all-1, .col-all-2, .col-all-3, .col-all-4, .col-all-5, .col-all-6, .col-all-7, .col-all-8, .col-all-9, .col-all-10, .col-all-11, .col-all-12{ float: left; position: relative; min-height: 1px;  padding-right: 15px; padding-left: 15px;}
+.col-centered{ float: none; margin: 0 auto;}
 
 /**************************** HEADER ****************************/
 /****************************************************************/
 .nav-alias{ display: none; height: 108px;}
 .fixed-nav{ top: 0; left: 0; width: 100%; height: 72px!important; z-index: 9999; position: fixed;}
-.nav-bar{ top: 0; z-index: 99; width: 100%; height: 108px; background-color: #FFFFFF;}
+.nav-bar{ top: 0; z-index: 9999; width: 100%; height: 108px; background-color: #FFFFFF;}
 .nav-bar .cover{ position: absolute; width: 100%; height: 108px;}
 .nav-bar .cover .container{ max-width: 1170px; min-width: 768px; height: 108px; padding: 0px!important;}
 .logo-panel{ float: left; height: 108px; padding-top: 18px; background-color: #F7B74C;}
@@ -80,11 +81,12 @@ a:link{ text-decoration: none;}
 .list-items .item .inner:hover a > img{ opacity: 0.9;}
 .list-items .item .inner .detail{  background: #F5F5F5; text-align: left; border: 1px solid #E5E5E5; border-top: 0px; padding: 10px 10px; -webkit-transition: background-color 0.4s; -moz-transition: background-color 0.4s; -o-transition: background-color 0.4s; -ms-transition: background-color 0.4s;}
 .list-items .item .inner .detail span{ color: #F7B74C; font-size: 14px; font-weight: bold; margin-bottom: 5px;}
-.list-items .item .detail h4{ margin-bottom: 5px;}
+.list-items .item .detail h5{ margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
 .products .images .productImage .magnify > img{ height: 150px;}
+.products .images .moreImages{ margin: 0}
 .products .images .moreImages .thumbnail{ height: 40px;}
 .products .images .moreImages .thumbnail > img{ max-height: 40px;}
 .products .detail .info{ height: 180px;}

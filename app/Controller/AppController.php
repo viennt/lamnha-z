@@ -66,7 +66,7 @@ class AppController extends Controller {
             $this->layout = 'manage';
         else:
             $this->layout = 'one-column';
+            $this->Auth->allow();
         endif;
-        $this->Auth->allow();
     }
 }

@@ -1,17 +1,32 @@
 <ul class="nav">
-	<li><a href="#" class="item">
-		<span class="glyphicon glyphicon-stats"></span> Manage Page
-	</a></li>
-	<li><a href="#" class="item">
-		<span class="glyphicon glyphicon-user"></span> Account
-	</a></li>
-	<li><a href="#" class="item">
-		<span class="glyphicon glyphicon-lock"></span> Login
-	</a></li>
-	<li><a href="#" class="item">
-		<span class="glyphicon glyphicon-log-in"></span> Register
-	</a></li>
-	<li><a href="#" class="item">
-		<span class="glyphicon glyphicon-log-out"></span> Logout
-	</a></li>
+	<li>
+	<?php echo $this->Html->link(
+		'<span class="glyphicon glyphicon-stats"></span> Manage Page',
+		array('controller'=> 'manage.html'),
+		array('class' => 'item', 'escape' => false)
+		);?></li>
+	<li>
+	<?php echo $this->Html->link(
+		'<span class="glyphicon glyphicon-user"></span> Account',
+		array('controller'=> 'profile.html'),
+		array('class' => 'item', 'escape' => false)
+		);?></li>
+	<li>
+	<?php echo $this->Html->link(
+		'<span class="glyphicon glyphicon-lock"></span> Login',
+		array('controller'=> 'login.html'),
+		array('class' => 'item', 'escape' => false)
+		);?></li>
+	<li>
+	<?php echo $this->Html->link(
+		'<span class="glyphicon glyphicon-log-in"></span> Register',
+		array('controller'=> 'register.html'),
+		array('class' => 'item', 'escape' => false)
+		);?></li>
+	<li>
+	<?php echo $this->Html->link(
+		'<span class="glyphicon glyphicon-log-out"></span> Logout',
+		array('controller'=> 'logout.html'),
+		array('class' => 'item', 'escape' => false)
+		);?></li>
 </ul>

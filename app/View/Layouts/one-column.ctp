@@ -33,11 +33,12 @@
 	<!-- Custom style -->
 	<?php echo $this->Html->css("public-style"); ?>
 
-	<!-- jQuery 2.1.4 -->
-	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
-
 	<!-- Vertical Menu -->
 	<?php echo $this->Html->css("vertical-menu"); ?>
+	
+	<!-- jQuery 2.1.4 -->
+	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
+	
 	<?php echo $this->fetch('css');?>
 
 </head>
@@ -69,7 +70,7 @@
 							</div>
 						</div>
 						<div class="hidden-sx hidden-sm hidden-md col-all-12 non-padding" style="height: 36px; z-index: 10">
-							<div class="col-lg-3 btn btn-flat btn-warning">A</div>
+							<div class="col-lg-3 btn btn-flat">TẤT CẢ DANH MỤC </div>
 						</div>
 					</div>
 				</div>
@@ -101,6 +102,7 @@
 			</div>
 		</footer>
 	</div>
+	
 	<!-- Bootstrap 3.3.5 -->
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 

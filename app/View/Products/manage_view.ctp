@@ -78,12 +78,12 @@
 									<?php echo $this->Html->link(
 										'<span class="glyphicon glyphicon-edit"></span>',
 										array('controller'=> 'productImages', 'action' => 'edit', $image['id']),
-										array('class' => 'btn col-all-6 btn-success btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+										array('class' => 'btn btn-xs col-all-6 btn-success btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Chỉnh sửa hình ảnh')
 										);?>
 									<?php echo $this->Html->link(
 										'<span class="glyphicon glyphicon-remove"></span>',
 										array('controller'=> 'productImages', 'action' => 'delete', $image['id']),
-										array('class' => 'btn col-all-6 btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $image['id']), 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+										array('class' => 'btn btn-xs col-all-6 btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $image['id']), 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Xóa hình ảnh')
 										);?>
 									</p>
 								</div>

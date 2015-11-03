@@ -1,6 +1,11 @@
 <a href="#" class="sidebar-toggle hidden-lg" data-toggle="offcanvas" role="button">
 	<span class="glyphicon glyphicon-menu-hamburger"></span>
 </a>
+<?php echo $this->Html->link(
+	'<span class="glyphicon glyphicon-globe"></span> Xem trang chính',
+	array('controller'=> 'pages', 'action' => 'display', 'manage' => false),
+	array('class' => 'sidebar-toggle', 'escape' => false)
+	);?>
 <!-- Navbar Right Menu -->
 <div class="navbar-custom-menu">
 	<ul class="nav navbar-nav">
@@ -11,16 +16,20 @@
 				<span class="label label-danger">2</span>
 			</a>
 			<ul class="dropdown-menu">
-				<li class="header">You have 1 notifications</li>
+				<li class="header">Bạn có 2 thông báo</li>
 				<li>
 				<!-- inner menu: contains the actual data -->
 				<ul class="menu">
-				<li>
-				<a href="#">
-				<i class="ion ion-ios-people info"></i> Notification title
-				</a>
-				</li>
-				...
+					<li>
+					<a href="#">
+						<i class="ion ion-ios-people info"></i> Hoàng Văn đã mua sản phẩn của bạn
+					</a>
+					</li>
+					<li>
+					<a href="#">
+						<i class="ion ion-ios-people info"></i> Hoàng Văn đã nhận xét sản phẩn của bạn
+					</a>
+					</li>
 				</ul>
 				</li>
 				<li class="footer"><a href="#">View all</a></li>
@@ -30,7 +39,6 @@
 		<li class="dropdown tasks-menu">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<span class="glyphicon glyphicon-flag"></span>
-				<span class="label label-danger">1</span>
 			</a>
 			<ul class="dropdown-menu">
 				<li class="header">You have 1 tasks</li>

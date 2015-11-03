@@ -33,11 +33,11 @@
 	<!-- Custom style -->
 	<?php echo $this->Html->css("public-style"); ?>
 
-	<!-- jQuery 2.1.4 -->
-	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
-
 	<!-- Vertical Menu -->
 	<?php echo $this->Html->css("vertical-menu"); ?>
+
+	<!-- jQuery 2.1.4 -->
+	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
 
 	<?php echo $this->fetch('css');?>
 
@@ -117,6 +117,7 @@
 			</div>
 		</footer>
 	</div>
+	
 	<!-- Bootstrap 3.3.5 -->
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 

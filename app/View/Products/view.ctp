@@ -6,42 +6,30 @@
 		<div class="row">
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
 				<figure class="thumbnail productImage" align="center">
-					<?php echo $this->Html->image(
-						'product.jpg', 
-						array('alt' => '', 'id' => 'mainImg', 'data-magnify-src' => '/lamnha-z/img/product.jpg')
-					); ?>
+					<?php
+					if(isset($product['ProductImage'][0]['name']))
+						echo $this->Html->image(
+							'uploads/products/'.$product['ProductImage'][0]['name'], 
+							array('alt' => $product['ProductImage'][0]['description'], 'id' => 'mainImg', 'data-magnify-src' => $this->webroot.'img/uploads/products/'.$product['ProductImage'][0]['name'])
+						); ?>
 				</figure>
-				<div class="moreImages row" style="margin: 0" align="center">
-					<div class="thumbnail non-border pointer col-all-2">
+				<div class="moreImages row">
+					<a href="#" class="btn btn-sm" style="float: left">
 						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<div class="non-border non-padding col-all-9">
+					<?php foreach ($product['ProductImage'] as $productImage): ?>
+						<figure class="thumbnail non-border pointer col-all-4">
+							<?php echo $this->Html->image(
+								'uploads/products/'.$productImage['name'], 
+								array('alt' => $productImage['description'], 'id' => 'subImg', 'onclick' => 'changeImage(this)')
+							); ?>
+						</figure>
+					<?php endforeach; ?>
 					</div>
-					<figure class="thumbnail non-border non-padding pointer col-all-2">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-						); ?>
-					</figure>
-					<figure class="thumbnail non-border non-padding pointer col-all-2">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-						); ?>
-					</figure>
-					<figure class="thumbnail non-border non-padding pointer col-all-2">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-						); ?>
-					</figure>
-					<figure class="thumbnail non-border non-padding pointer col-all-2">
-						<?php echo $this->Html->image(
-							'product.jpg', 
-							array('alt' => '', 'id' => 'subImg', 'onclick' => 'changeImage(this)')
-						); ?>
-					</figure>
-					<div class="thumbnail non-border non-padding pointer col-all-2">
+					<a href="#" class="btn btn-sm" style="float: right">
 						<span class="glyphicon glyphicon-chevron-right"></span>
-					</div>
+					</a>
 				</div>
 			</div>
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
@@ -123,47 +111,17 @@ $(document).ready(function () {
 		$("#quantityVal").val(slideEvt.value);
 	});
 
-	$('#mainImg').magnify();
-
-	function changeImage(subImg) {
-		$('#mainImg').attr('src', $(subImg).attr('src'));
-	}
-});
+	$("#mainImg").magnify();
+});	
+var changeImage = function(subImg) {
+	console.log("a");
+	$("#mainImg").attr("src", $(subImg).attr("src"));
+	$("#mainImg").attr("data-magnify-src", $(subImg).attr("src"));
+	$("#mainImg").magnify();
+};
 </script>
 
 
-<div class="related">
-	<h3><?php echo __('Related Product Images'); ?></h3>
-	<?php if (!empty($product['ProductImage'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Name'); ?></th>
-		<th><?php echo __('Description'); ?></th>
-		<th><?php echo __('Product Id'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($product['ProductImage'] as $productImage): ?>
-		<tr>
-			<td><?php echo $productImage['id']; ?></td>
-			<td><?php echo $productImage['name']; ?></td>
-			<td><?php echo $productImage['description']; ?></td>
-			<td><?php echo $productImage['product_id']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'product_images', 'action' => 'view', $productImage['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'product_images', 'action' => 'edit', $productImage['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'product_images', 'action' => 'delete', $productImage['id']), array(), __('Are you sure you want to delete # %s?', $productImage['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-	<?php endif; ?>
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Product Image'), array('controller' => 'product_images', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
-</div>
 <div class="related">
 	<h3><?php echo __('Related Product Videos'); ?></h3>
 	<?php if (!empty($product['ProductVideo'])): ?>

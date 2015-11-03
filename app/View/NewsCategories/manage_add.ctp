@@ -13,30 +13,3 @@
 	<?php $options = array('label' => 'Submit', 'div' => array('class' => 'box-footer'), 'class' => array('input' => 'btn btn-primary btn-flat btn-sm col-lg-12'));
 	echo $this->Form->end($options); ?>
 </div>
-
-<script type="text/javascript">
-$(document).ready(function () {
-	var actions = '<li class=\"header\">';
-	actions += '<?php echo __("ACTIONS"); ?>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<span>List News Categories</span>", array("action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<span>List News Categories</span>", array("controller" => "news_categories", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<span>New Parent News Category</span>", array("controller" => "news_categories", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<span>List News</span>", array("controller" => "news", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<span>New News</span>", array("controller" => "news", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	$("li#action")
-		.after(actions);
-
-});
-</script>

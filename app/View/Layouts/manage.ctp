@@ -104,6 +104,7 @@
 			<strong>Copyright © 2014-2015.</strong> All rights reserved.
 		</footer>
 	</div>
+	
 	<!-- Bootstrap 3.3.5 -->
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 
