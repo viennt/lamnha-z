@@ -1,3 +1,15 @@
+<?php $this->Paginator->options(array(
+		'update' => '#load',
+		'evalScripts' => true,
+		'before' => $this->Js->get('#busy-indicator')->effect(
+			'fadeIn',
+			array('buffer' => false)
+		),
+		'complete' => $this->Js->get('#busy-indicator')->effect(
+			'fadeOut',
+			array('buffer' => false)
+		),
+	)); ?>
 <div class="products box box-primary">
 	<div class="box-header with-border">
 		<?php echo $this->Html->link(__(' Thêm sản phẩm mới '),
@@ -57,3 +69,5 @@
 	?>
 	</div>
 </div>
+
+<?php echo $this->Js->writeBuffer();?>

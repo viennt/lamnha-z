@@ -6,6 +6,7 @@ a:link{ text-decoration: none;}
 .non-padding{ padding: 0!important;}
 .non-margin{ margin: 0!important;}
 .pointer{ cursor: pointer!important;}
+.hid{ display: none}
 ::selection { color: #FFF; background-color: #000000;}
 
 /*********************** CUSTOM BOOTSTRAP ***********************/

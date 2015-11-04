@@ -14,14 +14,14 @@
 		</div>
 		<?php endforeach; ?>
 	</div>
-	<div class="btn btn-flat btn-warning col-all-12" id="load">Xem thêm</div>
+	<div class="btn btn-flat btn-warning col-all-12" id="load-btn">Xem thêm</div>
 </div>
 
 
 <script type="text/javascript" async>
-$("#load").on("click", function() {
+$("#load-btn").on("click", function() {
 	$.ajax({
-		"url": "/lamnha-z/load.php",
+		"url": "<?php echo $this->Html->url(array('controller' => 'load.php')); ?>",
 		"type": "get",
 		"dataType": "html",
 		"success": function(data) {

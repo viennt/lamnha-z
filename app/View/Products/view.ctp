@@ -2,7 +2,8 @@
 <link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?> media='all'>
 <div class="products row" style="margin: 0">
 	<h1><?php echo h($product['Product']['name']); ?></h1>
-	<div class="product-name col-all-12"><h3><?php echo h($product['Product']['name']); ?></h3></div>
+	<h2>Công ty ABC</h2>
+	<div class="product-name col-all-12"><span><?php echo h($product['Product']['name']); ?></span><hr></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
@@ -43,7 +44,7 @@
 					<div class="row">
 						<div class="line col-all-5">Danh mục:</div>
 						<div class="line col-all-7">
-							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
+							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'productCategories', 'action' => 'view', 'id' => $product['ProductCategory']['id'], 'slug' => $this->Common->convertViToEn($product['ProductCategory']['name'], true))); ?>
 						</div>
 					</div>
 					

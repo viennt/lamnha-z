@@ -86,7 +86,7 @@
 				<div class="container">
 					<div id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-12 col-lg-12 non-right non-left">
 						<div class="content-sidebar">
-							<div class="panel" style="border: 2px solid #E5E5E5">
+							<div class="panel" style="border: 2px solid #E5E5E5" id="load">
 								<?php echo $this->Session->flash(); ?>
 								<?php echo $this->fetch('content'); ?>
 							</div>
@@ -116,5 +116,8 @@
 
 	<!-- Vertical menu -->
 	<?php echo $this->Html->script('vertical-menu'); ?>
+
+	<?php echo $this->fetch('script'); ?>
+	<?php echo $this->Js->writeBuffer(); ?>
 </body>
 </html>

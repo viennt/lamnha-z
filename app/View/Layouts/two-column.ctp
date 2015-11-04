@@ -101,7 +101,7 @@
 					</section>
 					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
 						<div class="content-sidebar">
-							<div class="panel">
+							<div class="panel" id="load">
 								<?php echo $this->Session->flash(); ?>
 								<?php echo $this->fetch('content'); ?>
 							</div>
@@ -131,5 +131,8 @@
 
 	<!-- Vertical menu -->
 	<?php echo $this->Html->script('vertical-menu'); ?>
+
+	<?php echo $this->fetch('script'); ?>
+	<?php echo $this->Js->writeBuffer(); ?>
 </body>
 </html>

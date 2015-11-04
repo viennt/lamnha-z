@@ -85,8 +85,10 @@ a:link{ text-decoration: none;}
 
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
-.products h1{display: none!important;}
+.products h1, .products h2{display: none!important;}
 .products .product-name{ text-align: center;}
+.products .product-name span{ font-size: 24px;}
+.products .product-name hr{ margin-top: 5px;}
 .products .images .productImage .magnify > img{ height: 150px;}
 .products .images .moreImages{ margin: 0}
 .products .images .moreImages .thumbnail{ height: 40px;}

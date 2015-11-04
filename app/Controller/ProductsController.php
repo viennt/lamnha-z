@@ -20,7 +20,26 @@ class ProductsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator', 'RequestHandler');
+	
+/**
+ * Helpers
+ *
+ * @var array
+ */
+	public $helpers = array('Js');
+	
+/**
+ * paginate: setting
+ *
+ * @var array
+ */
+	public $paginate = array(
+		'limit' => 3,
+		'order' => array(
+			'Product.id' => 'asc'
+		)
+	);
 
 /**
  * index method
@@ -29,6 +48,7 @@ class ProductsController extends AppController {
  */
 	public function manage_index() {
 		$this->Product->recursive = 0;
+		$this->Paginator->settings = $this->paginate;
 		$this->set('products', $this->Paginator->paginate());
 	}
 

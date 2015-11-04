@@ -6,6 +6,11 @@
 	array('controller'=> 'pages', 'action' => 'display', 'manage' => false),
 	array('class' => 'sidebar-toggle', 'escape' => false)
 	);?>
+<?php echo $this->Html->link(
+	$this->Html->image( 'control/indicator.gif'),
+	array('#'),
+	array('class' => 'hid sidebar-toggle', 'id' => 'busy-indicator', 'escape' => false)
+	); ?>
 <!-- Navbar Right Menu -->
 <div class="navbar-custom-menu">
 	<ul class="nav navbar-nav">
