@@ -14,7 +14,9 @@ class ProductVideosControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.product_video',
-		'app.product'
+		'app.product',
+		'app.product_category',
+		'app.product_image'
 	);
 
 /**

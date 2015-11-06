@@ -1,9 +1,8 @@
 <div class="groups box box-primary">
 	<div class="box-header with-border">
-		<h3 class="box-title"><?php echo __('Groups'); ?></h3></br></br>
 		<?php echo $this->Html->link(__(' Add '),
 			array('controller' => 'groups', 'action' => 'add'),
-			array('class'=>'btn btn-primary btn-flat btn-xs col-lg-12')
+			array('class'=>'btn btn-xm btn-primary btn-flat col-lg-12')
 			); ?>
 	</div>
 	<div class="box-body table-responsive no-padding">

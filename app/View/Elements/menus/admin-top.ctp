@@ -3,8 +3,8 @@
 </a>
 <?php echo $this->Html->link(
 	'<span class="glyphicon glyphicon-globe"></span> Xem trang chính',
-	array('controller'=> 'pages', 'action' => 'display', 'manage' => false),
-	array('class' => 'sidebar-toggle', 'escape' => false)
+	array('controller'=> 'home.html', 'action' => '', 'manage' => false),
+	array('class' => 'sidebar-toggle', 'target' => '_blank', 'escape' => false)
 	);?>
 <?php echo $this->Html->link(
 	$this->Html->image( 'control/indicator.gif'),
@@ -85,18 +85,6 @@
 				Nguyen The Vien - Web Developer
 				<small>Member since Nov. 2012</small>
 				</p>
-			</li>
-			<!-- Menu Body -->
-			<li class="user-body">
-				<div class="col-xs-4 text-center">
-				<a href="#">Followers</a>
-				</div>
-				<div class="col-xs-4 text-center">
-				<a href="#">Sales</a>
-				</div>
-				<div class="col-xs-4 text-center">
-				<a href="#">Friends</a>
-			</div>
 			</li>
 			<!-- Menu Footer-->
 			<li class="user-footer">

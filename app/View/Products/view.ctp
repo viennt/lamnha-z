@@ -1,13 +1,13 @@
 <link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/bootstrap-slider/slider.css'; ?> media='all'>
 <link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?> media='all'>
-<div class="products row" style="margin: 0">
+<div class="publicView row" style="margin: 0">
 	<h1><?php echo h($product['Product']['name']); ?></h1>
 	<h2>Công ty ABC</h2>
-	<div class="product-name col-all-12"><span><?php echo h($product['Product']['name']); ?></span><hr></div>
+	<div class="name col-all-12"><span><?php echo h($product['Product']['name']); ?></span><hr></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
-				<figure class="thumbnail productImage">
+				<figure class="thumbnail publicViewImage">
 					<?php
 					if(isset($product['ProductImage'][0]['name']))
 						echo $this->Html->image(
@@ -16,6 +16,7 @@
 						); ?>
 				</figure>
 				<div class="moreImages row">
+					<?php if(isset($product['ProductImage'])): ?>
 					<a href="#" class="btn btn-sm" style="float: left">
 						<span class="glyphicon glyphicon-chevron-left"></span>
 					</a>
@@ -32,6 +33,7 @@
 					<a href="#" class="btn btn-sm" style="float: right">
 						<span class="glyphicon glyphicon-chevron-right"></span>
 					</a>
+					<?php endif;?>
 				</div>
 			</div>
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
@@ -47,7 +49,6 @@
 							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'productCategories', 'action' => 'view', 'id' => $product['ProductCategory']['id'], 'slug' => $this->Common->convertViToEn($product['ProductCategory']['name'], true))); ?>
 						</div>
 					</div>
-					
 					<div class="row">
 						<div class="line col-all-5">Đặc điểm:</div>
 						<div class="line col-all-7">
@@ -104,8 +105,8 @@
 </div>
 
 
-<script src=<?php echo $this->webroot.'plugins/bootstrap-slider/bootstrap-slider.js'; ?>></script>
-<script src=<?php echo $this->webroot.'js/jquery.magnify.js'; ?>></script>
+<script src=<?php echo $this->webroot,'plugins/bootstrap-slider/bootstrap-slider.js'; ?>></script>
+<script src=<?php echo $this->webroot,'js/jquery.magnify.js'; ?>></script>
 <script type="text/javascript">
 $(document).ready(function () {
 	$("#quantity").slider();

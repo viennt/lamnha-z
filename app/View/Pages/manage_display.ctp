@@ -155,7 +155,7 @@
 	</div><!-- /.col -->
 </div>
 
-<script src=<?php echo $this->webroot.'plugins/chartjs/Chart.min.js';?> ></script>
+<script src=<?php echo $this->webroot,'plugins/chartjs/Chart.min.js';?> ></script>
 <script type="text/javascript">
 $(document).ready(function () {
 

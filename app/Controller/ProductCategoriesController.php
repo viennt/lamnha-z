@@ -57,7 +57,7 @@ class ProductCategoriesController extends AppController {
 			$this->ProductCategory->create();
 			if ($this->ProductCategory->save($this->request->data)) {
 				$this->Session->setFlash(__('The product category has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('The product category could not be saved. Please, try again.'));
 			}

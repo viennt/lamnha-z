@@ -14,17 +14,13 @@ class ServicesControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'app.service',
-		'app.category',
-		'app.category_type',
-		'app.news',
 		'app.user',
 		'app.group',
 		'app.profile',
+		'app.contractor',
+		'app.news',
 		'app.project',
-		'app.project_image',
-		'app.product',
-		'app.product_image',
-		'app.product_video',
+		'app.service_category',
 		'app.service_price'
 	);
 

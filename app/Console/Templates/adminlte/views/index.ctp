@@ -19,7 +19,7 @@
 		<h3 class="box-title"><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h3></br></br>
 		<?php echo "<?php echo \$this->Html->link(__(' Add '),\n";
 					echo "\t\t\tarray('controller' => '$pluralVar', 'action' => 'add'),\n";
-					echo "\t\t\tarray('class'=>'btn btn-primary btn-flat btn-xs col-lg-12')\n";
+					echo "\t\t\tarray('class'=>'btn btn-xm btn-primary btn-flat col-lg-12')\n";
 					echo "\t\t\t); ?>\n"; ?>
 	</div>
 	<div class="box-body table-responsive no-padding">

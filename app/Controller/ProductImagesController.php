@@ -9,6 +9,13 @@ App::uses('AppController', 'Controller');
 class ProductImagesController extends AppController {
 	
 /**
+ * Scaffold
+ *
+ * @var string
+ */
+	public $scaffold = 'manage';
+	
+/**
  * Components
  *
  * @var array
@@ -29,7 +36,7 @@ class ProductImagesController extends AppController {
 			$this->ProductImage->create();
 			if ($this->ProductImage->save($this->request->data)) {
 				$this->Session->setFlash(__('The product image has been saved.'));
-				return $this->redirect(array('action' => 'add'));
+				return $this->redirect(array('action' => 'add', $product_id));
 			} else {
 				$this->Session->setFlash(__('The product image could not be saved. Please, try again.'));
 			}

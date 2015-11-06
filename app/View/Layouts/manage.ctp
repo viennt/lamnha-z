@@ -53,7 +53,9 @@
 <body class="skin-blue fixed">
 	<div class="wrapper">
 		<header class="main-header">
-			<a href="#" class="logo">LamNha Manage</a>
+			<?php echo $this->Html->link('LamNha Manage',
+				array('controller'=> 'manage.html', 'action' => '', 'manage' => false),
+				array('class' => 'logo')); ?>
 			<nav class="navbar navbar-static-top" role="navigation">
 				<?php echo $this->element('menus/admin-top'); ?>
 			</nav>
@@ -104,7 +106,7 @@
 		
 		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
-				<b>Version</b> 2.3.0 | <?php echo WWW_ROOT; ?>
+				<b>Version</b> 2.3.0
 			</div>
 			<strong>Copyright © 2014-2015.</strong> All rights reserved.
 		</footer>

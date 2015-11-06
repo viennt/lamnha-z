@@ -58,7 +58,7 @@ class ServiceCategoriesController extends AppController {
 			$this->ServiceCategory->create();
 			if ($this->ServiceCategory->save($this->request->data)) {
 				$this->Session->setFlash(__('The service category has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('The service category could not be saved. Please, try again.'));
 			}
@@ -81,7 +81,7 @@ class ServiceCategoriesController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->ServiceCategory->save($this->request->data)) {
 				$this->Session->setFlash(__('The service category has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'view'));
 			} else {
 				$this->Session->setFlash(__('The service category could not be saved. Please, try again.'));
 			}

@@ -7,7 +7,7 @@ a:link{ text-decoration: none;}
 .non-margin{ margin: 0!important;}
 .pointer{ cursor: pointer!important;}
 .hid{ display: none}
-::selection { color: #FFF; background-color: #000000;}
+::selection { color: #FFF; background-color: #3C8DBC;}
 
 /*********************** CUSTOM BOOTSTRAP ***********************/
 /****************************************************************/
@@ -35,6 +35,7 @@ a:link{ text-decoration: none;}
 
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
+.products .detail, .products .description, .products .image, .products .video{ margin-bottom: 20px}
 .products .detail .price{ font-size: 25px; color: #FFC31C;}
 .products .detail .line{ font-size: 17px; color: #000000;}
 .products .detail .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}

@@ -50,22 +50,39 @@
 	);
 
 /**
- * ...and connect to product with slug.
+ * Products
  */
     Router::connect(
-        '/:slug-:id.html',
+        '/danh-muc-san-pham/:slug-:id.html',
+        array('controller' => 'productCategories', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+    Router::connect(
+        '/san-pham/:slug-:id.html',
         array('controller' => 'products', 'action' => 'view'),
         array(
             'pass' => array('id', 'slug'),
             "id"=>"[0-9]+", // chỉ là số
         )
     );
+
 /**
- * ...and connect to category with slug.
+ * Products
  */
     Router::connect(
-        '/san-pham/:slug-:id.html',
-        array('controller' => 'productCategories', 'action' => 'view'),
+        '/danh-muc-dich-vu/:slug-:id.html',
+        array('controller' => 'serviceCategories', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+    Router::connect(
+        '/dich-vu/:slug-:id.html',
+        array('controller' => 'services', 'action' => 'view'),
         array(
             'pass' => array('id', 'slug'),
             "id"=>"[0-9]+", // chỉ là số

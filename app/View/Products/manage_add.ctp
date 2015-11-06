@@ -26,7 +26,7 @@
 	echo $this->Form->end($options); ?>
 </div>
 
-<script src=<?php echo $this->webroot.'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'; ?>></script>
+<script src=<?php echo $this->webroot,'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'; ?>></script>
 <script type="text/javascript">
 $(document).ready(function () {
 	$('#description-textarea').wysihtml5();

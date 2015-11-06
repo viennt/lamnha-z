@@ -85,18 +85,18 @@ a:link{ text-decoration: none;}
 
 /************************ PRODUCT DETAIL ************************/
 /****************************************************************/
-.products h1, .products h2{display: none!important;}
-.products .product-name{ text-align: center;}
-.products .product-name span{ font-size: 24px;}
-.products .product-name hr{ margin-top: 5px;}
-.products .images .productImage .magnify > img{ height: 150px;}
-.products .images .moreImages{ margin: 0}
-.products .images .moreImages .thumbnail{ height: 40px;}
-.products .images .moreImages .thumbnail > img{ max-height: 40px;}
-.products .detail .info{ height: 180px;}
-.products .detail .info .price{ font-size: 25px; color: #F7B74C;}
-.products .detail .info .line{ font-size: 17px; color: #000000;}
-.products .detail .info .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}
+.publicView h1, .publicView h2{display: none!important;}
+.publicView .name{ text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.publicView .name span{ font-size: 24px;}
+.publicView .name hr{ margin-top: 5px;}
+.publicView .images .publicViewImage .magnify > img{ height: 150px;}
+.publicView .images .moreImages{ margin: 0}
+.publicView .images .moreImages .thumbnail{ height: 40px;}
+.publicView .images .moreImages .thumbnail > img{ max-height: 40px;}
+.publicView .detail .info{ height: 180px;}
+.publicView .detail .info .price{ font-size: 25px; color: #F7B74C;}
+.publicView .detail .info .line{ font-size: 17px; color: #000000;}
+.publicView .detail .info .line #quantityVal{ font-size: 14px; padding: 0; height: 100%;}
 .slider-handle{background-color: #F7B74C!important;}
 .comment .star-rating{ font-size: 30px; color: #F7B74C;}
 .comment .content{ height: 120px;}

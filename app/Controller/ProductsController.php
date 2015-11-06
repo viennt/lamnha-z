@@ -77,7 +77,7 @@ class ProductsController extends AppController {
 			$this->Product->create();
 			if ($this->Product->save($this->request->data)) {
 				$this->Session->setFlash(__('The product has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'add'));
 			} else {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}
@@ -100,7 +100,7 @@ class ProductsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Product->save($this->request->data)) {
 				$this->Session->setFlash(__('The product has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'view', $id));
 			} else {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}

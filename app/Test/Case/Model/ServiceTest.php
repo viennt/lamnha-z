@@ -14,15 +14,13 @@ class ServiceTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.service',
-		'app.category',
-		'app.category_type',
-		'app.news',
 		'app.user',
-		'app.product',
-		'app.product_image',
-		'app.product_video',
+		'app.group',
+		'app.profile',
+		'app.contractor',
+		'app.news',
 		'app.project',
-		'app.project_image',
+		'app.service_category',
 		'app.service_price'
 	);
 
