@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2015 at 08:42 PM
+-- Generation Time: Nov 06, 2015 at 03:18 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.5.27
 
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `opened` tinyint(1) NOT NULL DEFAULT '0',
   `product_category_id` bigint(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -174,8 +174,7 @@ INSERT INTO `products` (`id`, `name`, `description`, `specification`, `unit`, `p
 (2, 'Sỏi đỡ', '<p>\r\n\r\n</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Xuất xứ : sản phẩm Việt Nam</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Kích thước : 2-5 mm, 5-10 mm, 10-20 mm, 20-25 mm</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Công dụng : làm lớp lót đáy bể lọc</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Hạn dùng : tối thiểu 5 năm nên thay mới, định kỳ rửa ngược rửa xuôi</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Đơn vị tính : kg</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Tỷ trọng : 1,4 kg/lít</p><p>· &nbsp; &nbsp; &nbsp; &nbsp; Đóng bao : 40 kg (chuẩn)</p>\r\n\r\n<br><p></p>', '08', 'Bao', 1, 1, 8),
 (3, 'Gạch siêu nhẹ AAC', '<p>Gạch Bê tông khí chưng áp AAC Kích thước dài 600mm cao 200mm rộng 200mm:<br>\r\n 1. Trọng lượng nhẹ, tiết kiệm chi phí, nâng cao năng suất xây dựng<br>\r\n 2. Tính năng bảo ôn cách nhiệt cao<br>\r\n 3. Tính năng cách âm tốt<br>\r\n 4. Tính chịu nhiệt<br>\r\n 5. Khả năng chịu chấn động tốt<br>\r\n 6. Gia công dễ dàng<br>\r\n <small></small>7. Linh hoạt trong sản xuất và thân thiện với môi trường</p>', '600 x 200 x 200', 'viên', 1, 1, 7),
 (4, 'Đá bóc mặt lồi', '<p>\r\n\r\nĐang cập nhật\r\n\r\n<br></p>', '08', 'Bao', 1, 1, 8),
-(5, 'Cung cấp nhựa POM dạng tấm và thanh tròn cho gia công cơ khí', '<p>\r\n\r\n</p><p>POM, loại copolymer, là polymer tinh thể và có thể sử dụng ở nhiệt độ lên tới +100oC. Là loại đồng trùng hợp có tính năng cơ khí khá tốt, ổn định với độ ẩm và dễ dàng gia công và ổn định nhiệt tốt hơn và sức đề kháng mạnh mẽ với kiềm hơn acetal homopolymer.<br><br><strong><em>Đặc tính<br></em></strong></p><ul><li>Độ bền cơ học và độ cứng cao</li><li>Sức chịu mỏi và rão cao</li><li>Tính trơn trượt tốt và chịu mài món tốt</li><li>Ổn định về kích thước rất tốt</li><li>Đặc tính cách điện và điện môi tốt</li><li>Khả năng gia công rất tốt</li><li>Không đề kháng với axit có độ đậm đặc cao</li><li>Khó để sơn và gắn keo</li></ul><div><strong><em>Ứng dụng<br></em></strong><ul><li>Bạc tải trọng nặng, bánh răng, các bộ phận cho máy bơm.</li><li>Các bộ phận đòi hỏi chính xác, ổn định về kích thước.</li><li>Vít tải, chi tiết cho các ứng dụng của ngành dệt.</li><li>Cấu kiện trong nhà máy hóa chất. &nbsp;</li><li>Các bộ phận cách điện / dẫn điện.</li></ul><div><strong><em>Dải kích thước thông dụng của POM C:</em></strong><br><p></p><ul><li>Thanh tròn Dia. 6-300 x L 1000 / 2000 mm, màu trắng / đen, loại thường, chống tĩnh điện (ESD), dẫn điện (ELS).</li><li>Tấm dày 5-100mm, W600xL1200mm / W1000xL2000mm, màu trắng / đen, loại thường, chống tĩnh điện (ESD), dẫn điện (ELS).</li></ul><div><br>Liên hệ để có thông tin chi tiết về sản phẩm.</div></div></div>\r\n\r\n<br><p></p>', 'POM C', 'Tấm', 1, 1, 12),
-(6, 'THÉP 16 GÂN', '<p>\r\n\r\nĐang cập nhật\r\n\r\n<br></p>', '16 gân', 'Cây', 1, 1, 10);
+(5, 'Cung cấp nhựa POM dạng tấm và thanh tròn cho gia công cơ khí', '<p>\r\n\r\n</p><p>POM, loại copolymer, là polymer tinh thể và có thể sử dụng ở nhiệt độ lên tới +100oC. Là loại đồng trùng hợp có tính năng cơ khí khá tốt, ổn định với độ ẩm và dễ dàng gia công và ổn định nhiệt tốt hơn và sức đề kháng mạnh mẽ với kiềm hơn acetal homopolymer.<br><br><strong><em>Đặc tính<br></em></strong></p><ul><li>Độ bền cơ học và độ cứng cao</li><li>Sức chịu mỏi và rão cao</li><li>Tính trơn trượt tốt và chịu mài món tốt</li><li>Ổn định về kích thước rất tốt</li><li>Đặc tính cách điện và điện môi tốt</li><li>Khả năng gia công rất tốt</li><li>Không đề kháng với axit có độ đậm đặc cao</li><li>Khó để sơn và gắn keo</li></ul><div><strong><em>Ứng dụng<br></em></strong><ul><li>Bạc tải trọng nặng, bánh răng, các bộ phận cho máy bơm.</li><li>Các bộ phận đòi hỏi chính xác, ổn định về kích thước.</li><li>Vít tải, chi tiết cho các ứng dụng của ngành dệt.</li><li>Cấu kiện trong nhà máy hóa chất. &nbsp;</li><li>Các bộ phận cách điện / dẫn điện.</li></ul><div><strong><em>Dải kích thước thông dụng của POM C:</em></strong><br><p></p><ul><li>Thanh tròn Dia. 6-300 x L 1000 / 2000 mm, màu trắng / đen, loại thường, chống tĩnh điện (ESD), dẫn điện (ELS).</li><li>Tấm dày 5-100mm, W600xL1200mm / W1000xL2000mm, màu trắng / đen, loại thường, chống tĩnh điện (ESD), dẫn điện (ELS).</li></ul><div><br>Liên hệ để có thông tin chi tiết về sản phẩm.</div></div></div>\r\n\r\n<br><p></p>', 'POM C', 'Tấm', 1, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -259,7 +258,20 @@ CREATE TABLE IF NOT EXISTS `product_images` (
   `name` varchar(100) CHARACTER SET utf8 NOT NULL,
   `description` tinytext COLLATE utf8_unicode_ci,
   `product_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `product_images`
+--
+
+INSERT INTO `product_images` (`id`, `name`, `description`, `product_id`) VALUES
+(15, '1446456920.jpg', 'Mô tả a', 3),
+(16, '1446456941.jpg', 'Mô tả', 3),
+(17, '1446456946.jpg', 'Mô tả', 3),
+(19, '1446458455.jpg', 'Mô tả', 3),
+(20, '1446458684.jpg', 'Mô tả', 3),
+(21, '1446525455.jpg', 'Mô tả', 1),
+(22, '1446525495.jpg', 'Mô tả', 1);
 
 -- --------------------------------------------------------
 
@@ -286,7 +298,15 @@ CREATE TABLE IF NOT EXISTS `product_videos` (
   `code` varchar(100) CHARACTER SET utf8 NOT NULL,
   `description` tinytext COLLATE utf8_unicode_ci,
   `product_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `product_videos`
+--
+
+INSERT INTO `product_videos` (`id`, `code`, `description`, `product_id`) VALUES
+(1, 'dZQW4z7_7Ik', 'Mô tả a', 3),
+(2, 'GkAGsqW6Y1c', 'Mô tả', 3);
 
 -- --------------------------------------------------------
 
@@ -307,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `profiles` (
   `sex` varchar(20) CHARACTER SET utf8 NOT NULL,
   `address` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `profiles`
@@ -315,7 +335,8 @@ CREATE TABLE IF NOT EXISTS `profiles` (
 
 INSERT INTO `profiles` (`id`, `user_id`, `avatar_url`, `full_name`, `email`, `phone_number`, `personal_number`, `date_of_birth`, `place_of_birth`, `sex`, `address`, `published`) VALUES
 (1, 1, '', 'Nguyễn Thế Viễn', 'thevien@outlook.com', 963935709, 201687262, '1995-03-02', 'Đà Nẵng', 'Nam', 'K100/44 Phan Văn Định', 1),
-(2, 2, '', 'Nguyễn Văn A', 'vana@gmail.com', 954567865, 214564323, '1995-11-17', 'Đà Nẵng', 'Nam', '128 Nguyễn Văn Linh', 1);
+(2, 2, '', 'Nguyễn Văn A', 'vana@gmail.com', 954567865, 214564323, '1995-11-17', 'Đà Nẵng', 'Nam', '128 Nguyễn Văn Linh', 1),
+(3, 3, '', 'Service Supplier', 'thevien@outlook.com', 963935079, 2147483647, '1995-11-06', 'Đà Nẵng', 'Nam', 'K100/44', 1);
 
 -- --------------------------------------------------------
 
@@ -426,7 +447,15 @@ CREATE TABLE IF NOT EXISTS `services` (
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `user_id` bigint(20) NOT NULL,
   `service_category_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `name`, `description`, `price`, `published`, `user_id`, `service_category_id`) VALUES
+(1, 'Thiết kế nội thất phòng khách Hoàng Lân', '<p>\r\n\r\n</p><p><strong>Thiết kế nội thất phòng khách hiện đại</strong></p><p>Trong thiết kế nội thất chung cư, căn hộ hay biệt thự thì việc thiết kế nội thất phòng khách l<small></small>uôn được các gia chủ chú trọng và quan tâm hơn cả. Bởi vì phòng khách chính là nơi để đón tiếp những vị khách quý hay bạn bè của gia chủ cho nên đây cũng có thể được coi là bộ mặt chính của mỗi căn hộ. Vì vậy, <strong></strong>nội thất phòng khách<strong></strong>&nbsp;được chú trọng đầu tư là điều hoàn toàn dễ hiểu. </p>\r\n\r\n<p></p>', 500000, 1, 3, 6),
+(2, 'Bài trí nội thất phòng khách ADH', '<p>\r\n\r\nCác kiểu thiết kế phòng khách đó là phòng khách hiện đại, truyền thống, châu á đương thời với các đặc trưng về vẻ đẹp, giúp bạn tìm ra ý tưởng trang trí phòng khách phù hợp \r\n\r\n<br></p>', 399, 1, 3, 6);
 
 -- --------------------------------------------------------
 
@@ -441,16 +470,31 @@ CREATE TABLE IF NOT EXISTS `service_categories` (
   `parent_id` int(11) DEFAULT NULL,
   `lft` int(11) DEFAULT NULL,
   `rght` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `service_categories`
 --
 
 INSERT INTO `service_categories` (`id`, `name`, `description`, `parent_id`, `lft`, `rght`) VALUES
-(1, 'root', 'Mô tả', NULL, 1, 6),
-(2, 'Dịch vụ thiết kế', 'Mô tả', 1, 2, 3),
-(3, 'Dịch vụ thi công', 'Mô tả', 1, 4, 5);
+(1, 'root', 'Mô tả', NULL, 1, 36),
+(2, 'Dịch vụ thiết kế', 'Mô tả', 1, 2, 17),
+(3, 'Dịch vụ thi công', 'Mô tả', 1, 18, 19),
+(4, 'Dịch vụ sửa chữa', 'Mô tả', 1, 20, 33),
+(5, 'Tư vấn xây nhà', 'Mô tả', 1, 34, 35),
+(6, 'Thiết kế nội thất phòng khách', 'Mô tả', 2, 3, 4),
+(7, 'Thiết kế nội thất phòng ngủ', 'Mô tả', 2, 5, 6),
+(8, 'Thiết kế nội thất phòng bếp', 'Mô tả', 2, 7, 8),
+(9, 'Thiết kế nội thất phòng karaoke', 'Mô tả', 2, 9, 10),
+(10, 'Thiết kế nội thất trẻ em', 'Mô tả', 2, 11, 12),
+(11, 'Thiết kế phòng làm việc', 'Mô tả', 2, 13, 14),
+(12, 'Thiết kế nội thất chung cư', 'Mô tả', 2, 15, 16),
+(13, 'Cơi nới, mở rộng, xây thêm tầng', 'Mô tả', 4, 21, 22),
+(14, 'Xử lý sự cố thấm, dột, lún, nứt công trình', 'Mô tả', 4, 23, 24),
+(15, 'Trang trí, làm mới, sơn sửa, quét vôi', 'Mô tả', 4, 25, 26),
+(16, 'Cải tạo, sửa chữa hệ thống điện, hệ thống nước', 'Mô tả', 4, 27, 28),
+(17, 'Sửa chữa, lắp đặt thiết bị điều hòa', 'Mô tả', 4, 29, 30),
+(18, 'Xây tường ngăn, dựng vách ngăn, làm trần thạch cao', 'Mô tả', 4, 31, 32);
 
 -- --------------------------------------------------------
 
@@ -479,7 +523,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `group_id` bigint(20) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
@@ -487,7 +531,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `group_id`, `created`, `modified`) VALUES
 (1, 'viennt', '$2a$10$8.o5a8k.zbkQ0RA04qGgaOLOuvcJb39Xyf0WxJJeKo2d3TVeq05em', 1, '2015-10-10 06:18:54', '2015-10-10 06:18:54'),
-(2, 'admin', '$2a$10$8.o5a8k.zbkQ0RA04qGgaOLOuvcJb39Xyf0WxJJeKo2d3TVeq05em', 2, '2015-10-10 06:46:51', '2015-10-10 06:46:51');
+(2, 'admin', '$2a$10$8.o5a8k.zbkQ0RA04qGgaOLOuvcJb39Xyf0WxJJeKo2d3TVeq05em', 2, '2015-10-10 06:46:51', '2015-10-10 06:46:51'),
+(3, 'ssupplier', '$2a$10$BTksltjX/U35fbajeOIJvOxPm7.qREQmTOQyG1pSvMy0tu7AuUbJK', 4, '2015-11-06 11:40:33', '2015-11-06 11:40:33');
 
 -- --------------------------------------------------------
 
@@ -722,7 +767,7 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `product_categories`
 --
@@ -732,7 +777,7 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `product_prices`
 --
@@ -742,12 +787,12 @@ ALTER TABLE `product_prices`
 -- AUTO_INCREMENT for table `product_videos`
 --
 ALTER TABLE `product_videos`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `projects`
 --
@@ -782,12 +827,12 @@ ALTER TABLE `project_images`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `service_categories`
 --
 ALTER TABLE `service_categories`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `service_prices`
 --
@@ -797,7 +842,7 @@ ALTER TABLE `service_prices`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users_has_products`
 --
