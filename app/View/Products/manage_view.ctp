@@ -105,8 +105,9 @@
 					<div class="row">
 						<?php foreach($product['ProductVideo'] as $video): ?>
 						<div class="col-sx-12 col-sm-12 col-md-6 col-lg-6">
-							<div class="thumbnail">
-								<iframe width="100%" height="150" src=<?php echo 'https://www.youtube.com/embed/'.$video['code'] ?> frameborder="0" allowfullscreen></iframe>
+							<div class="thumbnail ">
+								<div class="embed-responsive embed-responsive-16by9">
+								<iframe src=<?php echo 'https://www.youtube.com/embed/'.$video['code'] ?> frameborder="0" allowfullscreen></iframe></div>
 								<div class="caption">
 									<p>
 									<?php echo $this->Html->link(

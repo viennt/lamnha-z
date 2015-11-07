@@ -40,12 +40,11 @@ class ServiceCategoriesController extends AppController {
  * @return void
  */
 	public function manage_view($id = null) {
-		return $this->redirect($this->referer());
-		// if (!$this->ServiceCategory->exists($id)) {
-		// 	throw new NotFoundException(__('Invalid service category'));
-		// }
-		// $options = array('conditions' => array('ServiceCategory.' . $this->ServiceCategory->primaryKey => $id));
-		// $this->set('serviceCategory', $this->ServiceCategory->find('first', $options));
+		if (!$this->ServiceCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid service category'));
+		}
+		$options = array('conditions' => array('ServiceCategory.' . $this->ServiceCategory->primaryKey => $id));
+		$this->set('serviceCategory', $this->ServiceCategory->find('first', $options));
 	}
 
 /**
@@ -112,5 +111,29 @@ class ServiceCategoriesController extends AppController {
 			$this->Session->setFlash(__('The service category could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		$this->layout = "two-column";
+		if (!$this->ServiceCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid service category'));
+		}
+		$options = array('conditions' => array('ServiceCategory.' . $this->ServiceCategory->primaryKey => $id));
+		$this->set('serviceCategory', $this->ServiceCategory->find('first', $options));
+
+		$this->loadModel('Service');
+		$categoryIds = $this->ServiceCategory->children($id , false, 'id');
+		$categoryIds = Hash::extract($categoryIds, '{n}.ServiceCategory.id');
+		$optionsService = array('conditions' => array('Service.service_category_id' => $categoryIds));
+		$this->set('services', $this->Service->find('all', $optionsService));
+
+		$this->set('crumbs', $this->ServiceCategory->getPath($id));
 	}
 }

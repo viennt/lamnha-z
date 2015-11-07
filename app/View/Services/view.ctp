@@ -1,21 +1,19 @@
 <!--<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?> media='all'> -->
 <div class="publicView row" style="margin: 0">
-	<h1><?php echo h($service['Service']['name']); ?></h1>
-	<h2><?php echo h($service['Service']['user_id']); ?></h2>
-	<div class="name col-all-12"><span><?php echo h($service['Service']['name']); ?></span><hr></div>
+	<div class="name col-all-12"><h1><?php echo h($service['Service']['name']); ?></h1><hr></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
+			<?php if(isset($service['ServiceImage'])): ?>
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
 				<figure class="thumbnail publicViewImage">
-					<?php
-					if(isset($service['ServiceImage'][0]['name']))
+					<?php if(isset($service['ServiceImage'][0]['name'])):
 						echo $this->Html->image(
 							'uploads/services/'.$service['ServiceImage'][0]['name'], 
 							array('alt' => $service['ServiceImage'][0]['description'], 'id' => 'mainImg', 'data-magnify-src' => $this->webroot.'img/uploads/services/'.$service['ServiceImage'][0]['name'])
-						); ?>
+						);
+						endif; ?>
 				</figure>
 				<div class="moreImages row">
-					<?php if(isset($service['ServiceImage'])): ?>
 					<a href="#" class="btn btn-sm" style="float: left">
 						<span class="glyphicon glyphicon-chevron-left"></span>
 					</a>
@@ -32,10 +30,11 @@
 					<a href="#" class="btn btn-sm" style="float: right">
 						<span class="glyphicon glyphicon-chevron-right"></span>
 					</a>
-					<?php endif;?>
 				</div>
 			</div>
+			<?php endif;?>
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
+				<h2><?php echo h($service['ServiceCategory']['name']); ?></h2>
 				<div class="info">
 					<div class="price col-sx-12">
 						<?php echo h($service['Service']['price']); ?>

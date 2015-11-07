@@ -53,6 +53,10 @@
  * Products
  */
     Router::connect(
+        '/danh-muc-san-pham.html',
+        array('controller' => 'productCategories', 'action' => 'view', 1)
+    );
+    Router::connect(
         '/danh-muc-san-pham/:slug-:id.html',
         array('controller' => 'productCategories', 'action' => 'view'),
         array(
@@ -72,6 +76,10 @@
 /**
  * Products
  */
+    Router::connect(
+        '/danh-muc-dich-vu.html',
+        array('controller' => 'serviceCategories', 'action' => 'view', 1)
+    );
     Router::connect(
         '/danh-muc-dich-vu/:slug-:id.html',
         array('controller' => 'serviceCategories', 'action' => 'view'),

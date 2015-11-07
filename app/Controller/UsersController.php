@@ -39,8 +39,8 @@ class UsersController extends AppController {
  * @return void
  */
 	public function register() {
-		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
+			var_dump($this->request->data); die;
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved.'));
@@ -59,23 +59,12 @@ class UsersController extends AppController {
  * @return void
  */
 	public function login() {
-		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
-				//var_dump($this->Auth->redirectUrl()); die;
 				return $this->redirect($this->Auth->redirectUrl());
 			}
 			$this->Session->setFlash(__('Invalid username or password, try again'));
 		}
-	}
-
-/**
- * manage_login method
- *
- * @return void
- */
-	public function manage_login() {
-		$this->redirect('/login.html');
 	}
 
 /**
@@ -97,6 +86,14 @@ class UsersController extends AppController {
 		$this->set('users', $this->Paginator->paginate());
 	}
 
+/**
+ * manage_login method
+ *
+ * @return void
+ */
+	public function manage_login() {
+		$this->redirect('/login.html');
+	}
 
 /**
  * add method

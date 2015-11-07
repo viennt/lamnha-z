@@ -1,9 +1,7 @@
 <link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/bootstrap-slider/slider.css'; ?> media='all'>
 <link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?> media='all'>
 <div class="publicView row" style="margin: 0">
-	<h1><?php echo h($product['Product']['name']); ?></h1>
-	<h2>Công ty ABC</h2>
-	<div class="name col-all-12"><span><?php echo h($product['Product']['name']); ?></span><hr></div>
+	<div class="name col-all-12"><h1><?php echo h($product['Product']['name']); ?></h1><hr></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
 		<div class="row">
 			<div class="images col-sx-2 col-sm-12 col-md-5 col-lg-5">
@@ -37,6 +35,7 @@
 				</div>
 			</div>
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
+				<h2><?php echo $product['ProductCategory']['name']; ?></h2>
 				<div class="info">
 					<div class="price col-sx-12">200.000đ</div>
 					<div class="row">

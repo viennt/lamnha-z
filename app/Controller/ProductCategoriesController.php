@@ -127,6 +127,14 @@ class ProductCategoriesController extends AppController {
 		}
 		$options = array('conditions' => array('ProductCategory.' . $this->ProductCategory->primaryKey => $id));
 		$this->set('productCategory', $this->ProductCategory->find('first', $options));
+
+		$this->loadModel('Product');
+		$categoryIds = $this->ProductCategory->children($id , false, 'id');
+		$categoryIds = Hash::extract($categoryIds, '{n}.ProductCategory.id');
+		$optionsProduct = array('conditions' => array('Product.product_category_id' => $categoryIds));
+		$this->set('products', $this->Product->find('all', $optionsProduct));
+
+		$this->set('crumbs', $this->ProductCategory->getPath($id));
 	}
 
 }

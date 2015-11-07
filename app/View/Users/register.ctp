@@ -1,99 +1,71 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Register</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
-    <!-- Font Awesome -->
-    <?php echo $this->Html->css('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');?>
-
-    <!-- Ionicons -->
-    <?php echo $this->Html->css('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');?>
-
-    <!-- Bootstrap -->
-    <?php echo $this->Html->css('bootstrap.min'); ?>
-
-    <!-- AdminLTE -->
-    <?php echo $this->Html->css('AdminLTE.min'); ?>
-
-    <!-- iCheck -->
-    <link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'plugins/iCheck/square/blue.css'; ?> />
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body class="hold-transition register-page">
-    <div class="register-box">
-
-      <div class="register-box-body">
-        <p class="login-box-msg">Register a new membership</p>
-        <form action="../../index.html" method="post">
-          <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Full name">
-            <span class="glyphicon glyphicon-user form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email">
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-          </div>
-          <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Retype password">
-            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-          </div>
-          <div class="row">
-            <div class="col-xs-8">
-              <div class="checkbox icheck">
-                <label>
-                  <input type="checkbox"> I agree to the <a href="#">terms</a>
-                </label>
-              </div>
-            </div><!-- /.col -->
-            <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-            </div><!-- /.col -->
-          </div>
-        </form>
-
-        <div class="social-auth-links text-center">
-          <p>- OR -</p>
-          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>
-          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>
+<div class="publicView row" style="margin: 0">
+    <div class="name col-all-12"><h1>Tạo tài khoản khách hàng mới</h1><hr></div>
+    <div class="col-all-6" style="border-right: 1px solid #E5E5E5">
+        <div class="users form">
+            <form action=<?php echo $this->webroot,'register.html'; ?> id="UserLoginForm" method="post" accept-charset="utf-8">
+                <div style="display:none;">
+                    <input type="hidden" name="_method" value="POST">
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Tên đăng nhập: </label></div>
+                    <div class="col-all-8"><input name="data[User][username]" class="form-control" maxlength="50" type="text" required="required"></div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Email: </label></div>
+                    <div class="col-all-8"><input name="data[Profile][email]" class="form-control" maxlength="100" type="email" required="required"></div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Họ tên: </label></div>
+                    <div class="col-all-8"><input name="data[Profile][full_name]" class="form-control" maxlength="100" type="text" required="required"></div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Giới tính: </label></div>
+                    <div class="col-all-8">
+                        <input name="data[Profile][sex]" type="radio" value="1" required="required"checked> Nam <br>
+                        <input name="data[Profile][sex]" type="radio" value="0" required="required"> Nữ
+                    </div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Số điện thoại: </label></div>
+                    <div class="col-all-8"><input name="data[Profile][phone_number]" class="form-control" maxlength="15" type="number" required="required"></div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Số CMND: </label></div>
+                    <div class="col-all-8"><input name="data[Profile][personal_number]" class="form-control" maxlength="15" type="number" required="required"></div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Mật khẩu: </label></div>
+                    <div class="col-all-8"><input name="data[User][password]" class="form-control" type="password" required="required"></div>
+                </div>
+                <div class="row form-group required">
+                    <div class="col-all-4"><label>Nhập lại mật khẩu: </label></div>
+                    <div class="col-all-8"><input name="data[User][re-password]" class="form-control" type="password" required="required"></div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-all-4"></div>
+                    <div class="col-all-8"><input type="checkbox" name="data[User][agreed]" value="Bike"> Tôi đã đọc và đồng ý với <a href="#">chính sách</a> của website.</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-all-4"></div>
+                    <div class="col-all-8"><input class="btn btn-flat btn-warning col-all-6" type="submit" value="Đăng ký"></div>
+                </div>
+            </form>
         </div>
-
-        <a href="login.html" class="text-center">I already have a membership</a>
-      </div><!-- /.form-box -->
-    </div><!-- /.register-box -->
-
-
-      <!-- jQuery 2.1.4 -->
-    <?php echo $this->Html->script('jquery-2.1.4.min'); ?>
-
-    <!-- Bootstrap 3.3.5 -->
-    <?php echo $this->Html->script('bootstrap.min.js'); ?>
-
-    <!-- iCheck -->
-    <script type="text/javascript" src=<?php echo $this->webroot.'plugins/iCheck/icheck.min.js'; ?> ></script>
-
-    <script>
-      $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' // optional
-        });
-      });
-    </script>
-  </body>
-</html>
+    </div>
+    <div class="col-all-6" style="border-right: 1px solid #E5E5E5">
+        <div class="social-auth-links">
+            <div class="btn-group col-all-12 form-group">
+                <button type="button" class="btn btn-flat btn-primary">
+                    <span class="glyphicon glyphicon-triangle-right"></span>
+                </button>
+                <button type="button" class="btn btn-flat btn-primary col-all-10">Đăng ký bằng Facebook</button>
+            </div>
+            <div class="btn-group col-all-12 form-group">
+                <button type="button" class="btn btn-flat btn-danger">
+                    <span class="glyphicon glyphicon-triangle-right"></span>
+                </button>
+                <button type="button" class="btn btn-flat btn-danger col-all-10">Đăng ký bằng Google+</button>
+            </div>
+        </div>
+    </div>
+</div>

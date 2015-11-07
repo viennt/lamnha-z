@@ -101,8 +101,13 @@
 					</section>
 					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
 						<div class="content-sidebar">
+							<?php if($this->Session->check('Message.flash')): ?>
+							<div class="alert alert-success alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<strong>Thông báo!</strong> <?php echo $this->Session->flash(); ?>
+							</div>
+							<?php endif; ?>
 							<div class="panel" id="load">
-								<?php echo $this->Session->flash(); ?>
 								<?php echo $this->fetch('content'); ?>
 							</div>
 						</div>

@@ -74,7 +74,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="hidden-sx hidden-sm hidden-md col-all-12 non-padding" style="height: 36px; z-index: 10">
+						<div class="hidden-sx hidden-sm hidden-md hidden-lg col-all-12 non-padding" style="height: 36px; z-index: 10">
 							<div class="col-lg-3 btn btn-flat">TẤT CẢ DANH MỤC </div>
 						</div>
 					</div>
@@ -86,8 +86,13 @@
 				<div class="container">
 					<div id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-12 col-lg-12 non-right non-left">
 						<div class="content-sidebar">
+							<?php if($this->Session->check('Message.flash')): ?>
+							<div class="alert alert-warning alert-dismissible" role="alert">
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<strong>Thông báo!</strong> <?php echo $this->Session->flash(); ?>
+							</div>
+							<?php endif; ?>
 							<div class="panel" style="border: 2px solid #E5E5E5" id="load">
-								<?php echo $this->Session->flash(); ?>
 								<?php echo $this->fetch('content'); ?>
 							</div>
 						</div>

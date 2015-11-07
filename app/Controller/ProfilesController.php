@@ -23,17 +23,10 @@ class ProfilesController extends AppController {
 	public $components = array('Paginator');
 
 /**
- * index method
+ * manage_detail method
  *
  * @return void
  */
-	public function detail($id = null) {
-		if(is_null($id))
-			$id = $this->Auth->User('id');
-		$options = array('conditions' => array('Profile.user_id' => $id));
-		$this->set('profile', $this->Profile->find('first', $options));
-	}
-
 	public function manage_detail($id = null) {
 		if(is_null($id))
 			$id = $this->Auth->User('id');
@@ -43,12 +36,12 @@ class ProfilesController extends AppController {
 	}
 
 /**
- * add method
+ * manage_add method
  *
  * @return void
  */
-	public function add() { 
-		return $this->redirect($this->referer());
+	public function manage_add() { 
+		//return $this->redirect($this->referer());
 		// if ($this->request->is('post')) {
 		// 	$this->Profile->create();
 		// 	if ($this->Profile->save($this->request->data)) {
@@ -63,13 +56,13 @@ class ProfilesController extends AppController {
 	}
 
 /**
- * edit method
+ * manage_edit method
  *
  * @throws NotFoundException
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function manage_edit($id = null) {
 		if (!$this->Profile->exists($id)) {
 			throw new NotFoundException(__('Invalid profile'));
 		}
@@ -86,5 +79,41 @@ class ProfilesController extends AppController {
 		}
 		$users = $this->Profile->User->find('list');
 		$this->set(compact('users'));
+	}
+
+/**
+ * detail method
+ *
+ * @return void
+ */
+	public function detail($id = null) {
+		if(is_null($id))
+			$id = $this->Auth->User('id');
+		$options = array('conditions' => array('Profile.user_id' => $id));
+		$this->set('profile', $this->Profile->find('first', $options));
+		$options = array('conditions' => array('Profile.' . $this->Profile->primaryKey => $id));
+		$this->request->data = $this->Profile->find('first', $options);
+	}
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function edit($id = null) {
+		if (!$this->Profile->exists($id)) {
+			throw new NotFoundException(__('Invalid profile'));
+		}
+		$this->autoRender = false;
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->Profile->save($this->request->data)) {
+				$this->Session->setFlash(__('The profile has been saved.'));
+				return $this->redirect($this->referer());
+			} else {
+				$this->Session->setFlash(__('The profile could not be saved. Please, try again.'));
+			}
+		}
 	}
 }

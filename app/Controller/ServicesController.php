@@ -148,6 +148,5 @@ class ServicesController extends AppController {
 		}
 		$options = array('conditions' => array('Service.' . $this->Service->primaryKey => $id));
 		$this->set('service', $this->Service->find('first', $options));
-		$this->set('title_for_layout', $slug);
 	}
 }
