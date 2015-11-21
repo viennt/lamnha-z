@@ -1,4 +1,4 @@
-<div class="services box box-primary flat" style="margin: 0">
+<div class="view_page box box-primary flat" style="margin: 0">
 	<div class="box-header with-border">
 		<h3 class="box-title">Dịch vụ: <?php echo h($service['Service']['name']); ?></h3>
 		<div class="pull-right box-tools">
@@ -31,7 +31,7 @@
 					<h4>THÔNG TIN DỊCH VỤ: </h4>
 					<div class="row">
 						<div class="col-all-5">Giá:</div>
-						<div class="col-all-7"><?php echo $service['Service']['price']; ?></div>
+						<div class="col-all-7"><?php //echo $service['Service']['price']; ?></div>
 					</div>
 					<div class="row">
 						<div class="col-all-5">Nhà cung cấp:</div>

@@ -18,8 +18,9 @@
 			echo $this->Form->input('description', array('class' => 'form-control', 'id' => 'description-textarea'));
 			echo $this->Form->input('specification', array('class' => 'form-control'));
 			echo $this->Form->input('unit', array('class' => 'form-control'));
+			echo $this->Form->input('quantity', array('class' => 'form-control'));
+			echo $this->Form->input('commision', array('class' => 'form-control'));
 			echo $this->Form->input('published');
-			echo $this->Form->input('opened');
 			echo $this->Form->input('product_category_id', array('class' => 'form-control'));
 		?></div>
 	<?php $options = array('label' => 'Submit', 'div' => array('class' => 'box-footer'), 'class' => array('input' => 'btn btn-primary btn-flat btn-sm col-lg-12'));

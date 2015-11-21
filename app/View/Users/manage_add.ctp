@@ -8,6 +8,7 @@
 		<div class="box-body"><?php
 			echo $this->Form->input('username', array('class'=>'form-control'));
 			echo $this->Form->input('password', array('class'=>'form-control'));
+			echo $this->Form->input('re-password', array('type'=>'password', 'class'=>'form-control'));
 			echo $this->Form->input('group_id', array('class'=>'form-control'));
 		?></div>
 	<?php $options = array('label' => 'Submit', 'div' => array('class' => 'box-footer'), 'class' => array('input' => 'btn btn-primary btn-flat btn-sm col-lg-12'));

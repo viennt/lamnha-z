@@ -24,8 +24,7 @@
 					<th><?php echo $this->Paginator->sort('id', '#'); ?></th>
 					<th><?php echo $this->Paginator->sort('name', 'Tên'); ?></th>
 					<th><?php echo $this->Paginator->sort('description', 'Chi tiết'); ?></th>
-					<th><?php echo $this->Paginator->sort('price', 'Giá'); ?></th>
-					<th><?php echo $this->Paginator->sort('published', 'Tình trạng'); ?></th>
+					<th><?php echo $this->Paginator->sort('published', 'Công khai'); ?></th>
 					<th><?php echo $this->Paginator->sort('user_id', 'Nhà cung cấp'); ?></th>
 					<th><?php echo $this->Paginator->sort('service_category_id', 'Danh mục'); ?></th>
 					<th class="actions"><?php echo __('Điều khiển'); ?></th>
@@ -33,25 +32,24 @@
 		</thead>
 		<tbody>
 		<?php foreach ($services as $service): ?>
-	<tr>
-		<td><?php echo h($service['Service']['id']); ?>&nbsp;</td>
-		<td><?php echo h($service['Service']['name']); ?>&nbsp;</td>
-		<td><?php echo h($service['Service']['description']); ?>&nbsp;</td>
-		<td><?php echo h($service['Service']['price']); ?>&nbsp;</td>
-		<td><?php echo h($service['Service']['published']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($service['User']['id'], array('controller' => 'users', 'action' => 'view', $service['User']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($service['ServiceCategory']['name'], array('controller' => 'service_categories', 'action' => 'view', $service['ServiceCategory']['id'])); ?>
-		</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-info btn-flat')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-success btn-flat')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $service['Service']['id']))); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
+		<tr>
+			<td><?php echo h($service['Service']['id']); ?>&nbsp;</td>
+			<td><?php echo h($service['Service']['name']); ?>&nbsp;</td>
+			<td><?php echo h($service['Service']['description']); ?>&nbsp;</td>
+			<td><?php echo h($service['Service']['published']); ?>&nbsp;</td>
+			<td>
+				<?php echo $this->Html->link($service['User']['id'], array('controller' => 'users', 'action' => 'view', $service['User']['id'])); ?>
+			</td>
+			<td>
+				<?php echo $this->Html->link($service['ServiceCategory']['name'], array('controller' => 'service_categories', 'action' => 'view', $service['ServiceCategory']['id'])); ?>
+			</td>
+			<td class="actions">
+				<?php echo $this->Html->link(__('View'), array('action' => 'view', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-info btn-flat')); ?>
+				<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-success btn-flat')); ?>
+				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $service['Service']['id']))); ?>
+			</td>
+		</tr>
+		<?php endforeach; ?>
 		</tbody>
 		</table>
 	</div>

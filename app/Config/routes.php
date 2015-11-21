@@ -74,7 +74,7 @@
     );
 
 /**
- * Products
+ * Service
  */
     Router::connect(
         '/danh-muc-dich-vu.html',
@@ -91,6 +91,30 @@
     Router::connect(
         '/dich-vu/:slug-:id.html',
         array('controller' => 'services', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+
+/**
+ * News
+ */
+    Router::connect(
+        '/danh-muc-tin-tuc.html',
+        array('controller' => 'newsCategories', 'action' => 'view', 1)
+    );
+    Router::connect(
+        '/danh-muc-tin-tuc/:slug-:id.html',
+        array('controller' => 'newsCategories', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+    Router::connect(
+        '/tin-tuc/:slug-:id.html',
+        array('controller' => 'news', 'action' => 'view'),
         array(
             'pass' => array('id', 'slug'),
             "id"=>"[0-9]+", // chỉ là số

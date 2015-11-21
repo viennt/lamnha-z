@@ -59,6 +59,15 @@ class PagesController extends AppController {
 	}
 
 /**
+ * Invoice method
+ *
+ * @return void
+ */
+	public function manage_invoice() {
+			
+	}
+
+/**
  * Displays a view
  *
  * @return void

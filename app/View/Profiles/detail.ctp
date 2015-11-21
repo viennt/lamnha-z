@@ -6,36 +6,65 @@
 		<ul class="list-group list-group-unbordered">
 			<li class="list-group-item">
 				<i>Email: </i>
-				<b class="pull-right"><?php echo h($profile['Profile']['email']); ?></b>
+				<b class="pull-right"><?php //echo h($profile['Profile']['email']); ?></b>
 			</li>
 			<li class="list-group-item">
 				<i>Số điện thoại: </i>
+				<?php if(isset($profile['Profile']['phone_number'])):?>
 				<b class="pull-right"><?php echo h($profile['Profile']['phone_number']); ?></b>
+				<?php else:?>
+				<b class="pull-right">null</b>
+				<?php endif;?>
 			</li>
 			<li class="list-group-item">
 				<i>Số CMND: </i>
+				<?php if(isset($profile['Profile']['personal_number'])):?>
 				<b class="pull-right"><?php echo h($profile['Profile']['personal_number']); ?></b>
+				<?php else:?>
+				<b class="pull-right">null</b>
+				<?php endif;?>
 			</li>
 			<li class="list-group-item">
 				<i>Ngày sinh: </i>
+				<?php if(isset($profile['Profile']['date_of_birth'])):?>
 				<b class="pull-right"><?php echo h($profile['Profile']['date_of_birth']); ?></b>
+				<?php else:?>
+				<b class="pull-right">null</b>
+				<?php endif;?>
 			</li>
 			<li class="list-group-item">
 				<i>Nơi sinh: </i>
+				<?php if(isset($profile['Profile']['place_of_birth'])):?>
 				<b class="pull-right"><?php echo h($profile['Profile']['place_of_birth']); ?></b>
+				<?php else:?>
+				<b class="pull-right">null</b>
+				<?php endif;?>
 			</li>
 			<li class="list-group-item">
 				<i>Giới tính: </i>
+				<?php if(isset($profile['Profile']['sex'])):?>
 				<b class="pull-right"><?php echo h($profile['Profile']['sex']); ?></b>
+				<?php else:?>
+				<b class="pull-right">null</b>
+				<?php endif;?>
 			</li>
 			<li class="list-group-item">
 				<i>Địa chỉ: </i><br/>
+				<?php if(isset($profile['Profile']['address'])):?>
 				<b><?php echo h($profile['Profile']['address']); ?></b>
+				<?php else:?>
+				<b>null</b>
+				<?php endif;?>
 			</li>
 		</ul>
 	</div>
 	<div class="about col-sx-12 col-sm-6 col-md-8 col-lg-9">
+		<?php if(isset($profile['Profile']['address'])):?>
 		<h2><?php echo h($profile['Profile']['full_name']); ?></h2>
+		<?php else:?>
+		<h2>Undefined</h2>
+		<?php endif;?>
+		
 		<h5>Nhà cung cấp dịch vụ</h5>
 		<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab" href="#active">Hoạt động</a></li>

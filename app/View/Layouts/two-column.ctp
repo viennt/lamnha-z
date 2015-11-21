@@ -19,15 +19,25 @@
 <html lang="vi">
 <head>
 	<meta charset="UTF-8">
-    <meta property="og:locale" content="vn_VN">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá thành phù hợp nhất.">
-    <meta name="author" content="viennt">
+	<meta name="author" content="viennt">
+
 	<link rel="canonical" href="http://www.lamnha-z.com/"/>
 	<link rel="alternate" href="http://www.lamnha-z.com/" hreflang="vi-vn" />
 	<title>Home Builder - Xây nhà Trực tuyến Giá rẻ</title>
+
+	<meta property="og:title"			content="Home Builder - Xây nhà Trực tuyến Giá rẻ"/>
+	<meta property="og:type" 			content="article"/>
+	<meta property="og:locale"			content="vn_VN"/>
+	<meta property="og:site_name"		content="LamnhaZ.Com" />
+	<meta property="og:description"		content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá thành phù hợp nhất.">
+	<meta property="og:url"				content="http://www.lamnha-z.com/home.html" />
+	<meta property="og:image"			content="http://www.lamnha-z.com/img/logo.png" />
+	<meta property="og:image:width"		content="640" />
+	<meta property="og:image:height"	content="360" />
 
 	<?php echo $this->Html->meta('icon');?>
 	<?php echo $this->fetch('meta');?>
@@ -35,11 +45,11 @@
 	<!-- Bootstrap -->
 	<?php echo $this->Html->css('bootstrap.min'); ?>
 
+	<!-- Bootstrap Custom -->
+	<?php echo $this->Html->css('bootstrap.custom.min'); ?>
+
 	<!-- Custom style -->
 	<?php echo $this->Html->css("public-style"); ?>
-
-	<!-- Vertical Menu -->
-	<?php echo $this->Html->css("vertical-menu"); ?>
 
 	<!-- jQuery 2.1.4 -->
 	<?php echo $this->Html->script('jquery-2.1.4.min'); ?>
@@ -88,6 +98,9 @@
 				<div class="container">
 					<section id="left-sidebar-container" class="col-sx-12 col-sm-12 col-md-3 col-lg-3 non-left non-right">
 						<?php 
+						if(strtolower($this->request->params['controller']) == 'productcategories'
+							|| strtolower($this->request->params['controller']) == 'servicecategories')
+							echo $this->element('menus/public-left-cart');
 						if(strtolower($this->request->params['controller']) == 'projectcategories'
 							|| strtolower($this->request->params['controller']) == 'pages')
 							echo $this->element('menus/public-left-project');
@@ -97,6 +110,9 @@
 						if(strtolower($this->request->params['controller']) == 'servicecategories'
 							|| strtolower($this->request->params['controller']) == 'pages')
 							echo $this->element('menus/public-left-service');
+						if(strtolower($this->request->params['controller']) == 'newscategories'
+							|| strtolower($this->request->params['controller']) == 'pages')
+							echo $this->element('menus/public-left-news');
 						?>
 					</section>
 					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
@@ -133,9 +149,6 @@
 
 	<!-- Public page -->
 	<?php echo $this->Html->script('public-script'); ?>
-
-	<!-- Vertical menu -->
-	<?php echo $this->Html->script('vertical-menu'); ?>
 
 	<?php echo $this->fetch('script'); ?>
 	<?php echo $this->Js->writeBuffer(); ?>

@@ -1,8 +1,8 @@
 <ul class="nav">
 	<?php if(!is_null($this->Session->read('Auth.User'))): ?>
 		<?php if((!is_null($this->Session->read('Auth.User'))) 
-			&& ($this->Session->read('Auth.User') != '5') 
-			&& ($this->Session->read('Auth.User') != '6')): ?>
+			&& ($this->Session->read('Auth.User.Group.id') != '5') 
+			&& ($this->Session->read('Auth.User.Group.id') != '6')): ?>
 		<li><?php echo $this->Html->link(
 			'<span class="glyphicon glyphicon-stats"></span> Trang quản lý',
 			array('controller'=> 'manage.html'),

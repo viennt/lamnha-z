@@ -1,5 +1,5 @@
 <!-- Service -->
-<div class="list-items">
+<div class="products">
 	<ol class="breadcrumb"><?php 
 		$i = 0;
 		$len = count($crumbs);
@@ -15,48 +15,37 @@
 		unset($i);
 		unset($len);
 	?></ol>
-	<div class="row" id="load-content">
-		<?php foreach ($serviceCategory['Service'] as $service): ?>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<?php echo $this->Html->image('product.jpg', array('alt' => 'CakePHP', 'url' => array('controller' => 'services', 'action' => 'view', 'id' => $service['id'], 'slug' => $this->Common->convertViToEn($service['name'], true)))); ?>
-				<div class="detail">
-					<h5><strong><?php echo $service['name']; ?></strong></h5>
-					<h5><small><?php echo $service['user_id']; ?></small></h5>
-					<span><?php echo $service['price']; ?></span>
+	<div class="list-items" id="load-content">
+		<ul>
+			<?php foreach ($serviceCategory['Service'] as $service): ?>
+			<li style="width: 190px">
+			<div class="drag-item" style="width: 190px">
+				<div class="inner">
+					<?php echo $this->Html->image('product.jpg', array('alt' => 'CakePHP', 'url' => array('controller' => 'services', 'action' => 'view', 'id' => $service['id'], 'slug' => $this->Common->convertViToEn($service['name'], true)))); ?>
+					<div class="detail">
+						<h5><strong><?php echo $service['name']; ?></strong></h5>
+						<h5><small><?php echo $service['user_id']; ?></small></h5>
+						<span><?php echo '12334'; ?></span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<?php endforeach; ?>
-		<?php foreach ($services as $service): ?>
-		<div class="item span3 col-sm-6 col-md-4 col-lg-3">
-			<div class="inner">
-				<?php echo $this->Html->image('product.jpg', array('alt' => 'CakePHP', 'url' => array('controller' => 'services', 'action' => 'view', 'id' => $service['Service']['id'], 'slug' => $this->Common->convertViToEn($service['Service']['name'], true)))); ?>
-				<div class="detail">
-					<h5><strong><?php echo $service['Service']['name']; ?></strong></h5>
-					<h5><small><?php echo $service['Service']['user_id']; ?></small></h5>
-					<span><?php echo $service['Service']['price']; ?></span>
+			</li>
+			<?php endforeach; ?>
+			<?php foreach ($services as $service): ?>
+			<li style="width: 190px">
+			<div class="drag-item" style="width: 190px">
+				<div class="inner">
+					<?php echo $this->Html->image('product.jpg', array('alt' => 'CakePHP', 'url' => array('controller' => 'services', 'action' => 'view', 'id' => $service['Service']['id'], 'slug' => $this->Common->convertViToEn($service['Service']['name'], true)))); ?>
+					<div class="detail">
+						<h5><strong><?php echo $service['Service']['name']; ?></strong></h5>
+						<h5><small><?php echo $service['Service']['user_id']; ?></small></h5>
+						<span><?php echo '12334'; ?></span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<?php endforeach; ?>
+			</li>
+			<?php endforeach; ?>
+		</ul>
 	</div>
-	<div class="btn btn-flat btn-warning col-all-12" id="load-btn">Xem thêm</div>
 </div>
-
-
-<script type="text/javascript" async>
-$("#load-btn").on("click", function() {
-	$.ajax({
-		"url": "<?php echo $this->Html->url(array('controller' => 'load.php')); ?>",
-		"type": "get",
-		"dataType": "html",
-		"success": function(data) {
-			$("#load-content").append(data);
-		}
-	})
-	.done(function( data ) {
-	    $("#load-content").append(data);
-  });
-});
-</script>
+<script src=<?php echo $this->webroot,'plugins/easyui/jquery.easyui.min.js'; ?>></script>

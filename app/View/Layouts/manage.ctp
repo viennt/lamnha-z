@@ -35,6 +35,9 @@
 	<!-- Bootstrap -->
 	<?php echo $this->Html->css('bootstrap.min'); ?>
 
+	<!-- Bootstrap Custom -->
+	<?php echo $this->Html->css('bootstrap.custom.min'); ?>
+
 	<!-- AdminLTE -->
 	<?php echo $this->Html->css('AdminLTE.min'); ?>
 

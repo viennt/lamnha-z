@@ -15,25 +15,6 @@
                     <div class="col-all-8"><input name="data[Profile][email]" class="form-control" maxlength="100" type="email" required="required"></div>
                 </div>
                 <div class="row form-group required">
-                    <div class="col-all-4"><label>Họ tên: </label></div>
-                    <div class="col-all-8"><input name="data[Profile][full_name]" class="form-control" maxlength="100" type="text" required="required"></div>
-                </div>
-                <div class="row form-group required">
-                    <div class="col-all-4"><label>Giới tính: </label></div>
-                    <div class="col-all-8">
-                        <input name="data[Profile][sex]" type="radio" value="1" required="required"checked> Nam <br>
-                        <input name="data[Profile][sex]" type="radio" value="0" required="required"> Nữ
-                    </div>
-                </div>
-                <div class="row form-group required">
-                    <div class="col-all-4"><label>Số điện thoại: </label></div>
-                    <div class="col-all-8"><input name="data[Profile][phone_number]" class="form-control" maxlength="15" type="number" required="required"></div>
-                </div>
-                <div class="row form-group required">
-                    <div class="col-all-4"><label>Số CMND: </label></div>
-                    <div class="col-all-8"><input name="data[Profile][personal_number]" class="form-control" maxlength="15" type="number" required="required"></div>
-                </div>
-                <div class="row form-group required">
                     <div class="col-all-4"><label>Mật khẩu: </label></div>
                     <div class="col-all-8"><input name="data[User][password]" class="form-control" type="password" required="required"></div>
                 </div>

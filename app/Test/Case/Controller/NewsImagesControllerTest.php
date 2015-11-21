@@ -15,18 +15,15 @@ class NewsImagesControllerTest extends ControllerTestCase {
 	public $fixtures = array(
 		'app.news_image',
 		'app.news',
-		'app.category',
-		'app.category_type',
-		'app.product',
-		'app.product_image',
-		'app.product_video',
-		'app.project',
 		'app.user',
 		'app.group',
 		'app.profile',
+		'app.contractor',
+		'app.project',
 		'app.service',
+		'app.service_category',
 		'app.service_price',
-		'app.project_image'
+		'app.news_category'
 	);
 
 /**

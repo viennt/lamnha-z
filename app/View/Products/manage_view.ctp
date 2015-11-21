@@ -1,4 +1,4 @@
-<div class="products box box-primary flat" style="margin: 0">
+<div class="view_page box box-primary flat" style="margin: 0">
 	<div class="box-header with-border">
 		<h3 class="box-title">Sản phẩm: <?php echo h($product['Product']['name']); ?></h3>
 		<div class="pull-right box-tools">
@@ -43,11 +43,22 @@
 							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
 						</div>
 					</div>
-					
 					<div class="row">
 						<div class="col-all-5">Đặc điểm:</div>
 						<div class="col-all-7">
 							<?php echo h($product['Product']['specification']); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Số lượng: </div>
+						<div class="col-all-7">
+							<?php echo h($product['Product']['quantity']); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Hoa hồng:</div>
+						<div class="col-all-7">
+							<?php echo h($product['Product']['commision']), '%'; ?>
 						</div>
 					</div>
 					<div class="row">

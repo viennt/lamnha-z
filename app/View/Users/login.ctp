@@ -35,13 +35,13 @@
                 <button type="button" class="btn btn-flat btn-primary">
                     <span class="glyphicon glyphicon-triangle-right"></span>
                 </button>
-                <button type="button" class="btn btn-flat btn-primary col-all-10">Đăng nhập bằng Facebook</button>
+                <a href="facebook/login.php" type="button" class="btn btn-flat btn-primary col-all-10" role="button">Đăng nhập bằng Facebook</a>
             </div>
             <div class="btn-group col-all-12 form-group">
                 <button type="button" class="btn btn-flat btn-danger">
                     <span class="glyphicon glyphicon-triangle-right"></span>
                 </button>
-                <button type="button" class="btn btn-flat btn-danger col-all-10">Đăng nhập bằng Google+</button>
+                <a href="googleplus/login.php"  type="button" class="btn btn-flat btn-danger col-all-10" role="button">Đăng nhập bằng Google+</a>
             </div>
         </div>
     </div>

@@ -42,7 +42,7 @@ class MenusController extends AppController {
  *
  * @return Servicedata
  */
-	function services() {
+    function services() {
         $this->loadModel('ServiceCategory');
         $ServiceCategories = $this->ServiceCategory->find('all');
         foreach ($ServiceCategories as $Category) {
@@ -50,5 +50,20 @@ class MenusController extends AppController {
         }
         $this->set('menuHorizontal_services', $Servicedata);
         return $Servicedata;
-	}
+    }
+
+/**
+ * services method
+ *
+ * @return Newsdata
+ */
+    function news() {
+        $this->loadModel('NewsCategory');
+        $NewsCategories = $this->NewsCategory->find('all');
+        foreach ($NewsCategories as $Category) {
+            $Newsdata[$Category['NewsCategory']['parent_id']][] = $Category;
+        }
+        $this->set('menuHorizontal_news', $Newsdata);
+        return $Newsdata;
+    }
 }

@@ -40,12 +40,11 @@ class NewsCategoriesController extends AppController {
  * @return void
  */
 	public function manage_view($id = null) {
-		return $this->redirect($this->referer());
-		// if (!$this->NewsCategory->exists($id)) {
-		// 	throw new NotFoundException(__('Invalid news category'));
-		// }
-		// $options = array('conditions' => array('NewsCategory.' . $this->NewsCategory->primaryKey => $id));
-		// $this->set('newsCategory', $this->NewsCategory->find('first', $options));
+		if (!$this->NewsCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid news category'));
+		}
+		$options = array('conditions' => array('NewsCategory.' . $this->NewsCategory->primaryKey => $id));
+		$this->set('newsCategory', $this->NewsCategory->find('first', $options));
 	}
 
 /**
@@ -112,5 +111,29 @@ class NewsCategoriesController extends AppController {
 			$this->Session->setFlash(__('The news category could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		$this->layout = "two-column";
+		if (!$this->NewsCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid news category'));
+		}
+		$options = array('conditions' => array('NewsCategory.' . $this->NewsCategory->primaryKey => $id));
+		$this->set('newsCategory', $this->NewsCategory->find('first', $options));
+
+		$this->loadModel('News');
+		$categoryIds = $this->NewsCategory->children($id , false, 'id');
+		$categoryIds = Hash::extract($categoryIds, '{n}.NewsCategory.id');
+		$optionsNews = array('conditions' => array('News.news_category_id' => $categoryIds));
+		$this->set('news', $this->News->find('all', $optionsNews));
+
+		$this->set('crumbs', $this->NewsCategory->getPath($id));
 	}
 }

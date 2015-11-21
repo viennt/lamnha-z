@@ -30,16 +30,40 @@ class User extends AppModel {
 			),
 		),
 		'password' => array(
-			'notBlank' => array(
-				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+			'length' => array(
+				'rule' => array('between', 8, 40),
+				'message' => 'Your password must be between 8 and 40 characters.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		're-password' => array(
+			'length' => array(
+				'rule' => array('between', 8, 40),
+				'message' => 'Your password must be between 8 and 40 characters.',
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+			'compare' => array(
+				'rule' => array('validatePasswords'),
+				'message' => 'The passwords you entered do not match.',
+			)
+		)
 	);
+
+/**
+ * validate_passwords associations
+ *
+ * @var array
+ */
+	public function validatePasswords() {
+		return $this->data[$this->alias]['password'] === $this->data[$this->alias]['re-password'];
+	}
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
@@ -51,6 +75,7 @@ class User extends AppModel {
             'order' => ''
         )
     );
+
 /**
  * belongsTo associations
  *
@@ -126,6 +151,19 @@ class User extends AppModel {
 		),
 		'Service' => array(
 			'className' => 'Service',
+			'foreignKey' => 'user_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Product' => array(
+			'className' => 'Product',
 			'foreignKey' => 'user_id',
 			'dependent' => false,
 			'conditions' => '',

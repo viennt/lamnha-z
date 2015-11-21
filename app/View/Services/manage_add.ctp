@@ -16,7 +16,6 @@
 		<div class="box-body"><?php
 			echo $this->Form->input('name', array('class'=>'form-control'));
 			echo $this->Form->input('description', array('class'=>'form-control', 'id' => 'description-textarea'));
-			echo $this->Form->input('price', array('class'=>'form-control'));
 			echo $this->Form->input('published');
 			echo $this->Form->input('user_id', array('type'=>'hidden', 'value' => $user_id));
 			echo $this->Form->input('service_category_id', array('class'=>'form-control'));

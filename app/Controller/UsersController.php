@@ -40,7 +40,6 @@ class UsersController extends AppController {
  */
 	public function register() {
 		if ($this->request->is('post')) {
-			var_dump($this->request->data); die;
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved.'));
@@ -65,6 +64,50 @@ class UsersController extends AppController {
 			}
 			$this->Session->setFlash(__('Invalid username or password, try again'));
 		}
+	}
+
+/**
+ * login method
+ *
+ * @return void
+ */
+	public function registerfacebook($id = null, $name = null, $email = null){
+		var_dump($id);
+		die;
+	}
+
+/**
+ * login method
+ *
+ * @return void
+ */
+	public function loginfacebook($id = null){
+			$user = $this->User->find('first',
+				array('conditions' => array('User.facebook_id' => $id), 'recursive' => 1, 'callbacks' => true,
+				'fields' => array('User.username', 'User.password', 'User.id', 'User.facebook_id', 'User.group_id')));
+			$this->loadModel('Group');
+			$group = $this->Group->find('first',
+				array('conditions' => array('Group.id' => $user['User']['group_id']), 'recursive' => 0));
+		$user['username'] = $user['User']['username'];
+		$user['password'] = $user['User']['password'];
+		$user['facebook_id'] = $user['User']['facebook_id'];
+		$user['id'] = $user['User']['id'];
+			$user['Group']['id'] = $group['Group']['id'];
+			$user['Group']['name'] = $group['Group']['name'];
+			$user['Group']['created'] = $group['Group']['created'];
+			$user['Group']['modified'] = $group['Group']['modified'];
+		unset($user['User']);
+		unset($user['Contractor']);
+		unset($user['Project']);
+		unset($user['Service']);
+		unset($user['News']);
+		unset($user['Product']);
+		if(isset($user))
+			if ($this->Auth->login($user))
+				$this->Session->setFlash(__('Đăng nhập thành công'));
+		else
+			$this->Session->setFlash(__('Đăng nhập không thành công. Vui lòng thử lại.'));
+		return $this->redirect($this->Auth->redirectUrl());
 	}
 
 /**

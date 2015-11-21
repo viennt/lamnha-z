@@ -30,11 +30,6 @@
                     array('controller'=> 'newsCategories', 'action' => 'index', 'manage' => true),
                     array('class' => 'sidebar-toggle', 'escape' => false)
                     );?></li>
-                <li><?php echo $this->Html->link(
-                    '<span class="glyphicon glyphicon-triangle-right"></span> Nhà thầu',
-                    array('controller'=> 'contractorCategories', 'action' => 'index', 'manage' => true),
-                    array('class' => 'sidebar-toggle', 'escape' => false)
-                    );?></li>
             </ul>
             </li>
         <li><a href="#">
@@ -51,9 +46,11 @@
             array('controller'=> 'services', 'action' => 'index', 'manage' => true),
             array('class' => 'sidebar-toggle', 'escape' => false)
             );?></li>
-        <li><a href="#">
-            <span class="glyphicon glyphicon-bullhorn"></span> Quản lý tin tức
-            </a></li>
+        <li><?php echo $this->Html->link(
+            '<span class="glyphicon glyphicon-bullhorn"></span> Quản lý tin tức',
+            array('controller'=> 'news', 'action' => 'index', 'manage' => true),
+            array('class' => 'sidebar-toggle', 'escape' => false)
+            );?></li>
         <li><?php echo $this->Html->link(
             '<span class="glyphicon glyphicon-user"></span> Quản lý người dùng',
             array('controller'=> 'users', 'action' => 'index', 'manage' => true),
@@ -64,12 +61,6 @@
             </a></li>
         <li><a href="#">
             <span class="glyphicon glyphicon-stats"></span> Thống kê
-            </a></li>
-        <li><a href="#">
-            <span class="glyphicon glyphicon-file"></span> Báo cáo
-            </a></li>
-        <li><a href="#">
-            <span class="glyphicon glyphicon-wrench"></span> Cài đặt
             </a></li>
     </ul>
 </li>

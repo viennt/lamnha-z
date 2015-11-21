@@ -14,12 +14,15 @@ class NewsTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.news',
-		'app.category',
-		'app.category_type',
-		'app.product',
+		'app.user',
+		'app.group',
+		'app.profile',
+		'app.contractor',
 		'app.project',
 		'app.service',
-		'app.user'
+		'app.service_category',
+		'app.service_price',
+		'app.news_category'
 	);
 
 /**
