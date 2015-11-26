@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * ServiceCategories Controller
@@ -125,13 +132,15 @@ class ServiceCategoriesController extends AppController {
 		if (!$this->ServiceCategory->exists($id)) {
 			throw new NotFoundException(__('Invalid service category'));
 		}
-		$options = array('conditions' => array('ServiceCategory.' . $this->ServiceCategory->primaryKey => $id));
-		$this->set('serviceCategory', $this->ServiceCategory->find('first', $options));
-
 		$this->loadModel('Service');
 		$categoryIds = $this->ServiceCategory->children($id , false, 'id');
 		$categoryIds = Hash::extract($categoryIds, '{n}.ServiceCategory.id');
-		$optionsService = array('conditions' => array('Service.service_category_id' => $categoryIds));
+		array_push($categoryIds, "{$id}");
+
+		$optionsService = array(
+			'conditions' => array('Service.service_category_id' => $categoryIds, 'Service.published' => 1),
+			'recursive' => 1,
+			'fields' => array('Service.name'));
 		$this->set('services', $this->Service->find('all', $optionsService));
 
 		$this->set('crumbs', $this->ServiceCategory->getPath($id));

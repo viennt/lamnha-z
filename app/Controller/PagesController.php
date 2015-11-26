@@ -1,22 +1,11 @@
 <?php
-/**
- * Static content controller.
- *
- * This file will render views from views/pages/
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 
 App::uses('AppController', 'Controller');
 
@@ -45,6 +34,31 @@ class PagesController extends AppController {
  */
 	public function display() {
 		$this->layout = "two-column";
+		$this->loadModel('Project');
+		$optionsProject = array(
+			'recursive' => 1,
+			'order' => array('Project.id DESC'),
+			'limit' => 4,
+			'fields' => array('Project.name'));
+		$this->set('projects', $this->Project->find('all', $optionsProject));
+
+		$this->loadModel('Product');
+		$optionsProduct = array(
+			'conditions' => array('Product.published' => 1),
+			'recursive' => 1,
+			'order' => array('Product.id DESC'),
+			'limit' => 8,
+			'fields' => array('Product.name'));
+		$this->set('products', $this->Product->find('all', $optionsProduct));
+
+		$this->loadModel('Service');
+		$optionsService = array(
+			'conditions' => array('Service.published' => 1),
+			'recursive' => 1,
+			'order' => array('Service.id DESC'),
+			'limit' => 8,
+			'fields' => array('Service.name'));
+		$this->set('services', $this->Service->find('all', $optionsService));
 	}
 
 /**

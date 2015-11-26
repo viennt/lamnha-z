@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * NewsCategories Controller
@@ -125,13 +132,15 @@ class NewsCategoriesController extends AppController {
 		if (!$this->NewsCategory->exists($id)) {
 			throw new NotFoundException(__('Invalid news category'));
 		}
-		$options = array('conditions' => array('NewsCategory.' . $this->NewsCategory->primaryKey => $id));
-		$this->set('newsCategory', $this->NewsCategory->find('first', $options));
-
 		$this->loadModel('News');
 		$categoryIds = $this->NewsCategory->children($id , false, 'id');
 		$categoryIds = Hash::extract($categoryIds, '{n}.NewsCategory.id');
-		$optionsNews = array('conditions' => array('News.news_category_id' => $categoryIds));
+		array_push($categoryIds, "{$id}");
+		
+		$optionsNews = array(
+			'conditions' => array('News.news_category_id' => $categoryIds, 'News.published' => 1),
+			'recursive' => 1,
+			'fields' => array('News.title', 'News.abstract', 'News.created', 'News.view'));
 		$this->set('news', $this->News->find('all', $optionsNews));
 
 		$this->set('crumbs', $this->NewsCategory->getPath($id));

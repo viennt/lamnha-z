@@ -5,40 +5,54 @@ class CommonHelper extends AppHelper {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-    // Chuyển đổi dữ liêu sang xml
-    function dataToXml($data = null, $parent = 0, $model = null, $controller = null, $action = null, $value = null) {
+    // Ham tao menu
+    function create_menu($data = null, $parent = 0, $model = null, $controller = null, $action = null, $liclass = 'has-sub') {
         $str = '';
-        if(isset($data[$parent])) {
-            $str .= "<ul>";
-            foreach($data[$parent] as $rs) {
-                if(($rs[$model]['rght'] - $rs[$model]['lft']) == 1)
-                    $str .= '<li>';
-                else
-                    $str .= '<li class='.$value.'>';
+        $str .= '<ul>';
+        foreach($data as $key => $rs) {
+            if($rs['parent_id'] == $parent) {
+                unset($data[$key]);
+                $rs['rght'] - $rs['lft'] == 1 ? $str .= '<li>' : $str .= '<li class="'.$liclass.'">';
                 $str .= $this->Html->link(
-                        $rs[$model]['name'],
+                        $rs['name'],
                         array(
                             'controller' => $controller, 
                             'action' => $action,
-                            'id' => $rs[$model]['id'],
-                            'slug' => $this->convertViToEn($rs[$model]['name'], true)
+                            'id' => $rs['id'],
+                            'slug' => $this->convertViToEn($rs['name'], true)
                         )
                     );
-                $str .= $this->dataToXml($data, $rs[$model]['id'], $model, $controller, $action, '');
+                $rs['rght'] - $rs['lft'] == 1 ?  : $str .= $this->create_menu($data, $rs['id'], $model, $controller, $action, $liclass);
                 $str .= '</li>';
             }
-            $str .= '</ul>';
         }
+        $str .= '</ul>';
         return $str;
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////
-
-    // Hàm tạo menu
-    function create_menu($data = null, $model = null, $controller = null, $action = null) {
-        $CategoryRoot_id = 1; // Lấy id của category "Product"
-        $menu = $this->dataToXml($data, $CategoryRoot_id, $model, $controller, $action, 'has-sub');
-        return $menu;
+    function create_adminlte_menu($data = null, $parent = 0, $model = null, $controller = null, $action = null, $liclass = 'has-sub', $ulclass = 'treeview-menu') {
+        $str = '';
+        $str .= '<ul class="'.$ulclass.'">';
+        foreach($data as $key => $rs) {
+            if($rs['parent_id'] == $parent) {
+                unset($data[$key]);
+                $str .= '<li>';
+                $str .= $this->Html->link(
+                        '<span class="glyphicon glyphicon-menu-right"></span> '. $rs['name'],
+                        array(
+                            'controller' => $controller, 
+                            'action' => $action,
+                            'id' => $rs['id'],
+                            'slug' => $this->convertViToEn($rs['name'], true)
+                        ),
+                        array('escape' => false)
+                    );
+                $rs['rght'] - $rs['lft'] == 1 ?  : $str .= $this->create_adminlte_menu($data, $rs['id'], $model, $controller, $action, $liclass, $ulclass);
+                $str .= '</li>';
+            }
+        }
+        $str .= '</ul>';
+        return $str;
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -67,7 +81,7 @@ class CommonHelper extends AppHelper {
             $str = str_replace("/", "-", $str);
             $str = str_replace(" ", "-", $str);
         }
-        return $str;
+        return strtolower($str);
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////

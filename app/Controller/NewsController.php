@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * News Controller
@@ -35,7 +42,7 @@ class NewsController extends AppController {
  * @var array
  */
 	public $paginate = array(
-		'limit' => 1,
+		'limit' => 10,
 		'order' => array(
 			'News.id' => 'asc'
 		)

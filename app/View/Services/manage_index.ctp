@@ -23,7 +23,6 @@
 		<tr>
 					<th><?php echo $this->Paginator->sort('id', '#'); ?></th>
 					<th><?php echo $this->Paginator->sort('name', 'Tên'); ?></th>
-					<th><?php echo $this->Paginator->sort('description', 'Chi tiết'); ?></th>
 					<th><?php echo $this->Paginator->sort('published', 'Công khai'); ?></th>
 					<th><?php echo $this->Paginator->sort('user_id', 'Nhà cung cấp'); ?></th>
 					<th><?php echo $this->Paginator->sort('service_category_id', 'Danh mục'); ?></th>
@@ -35,7 +34,6 @@
 		<tr>
 			<td><?php echo h($service['Service']['id']); ?>&nbsp;</td>
 			<td><?php echo h($service['Service']['name']); ?>&nbsp;</td>
-			<td><?php echo h($service['Service']['description']); ?>&nbsp;</td>
 			<td><?php echo h($service['Service']['published']); ?>&nbsp;</td>
 			<td>
 				<?php echo $this->Html->link($service['User']['id'], array('controller' => 'users', 'action' => 'view', $service['User']['id'])); ?>

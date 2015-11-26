@@ -64,8 +64,7 @@
 		<?php else:?>
 		<h2>Undefined</h2>
 		<?php endif;?>
-		
-		<h5>Nhà cung cấp dịch vụ</h5>
+		<h5><?php echo h($profile['Group']['name']); ?></h5>
 		<ul class="nav nav-tabs">
 			<li class="active"><a data-toggle="tab" href="#active">Hoạt động</a></li>
 			<li><a data-toggle="tab" href="#projects">Dự án</a></li>
@@ -82,19 +81,27 @@
 			</div>
 			<div id="projects" class="tab-pane fade">
 				<h3>Dự án đã hoàn thành</h3>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<?php foreach ($profile['Project'] as $project): ?>
+					<p><?php echo h($project['name']);?></p>
+				<?php endforeach;?>
 			</div>
 			<div id="products" class="tab-pane fade">
 				<h3>Sản phẩm đã đăng</h3>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<?php foreach ($profile['Product'] as $product): ?>
+					<p><?php echo h($product['name']);?></p>
+				<?php endforeach;?>
 			</div>
 			<div id="services" class="tab-pane fade">
 				<h3>Dịch vụ đã đăng</h3>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<?php foreach ($profile['Service'] as $service): ?>
+					<p><?php echo h($service['name']);?></p>
+				<?php endforeach;?>
 			</div>
 			<div id="news" class="tab-pane fade">
 				<h3>Bài viết đã đăng</h3>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<?php foreach ($profile['News'] as $news): ?>
+					<p><?php echo h($news['title']);?></p>
+				<?php endforeach;?>
 			</div>
 			<div id="about" class="tab-pane fade">
 				<h3>Giới thiệu</h3>
@@ -109,7 +116,6 @@
 						echo $this->Form->input('id', array('class'=>'form-control'));
 						echo $this->Form->input('user_id', array('type'=>'hidden', 'value' => $this->Session->read('Auth.User.id')));
 						echo $this->Form->input('full_name', array('class'=>'form-control'));
-						echo $this->Form->input('email', array('class'=>'form-control'));
 						echo $this->Form->input('phone_number', array('class'=>'form-control'));
 						echo $this->Form->input('personal_number', array('class'=>'form-control'));
 						echo $this->Form->input('date_of_birth', array('type' => 'text', 'class'=>'form-control', 'data-inputmask' => '\'alias\': \'mm/dd/yyyy\'', 'data-mask' => ''));

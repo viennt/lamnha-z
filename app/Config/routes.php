@@ -29,7 +29,7 @@
 		array('controller' => 'pages', 'action' => 'display')
 	);
 	Router::connect(
-		'/home.html', 
+		'/trang-chu.html', 
 		array('controller' => 'pages', 'action' => 'display')
 	);
 	Router::connect(
@@ -40,14 +40,50 @@
 /**
  * Users page
  */
-	Router::connect('/register.html', array('controller' => 'users', 'action' => 'register'));
-	Router::connect('/login.html', array('controller' => 'users', 'action' => 'login'));
-	Router::connect('/logout.html', array('controller' => 'users', 'action' => 'logout'));
-	Router::connect('/profile.html', array('controller' => 'profiles', 'action' => 'detail'));
+	Router::connect('/dang-ky.html', array('controller' => 'users', 'action' => 'register'));
+	Router::connect('/dang-nhap.html', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('/dang-xuat.html', array('controller' => 'users', 'action' => 'logout'));
+	Router::connect('/tai-khoan.html', array('controller' => 'profiles', 'action' => 'detail'));
 	Router::connect(
 		"/manage/profile.html", 
 		array('controller' => 'profiles', 'action' => 'detail', 'prefix' => 'manage')
 	);
+
+/**
+ * Project
+ */
+    Router::connect(
+        '/danh-muc-du-an.html',
+        array('controller' => 'projectCategories', 'action' => 'view', 1)
+    );
+    Router::connect(
+        '/danh-muc-du-an/:slug-:id.html',
+        array('controller' => 'projectCategories', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+    Router::connect(
+        '/du-an/:slug-:id.html',
+        array('controller' => 'projects', 'action' => 'view'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+    Router::connect(
+        '/du-an/chinh-sua/:slug-:id.html',
+        array('controller' => 'projects', 'action' => 'edit'),
+        array(
+            'pass' => array('id', 'slug'),
+            "id"=>"[0-9]+", // chỉ là số
+        )
+    );
+    Router::connect(
+        '/tao-du-an.html',
+        array('controller' => 'projects', 'action' => 'add')
+    );
 
 /**
  * Products
@@ -111,6 +147,14 @@
             'pass' => array('id', 'slug'),
             "id"=>"[0-9]+", // chỉ là số
         )
+    );
+    Router::connect(
+        '/chia-se.html',
+        array('controller' => 'newsCategories', 'action' => 'view', 8)
+    );
+    Router::connect(
+        '/mien-phi.html',
+        array('controller' => 'newsCategories', 'action' => 'view', 9)
     );
     Router::connect(
         '/tin-tuc/:slug-:id.html',

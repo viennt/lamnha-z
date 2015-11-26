@@ -30,7 +30,7 @@
 	<meta property="og:locale"			content="vn_VN"/>
 	<meta property="og:site_name"		content="LamnhaZ.Com" />
 	<meta property="og:description"		content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá thành phù hợp nhất.">
-	<meta property="og:url"				content="http://www.lamnha-z.com/home.html" />
+	<meta property="og:url"				content="http://www.lamnha-z.com/trang-chu.html" />
 	<meta property="og:image"			content="http://www.lamnha-z.com/img/logo.png" />
 	<meta property="og:image:width"		content="640" />
 	<meta property="og:image:height"	content="360" />
@@ -65,7 +65,7 @@
 				<div class="cover">
 					<div class="container">
 						<figure class="logo-panel col-sx-12 col-sm-12 col-md-12 col-lg-3">
-							<?php echo $this->Html->image('logo.png', array('alt' => 'My home builder', 'url' => array('controller' => 'home.html'))); ?>
+							<?php echo $this->Html->image('logo.png', array('alt' => 'My home builder', 'url' => array('controller' => 'trang-chu.html'))); ?>
 						</figure>
 						<div class="nav-panel col-sx-12 col-sm-12 col-md-12 col-lg-9">
 							<div class="rec hidden-xs hidden-sm hidden-md"></div>

@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * Users Controller
@@ -9,61 +16,97 @@ App::uses('AppController', 'Controller');
 class MenusController extends AppController {
 
 /**
- * projects method
- *
- * @return Projectdata
- */
-	function projects() {
-        $this->loadModel('ProjectCategory');
-        $ProjectCategories = $this->ProjectCategory->find('all');
-        foreach ($ProjectCategories as $Category) {
-            $Projectdata[$Category['ProjectCategory']['parent_id']][] = $Category;
-        }
-        $this->set('menuHorizontal_projects', $Projectdata);
-        return $Projectdata;
-	}
-
-/**
  * products method
  *
- * @return Productdata
+ * @return ProductData
  */
-	function products() {
+    function oneLevelProductCats() {
+        $this->autoRender = false;
         $this->loadModel('ProductCategory');
-        $ProductCategories = $this->ProductCategory->find('all');
-        foreach ($ProductCategories as $Category) {
-            $Productdata[$Category['ProductCategory']['parent_id']][] = $Category;
-        }
-        return $Productdata;
-	}
-
-/**
- * services method
- *
- * @return Servicedata
- */
-    function services() {
-        $this->loadModel('ServiceCategory');
-        $ServiceCategories = $this->ServiceCategory->find('all');
-        foreach ($ServiceCategories as $Category) {
-            $Servicedata[$Category['ServiceCategory']['parent_id']][] = $Category;
-        }
-        $this->set('menuHorizontal_services', $Servicedata);
-        return $Servicedata;
+        $options = array('conditions' => array('ProductCategory.parent_id' => 1), 'recursive' => -1);
+        $ProductCategories = $this->ProductCategory->find('all', $options);
+        foreach ($ProductCategories as $Category)
+            $ProductData[$Category['ProductCategory']['id']] = $Category['ProductCategory'];
+        return $ProductData;
+    }
+    function productCats() {
+        $this->layout = 'ajax';
+        $this->loadModel('ProductCategory');
+        $ProductCategories = $this->ProductCategory->find('all', array('recursive' => -1));
+        foreach ($ProductCategories as $Category)
+            $ProductData[$Category['ProductCategory']['id']] = $Category['ProductCategory'];
+        $this->set('data', $ProductData);
+        return $ProductData;
     }
 
 /**
  * services method
  *
- * @return Newsdata
+ * @return ServiceData
  */
-    function news() {
+    function oneLevelServiceCats() {
+        $this->autoRender = false;
+        $this->loadModel('ServiceCategory');
+        $options = array('conditions' => array('ServiceCategory.parent_id' => 1), 'recursive' => -1);
+        $ServiceCategories = $this->ServiceCategory->find('all', $options);
+        foreach ($ServiceCategories as $Category)
+            $ServiceData[$Category['ServiceCategory']['id']] = $Category['ServiceCategory'];
+        return $ServiceData;
+    }
+    function serviceCats() {
+        $this->layout = 'ajax';
+        $this->loadModel('ServiceCategory');
+        $ServiceCategories = $this->ServiceCategory->find('all', array('recursive' => -1));
+        foreach ($ServiceCategories as $Category)
+            $ServiceData[$Category['ServiceCategory']['id']] = $Category['ServiceCategory'];
+        $this->set('data', $ServiceData);
+        return $ServiceData;
+    }
+
+/**
+ * projects method
+ *
+ * @return ProjectData
+ */
+    function oneLevelProjectCats() {
+        $this->autoRender = false;
+        $this->loadModel('ProjectCategory');
+        $options = array('conditions' => array('ProjectCategory.parent_id' => 1), 'recursive' => -1);
+        $ProjectCategories = $this->ProjectCategory->find('all', $options);
+        foreach ($ProjectCategories as $Category)
+            $ProjectData[$Category['ProjectCategory']['id']] = $Category['ProjectCategory'];
+        return $ProjectData;
+    }
+	function projectCats() {
+        $this->layout = 'ajax';
+        $this->loadModel('ProjectCategory');
+        $ProjectCategories = $this->ProjectCategory->find('all', array('recursive' => -1));
+        foreach ($ProjectCategories as $Category)
+            $ProjectData[$Category['ProjectCategory']['id']] = $Category['ProjectCategory'];
+        $this->set('data', $ProjectData);
+        return $ProjectData;
+	}
+
+/**
+ * services method
+ *
+ * @return NewsData
+ */
+    function oneLevelNewsCats() {
+        $this->autoRender = false;
         $this->loadModel('NewsCategory');
-        $NewsCategories = $this->NewsCategory->find('all');
-        foreach ($NewsCategories as $Category) {
-            $Newsdata[$Category['NewsCategory']['parent_id']][] = $Category;
-        }
-        $this->set('menuHorizontal_news', $Newsdata);
-        return $Newsdata;
+        $options = array('conditions' => array('NewsCategory.parent_id' => 1), 'recursive' => -1);
+        $NewsCategories = $this->NewsCategory->find('all', $options);
+        foreach ($NewsCategories as $Category)
+            $NewsData[$Category['NewsCategory']['id']] = $Category['NewsCategory'];
+        return $NewsData;
+    }
+    function newsCats() {
+        $this->loadModel('NewsCategory');
+        $NewsCategories = $this->NewsCategory->find('all', array('recursive' => -1));
+        foreach ($NewsCategories as $Category)
+            $NewsData[$Category['NewsCategory']['id']] = $Category['NewsCategory'];
+        $this->set('data', $NewsData);
+        return $NewsData;
     }
 }

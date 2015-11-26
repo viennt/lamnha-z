@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * ProductCategories Controller
@@ -125,13 +132,15 @@ class ProductCategoriesController extends AppController {
 		if (!$this->ProductCategory->exists($id)) {
 			throw new NotFoundException(__('Invalid product category'));
 		}
-		$options = array('conditions' => array('ProductCategory.' . $this->ProductCategory->primaryKey => $id));
-		$this->set('productCategory', $this->ProductCategory->find('first', $options));
-
 		$this->loadModel('Product');
 		$categoryIds = $this->ProductCategory->children($id , false, 'id');
 		$categoryIds = Hash::extract($categoryIds, '{n}.ProductCategory.id');
-		$optionsProduct = array('conditions' => array('Product.product_category_id' => $categoryIds));
+		array_push($categoryIds, "{$id}");
+
+		$optionsProduct = array(
+			'conditions' => array('Product.product_category_id' => $categoryIds, 'Product.published' => 1),
+			'recursive' => 1,
+			'fields' => array('Product.name'));
 		$this->set('products', $this->Product->find('all', $optionsProduct));
 
 		$this->set('crumbs', $this->ProductCategory->getPath($id));

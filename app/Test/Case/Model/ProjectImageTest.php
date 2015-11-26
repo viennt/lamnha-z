@@ -14,7 +14,23 @@ class ProjectImageTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.project_image',
-		'app.project'
+		'app.project',
+		'app.user',
+		'app.group',
+		'app.profile',
+		'app.contractor',
+		'app.news',
+		'app.news_category',
+		'app.news_image',
+		'app.service',
+		'app.service_category',
+		'app.service_price',
+		'app.product',
+		'app.product_category',
+		'app.product_image',
+		'app.product_video',
+		'app.project_category',
+		'app.project_design'
 	);
 
 /**

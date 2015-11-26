@@ -34,7 +34,7 @@
 	<meta property="og:locale"			content="vn_VN"/>
 	<meta property="og:site_name"		content="LamnhaZ.Com" />
 	<meta property="og:description"		content="Cung cấp dịch vụ xây dựng trực tuyến. Tạo ra sự kết nối giữa nhà cung cấp và khách hàng, giá thành phù hợp nhất.">
-	<meta property="og:url"				content="http://www.lamnha-z.com/home.html" />
+	<meta property="og:url"				content="http://www.lamnha-z.com/trang-chu.html" />
 	<meta property="og:image"			content="http://www.lamnha-z.com/img/logo.png" />
 	<meta property="og:image:width"		content="640" />
 	<meta property="og:image:height"	content="360" />
@@ -65,7 +65,7 @@
 				<div class="cover">
 					<div class="container">
 						<figure class="logo-panel col-sx-12 col-sm-12 col-md-12 col-lg-3">
-							<?php echo $this->Html->image('logo.png', array('alt' => 'My home builder', 'url' => array('controller' => 'home.html'))); ?>
+							<?php echo $this->Html->image('logo.png', array('alt' => 'My home builder', 'url' => array('controller' => 'trang-chu.html'))); ?>
 						</figure>
 						<div class="nav-panel col-sx-12 col-sm-12 col-md-12 col-lg-9">
 							<div class="rec hidden-xs hidden-sm hidden-md"></div>
@@ -88,8 +88,18 @@
 				</div>
 			</div>
 			<?php if(strtolower($this->request->params['controller']) == 'pages'): ?>
-			<div class="banner hidden-xs hidden-sm hidden-md">
-				<div class="container"></div>
+			<div id="banner" class="banner hidden-xs hidden-sm hidden-md">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-lg-offset-7">
+							<h2>
+								<strong>LÀM NHÀ</strong><br/>
+								<strong>TRỰC TUYẾN</strong><br/>
+							</h2><hr>
+							<?php echo $this->Html->link('TẠO DỰ ÁN', array('controller' => 'tao-du-an.html'), array('class' => 'btn btn-flat btn-warning')); ?>
+						</div>
+					</div>
+				</div>
 			</div>
 			<?php endif; ?>
 		</header>
@@ -101,18 +111,37 @@
 						if(strtolower($this->request->params['controller']) == 'productcategories'
 							|| strtolower($this->request->params['controller']) == 'servicecategories')
 							echo $this->element('menus/public-left-cart');
-						if(strtolower($this->request->params['controller']) == 'projectcategories'
-							|| strtolower($this->request->params['controller']) == 'pages')
-							echo $this->element('menus/public-left-project');
+
 						if(strtolower($this->request->params['controller']) == 'productcategories'
 							|| strtolower($this->request->params['controller']) == 'pages')
-							echo $this->element('menus/public-left-product');
+							echo $this->element('menus/public-left-menu', array(
+								'title' => 'Sản phẩm',
+								'titleURL' => 'danh-muc-san-pham.html',
+								'categoryName' => 'Product',
+							));
+
 						if(strtolower($this->request->params['controller']) == 'servicecategories'
 							|| strtolower($this->request->params['controller']) == 'pages')
-							echo $this->element('menus/public-left-service');
-						if(strtolower($this->request->params['controller']) == 'newscategories'
-							|| strtolower($this->request->params['controller']) == 'pages')
-							echo $this->element('menus/public-left-news');
+							echo $this->element('menus/public-left-menu', array(
+								'title' => 'Dịch vụ',
+								'titleURL' => 'danh-muc-dich-vu.html',
+								'categoryName' => 'Service',
+							));
+
+						if(strtolower($this->request->params['controller']) == 'projectcategories'
+							|| strtolower($this->request->params['controller']) == 'projects')
+							echo $this->element('menus/public-left-menu', array(
+								'title' => 'Dự án',
+								'titleURL' => 'danh-muc-du-an.html',
+								'categoryName' => 'Project',
+							));
+
+						if(strtolower($this->request->params['controller']) == 'newscategories')
+							echo $this->element('menus/public-left-menu', array(
+								'title' => 'Tin tức',
+								'titleURL' => 'danh-muc-tin-tuc.html',
+								'categoryName' => 'News',
+							));
 						?>
 					</section>
 					<article id="content-sidebar-container" class="col-sx-12 col-sm-12 col-md-9 col-lg-9 non-right">
@@ -123,6 +152,7 @@
 								<strong>Thông báo!</strong> <?php echo $this->Session->flash(); ?>
 							</div>
 							<?php endif; ?>
+							<?php echo $this->element('menus/breadcrumb');?>
 							<div class="panel" id="load">
 								<?php echo $this->fetch('content'); ?>
 							</div>
@@ -133,7 +163,7 @@
 		</article>
 		<footer class="contain">
 			<div class="cover">
-					<?php echo $this->element('footer/sponsor'); ?>
+					<?php //echo $this->element('footer/sponsor'); ?>
 					<?php echo $this->element('footer/about'); ?>
 					<div class="copyright">
 						<div class="container">
@@ -146,6 +176,12 @@
 	
 	<!-- Bootstrap 3.3.5 -->
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
+
+	<!-- jQuery Lazyload -->
+	<?php echo $this->Html->script('jquery.lazyload'); ?>
+
+	<!-- jQuery Scrool Stop -->
+	<?php echo $this->Html->script('jquery.scrollstop'); ?>
 
 	<!-- Public page -->
 	<?php echo $this->Html->script('public-script'); ?>

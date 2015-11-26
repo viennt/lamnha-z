@@ -24,7 +24,6 @@
 					<th><?php echo $this->Paginator->sort('id', '#'); ?></th>
 					<th><?php echo $this->Paginator->sort('title', 'Tiêu đề'); ?></th>
 					<th><?php echo $this->Paginator->sort('abstract', 'Tóm tắt'); ?></th>
-					<th><?php echo $this->Paginator->sort('detail', 'Chi tiết'); ?></th>
 					<th><?php echo $this->Paginator->sort('created', 'Ngày đăng'); ?></th>
 					<th><?php echo $this->Paginator->sort('view', 'Lượt xem'); ?></th>
 					<th><?php echo $this->Paginator->sort('published', 'Công khai'); ?></th>
@@ -39,7 +38,6 @@
 			<td><?php echo h($news['News']['id']); ?>&nbsp;</td>
 			<td><?php echo h($news['News']['title']); ?>&nbsp;</td>
 			<td><?php echo h($news['News']['abstract']); ?>&nbsp;</td>
-			<td><?php echo h($news['News']['detail']); ?>&nbsp;</td>
 			<td><?php echo h($news['News']['created']); ?>&nbsp;</td>
 			<td><?php echo h($news['News']['view']); ?>&nbsp;</td>
 			<td><?php echo h($news['News']['published']); ?>&nbsp;</td>

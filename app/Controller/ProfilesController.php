@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * Profiles Controller
@@ -88,8 +95,9 @@ class ProfilesController extends AppController {
 	public function detail($id = null) {
 		if(is_null($id))
 			$id = $this->Auth->User('id');
-		$options = array('conditions' => array('Profile.user_id' => $id));
-		$this->set('profile', $this->Profile->find('first', $options));
+		$this->loadModel('User');
+		$options = array('conditions' => array('User.id' => $id), 'recursive' => 2);
+		$this->set('profile', $this->User->find('first', $options));
 		$options = array('conditions' => array('Profile.' . $this->Profile->primaryKey => $id));
 		$this->request->data = $this->Profile->find('first', $options);
 	}

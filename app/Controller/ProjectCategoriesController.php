@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * ProjectCategories Controller
@@ -40,12 +47,11 @@ class ProjectCategoriesController extends AppController {
  * @return void
  */
 	public function manage_view($id = null) {
-		return $this->redirect($this->referer());
-		// if (!$this->ProjectCategory->exists($id)) {
-		// 	throw new NotFoundException(__('Invalid project category'));
-		// }
-		// $options = array('conditions' => array('ProjectCategory.' . $this->ProjectCategory->primaryKey => $id));
-		// $this->set('projectCategory', $this->ProjectCategory->find('first', $options));
+		if (!$this->ProjectCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid project category'));
+		}
+		$options = array('conditions' => array('ProjectCategory.' . $this->ProjectCategory->primaryKey => $id));
+		$this->set('projectCategory', $this->ProjectCategory->find('first', $options));
 	}
 
 /**
@@ -112,5 +118,31 @@ class ProjectCategoriesController extends AppController {
 			$this->Session->setFlash(__('The project category could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		$this->layout = "two-column";
+		if (!$this->ProjectCategory->exists($id)) {
+			throw new NotFoundException(__('Invalid project category'));
+		}
+		$this->loadModel('Project');
+		$categoryIds = $this->ProjectCategory->children($id , false, 'id');
+		$categoryIds = Hash::extract($categoryIds, '{n}.ProjectCategory.id');
+		array_push($categoryIds, "{$id}");
+
+		$optionsProject = array(
+			'conditions' => array('Project.project_category_id' => $categoryIds),
+			'recursive' => 1,
+			'fields' => array('Project.name'));
+		$this->set('projects', $this->Project->find('all', $optionsProject));
+
+		$this->set('crumbs', $this->ProjectCategory->getPath($id));
 	}
 }

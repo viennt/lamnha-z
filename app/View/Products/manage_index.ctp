@@ -23,7 +23,6 @@
 		<tr>
 					<th><?php echo $this->Paginator->sort('id', '#'); ?></th>
 					<th><?php echo $this->Paginator->sort('name', 'Tên'); ?></th>
-					<th><?php echo $this->Paginator->sort('description', 'Chi tiết'); ?></th>
 					<th><?php echo $this->Paginator->sort('specification', 'Đặc điểm'); ?></th>
 					<th><?php echo $this->Paginator->sort('unit', 'Đơn vị'); ?></th>
 					<th><?php echo $this->Paginator->sort('quantity', 'Số lượng'); ?></th>
@@ -38,7 +37,6 @@
 		<tr>
 			<td><?php echo h($product['Product']['id']); ?>&nbsp;</td>
 			<td><?php echo h($product['Product']['name']); ?>&nbsp;</td>
-			<td><?php echo h($product['Product']['description']); ?>&nbsp;</td>
 			<td><?php echo h($product['Product']['specification']); ?>&nbsp;</td>
 			<td><?php echo h($product['Product']['unit']); ?>&nbsp;</td>
 			<td><?php echo h($product['Product']['quantity']); ?>&nbsp;</td>

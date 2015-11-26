@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * Products Controller
@@ -35,7 +42,7 @@ class ProductsController extends AppController {
  * @var array
  */
 	public $paginate = array(
-		'limit' => 3,
+		'limit' => 10,
 		'order' => array(
 			'Product.id' => 'asc'
 		)
@@ -82,8 +89,9 @@ class ProductsController extends AppController {
 				$this->Session->setFlash(__('The product could not be saved. Please, try again.'));
 			}
 		}
+		$user_id = $this->Auth->User('id');
 		$productCategories = $this->Product->ProductCategory->generateTreeList(null, null, null, '___');
-		$this->set(compact('productCategories'));
+		$this->set(compact('user_id', 'productCategories'));
 	}
 
 /**
@@ -108,8 +116,9 @@ class ProductsController extends AppController {
 			$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
 			$this->request->data = $this->Product->find('first', $options);
 		}
+		$user_id = $this->Auth->User('id');
 		$productCategories = $this->Product->ProductCategory->generateTreeList(null, null, null, '___');
-		$this->set(compact('productCategories'));
+		$this->set(compact('user_id', 'productCategories'));
 	}
 
 /**

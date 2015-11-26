@@ -2,7 +2,7 @@
     <div class="name col-all-12"><h1>Đăng nhập vào Website</h1><hr></div>
     <div class="col-all-6" style="border-right: 1px solid #E5E5E5">
         <div class="users form">
-            <form action=<?php echo $this->webroot,'login.html'; ?> id="UserLoginForm" method="post" accept-charset="utf-8">
+            <form action=<?php echo $this->webroot,'dang-nhap.html'; ?> id="UserLoginForm" method="post" accept-charset="utf-8">
                 <div style="display:none;">
                     <input type="hidden" name="_method" value="POST">
                 </div>

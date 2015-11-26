@@ -1,4 +1,11 @@
 <?php
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 App::uses('AppController', 'Controller');
 /**
  * Users Controller
@@ -85,28 +92,30 @@ class UsersController extends AppController {
 			$user = $this->User->find('first',
 				array('conditions' => array('User.facebook_id' => $id), 'recursive' => 1, 'callbacks' => true,
 				'fields' => array('User.username', 'User.password', 'User.id', 'User.facebook_id', 'User.group_id')));
-			$this->loadModel('Group');
-			$group = $this->Group->find('first',
-				array('conditions' => array('Group.id' => $user['User']['group_id']), 'recursive' => 0));
-		$user['username'] = $user['User']['username'];
-		$user['password'] = $user['User']['password'];
-		$user['facebook_id'] = $user['User']['facebook_id'];
-		$user['id'] = $user['User']['id'];
-			$user['Group']['id'] = $group['Group']['id'];
-			$user['Group']['name'] = $group['Group']['name'];
-			$user['Group']['created'] = $group['Group']['created'];
-			$user['Group']['modified'] = $group['Group']['modified'];
-		unset($user['User']);
-		unset($user['Contractor']);
-		unset($user['Project']);
-		unset($user['Service']);
-		unset($user['News']);
-		unset($user['Product']);
-		if(isset($user))
+		if(isset($user['User'])){
+				$this->loadModel('Group');
+				$group = $this->Group->find('first',
+					array('conditions' => array('Group.id' => $user['User']['group_id']), 'recursive' => 0));
+			$user['username'] = $user['User']['username'];
+			$user['password'] = $user['User']['password'];
+			$user['facebook_id'] = $user['User']['facebook_id'];
+			$user['id'] = $user['User']['id'];
+				$user['Group']['id'] = $group['Group']['id'];
+				$user['Group']['name'] = $group['Group']['name'];
+				$user['Group']['created'] = $group['Group']['created'];
+				$user['Group']['modified'] = $group['Group']['modified'];
+			unset($user['User']);
+			unset($user['Contractor']);
+			unset($user['Project']);
+			unset($user['Service']);
+			unset($user['News']);
+			unset($user['Product']);
+
 			if ($this->Auth->login($user))
 				$this->Session->setFlash(__('Đăng nhập thành công'));
-		else
+		}else {
 			$this->Session->setFlash(__('Đăng nhập không thành công. Vui lòng thử lại.'));
+		}
 		return $this->redirect($this->Auth->redirectUrl());
 	}
 

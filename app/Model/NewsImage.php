@@ -1,5 +1,12 @@
 <?php
-App::uses('AppModel', 'Model');
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
+App::uses('AppModel', 'Model', 'File', 'Utility');
 /**
  * NewsImage Model
  *
@@ -52,6 +59,7 @@ class NewsImage extends AppModel {
  * @param string
  */
 	public $uploadDir = 'img/uploads/news';
+	public $image;
 
 /**
  * Before Validation Callback
@@ -79,6 +87,30 @@ class NewsImage extends AppModel {
 		return parent::beforeSave($options);
 	}
 	
+
+/**
+ * Before Delete Callback
+ * @param array $options
+ * @return boolean
+ */
+	public function beforeDelete($cascade = true) {
+		$this->image = $this->find('first', 
+			array('conditions' => array('NewsImage.id' => $this->id), 'recursive' => 0, 'fields' => 'NewsImage.name')
+			);
+	}
+
+/**
+ * After Delete Callback
+ * @param array $options
+ * @return boolean
+ */
+	public function afterDelete() {
+		var_dump($this->image);
+		if(isset($this->image['NewsImage']['name'])){
+	    	unlink(WWW_ROOT . $this->uploadDir . DS . $this->image['NewsImage']['name']);
+		}
+	}
+
 /**
  * Process the Upload
  * @param array $check

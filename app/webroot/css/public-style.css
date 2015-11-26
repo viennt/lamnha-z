@@ -9,6 +9,23 @@ a:link{text-decoration: none;}
 .non-padding{padding: 0!important;}
 .non-margin{ margin: 0!important;}
 .pointer{cursor: pointer!important;}
+
+.text-red{color:#dd4b39 !important}
+.text-yellow{color:#F7B74C !important}
+.text-aqua{color:#00c0ef !important}
+.text-blue{color:#0073b7 !important}
+.text-black{color:#111 !important}
+.text-light-blue{color:#3c8dbc !important}
+.text-green{color:#00a65a !important}
+.text-gray{color:#d2d6de !important}
+.text-navy{color:#001f3f !important}
+.text-teal{color:#39cccc !important}
+.text-olive{color:#3d9970 !important}
+.text-lime{color:#01ff70 !important}
+.text-orange{color:#ff851b !important}
+.text-fuchsia{color:#f012be !important}
+.text-purple{color:#605ca8 !important}
+.text-maroon{color:#d81b60 !important}
 ::selection {color: #FFF; background-color: #000000;}
 
 /**************************** HEADER ****************************/
@@ -33,27 +50,27 @@ a:link{text-decoration: none;}
 .nav-panel .main-menu .nav > li:hover, .nav-panel .main-menu .nav > li.active{background-color: #F7B74C;}
 .nav-panel .main-menu .nav > li > a{color: #343434; padding: 0;}
 .nav-panel .main-menu .nav > li:hover > a, .nav-panel .main-menu .nav > li.active > a{color: #FFFFFF; background-color: #F7B74C;}
+.nav-panel .main-menu .nav > .dropdown:hover > .dropdown-menu{display: inherit;}
 .banner{width: 100%; height: 252px; text-align: center;}
-.banner .container{max-width: 1170px; min-width: 768px; height: 100%; padding: 0px!important; background-image: url(../img/banner.jpg); background-position: 0px 0px;}
+.banner .container{max-width: 1170px; min-width: 768px; height: 100%; padding: 0px!important; background-image: url(../img/banner-0.jpg); background-position: 0px 0px; -webkit-transition: 0.8s; -moz-transition: 0.8s; -o-transition: 0.8s; -ms-transition: 0.8s;}
+.banner .container .row{color: #343434; padding: 20px; -webkit-transition: 0.8s; -moz-transition: 0.8s; -o-transition: 0.8s; -ms-transition: 0.8s;}
+.banner .container .row div{text-align: left; }
+.banner .container .row hr{border-top: 5px solid #333; -webkit-transition: 0.8s; -moz-transition: 0.8s; -o-transition: 0.8s; -ms-transition: 0.8s;}
 
 /************************* Vertical Menu ************************/
 /****************************************************************/
+.align-right{float:right}
 #cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a{margin:0;padding:0;border:0;list-style:none;line-height:1;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 #cssmenu{color:#ffffff}
 #cssmenu ul ul{display:none}
-#cssmenu > ul > li.active > ul{display:block}
-.align-right{float:right}
-#cssmenu > ul > li > a{padding:16px 22px;cursor:pointer;z-index:2;font-size:16px;text-decoration:none;color:#000000;background:#FFFFFF;border-bottom:1px solid #E5E5E5;-webkit-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease}
-#cssmenu > ul > li > a:hover{border-color:#FFC31C;color:#FFC31C}
+#cssmenu ul li a:hover{border-color:#FFC31C;color:#FFC31C}
+#cssmenu ul > li.active > ul{display:block}
 #cssmenu ul > li.has-sub.open > a{border-color:#FFC31C;background-color:#F0F0F0}
 #cssmenu ul > li.has-sub.open > ul > li > a{background-color:#F5F5F5}
 #cssmenu ul > li.has-sub.open > ul > li.has-sub.open > ul > li > a{background-color:#FCFCFC}
 #cssmenu ul > li.has-sub > a:before{position:absolute;right:22px;top:15px;display:block;content:"›";-webkit-transition:all 0.1s ease-out;-moz-transition:all 0.1s ease-out;-ms-transition:all 0.1s ease-out;-o-transition:all 0.1s ease-out;transition:all 0.1s ease-out}
 #cssmenu ul > li.has-sub.open > a:before{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg)}
-#cssmenu ul ul li a{padding:14px 22px;cursor:pointer;z-index:2;font-size:14px;text-decoration:none;color:#000000;background:#FFFFFF;border-bottom:1px solid #E5E5E5;-webkit-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease}
-#cssmenu ul ul ul li a{padding-left:32px}
-#cssmenu ul ul li a:hover{border-color:#FFC31C;color:#FFC31C}
-#cssmenu ul ul > li.has-sub > a:before{top:12px}
+#cssmenu ul li a{padding:14px 22px;cursor:pointer;z-index:2;font-size:14px;text-decoration:none;color:#000000;background:#FFFFFF;border-bottom:1px solid #E5E5E5;-webkit-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease}
 
 
 /**************************** CONTENT ***************************/
@@ -71,23 +88,25 @@ a:link{text-decoration: none;}
 /**************************** FOOTER ****************************/
 /****************************************************************/
 .sponsor{height: 144px; border-top: 5px solid #F7B74C; background-color: #FFFFFF;}
-.about-company{height: 180px; background-color: #E5E5E5;}
+.about-company{height: 180px; background-color: #505050; color: #FFFFFF;}
+.about-company .container{height: 100%}
+.about-company .container .row{height: 100%}
 .copyright{height: 36px; background-color: #343434;}
 .container > span{float: left; color: #E5E5E5; margin-top: 9px;}
 
-/************************ LIST PRODICTS *************************/
+/******************** LIST PRODICTS/SERVICES ********************/
 /****************************************************************/
 .drop-cart{background: url('../img/cart-bg.png') no-repeat center; background-color: #F5F5F5;}
-.products .list-items ul{margin:0; padding:0;}
-.products .list-items li{display:inline; float:left; margin:10px;}
-.products .list-items .drag-item{margin-bottom: 30px; display:block;}
-.products .list-items .drag-item .inner{background: #F7B74C; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s; }
-.products .list-items .drag-item .inner:hover{box-shadow: 0px 0px 10px #FFEBB5;}
-.products .list-items .drag-item .inner a > img{ width: 100%; border: 1px solid #E5E5E5; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s;}
-.products .list-items .drag-item .inner:hover a > img{opacity: 0.9;}
-.products .list-items .drag-item .inner .detail{ background: #F5F5F5; text-align: left; border: 1px solid #E5E5E5; border-top: 0px; padding: 10px 10px; -webkit-transition: background-color 0.4s; -moz-transition: background-color 0.4s; -o-transition: background-color 0.4s; -ms-transition: background-color 0.4s;}
-.products .list-items .drag-item .inner .detail span{color: #FFA000; font-size: 14px; font-weight: bold; margin-bottom: 5px;}
-.products .list-items .drag-item .detail h5{margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.publicList .list-items ul{margin:0; padding:0;}
+.publicList .list-items li{display:inline; float:left; margin:10px;}
+.publicList .list-items .drag-item{margin-bottom: 30px; display:block;}
+.publicList .list-items .inner{text-align: center; background: #E5E5E5; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s; }
+.publicList .list-items .inner:hover{box-shadow: 0px 0px 10px #FFEBB5;}
+.publicList .list-items .inner a > img{ max-width: 100%; height: 150px; border: 1px solid #E5E5E5; -webkit-transition: 0.4s; -moz-transition: 0.4s; -o-transition: 0.4s; -ms-transition: 0.4s;}
+.publicList .list-items .inner:hover a > img{opacity: 0.9;}
+.publicList .list-items .inner .detail{ background: #F5F5F5; text-align: left; border: 1px solid #E5E5E5; border-top: 0px; padding: 10px 10px; -webkit-transition: background-color 0.4s; -moz-transition: background-color 0.4s; -o-transition: background-color 0.4s; -ms-transition: background-color 0.4s;}
+.publicList .list-items .inner .detail span{color: #FFA000; font-size: 14px; font-weight: bold; margin-bottom: 5px;}
+.publicList .list-items .detail h5{margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 /******************** PRODUCT/SERVICE DETAIL *********************/
 /****************************************************************/
@@ -96,10 +115,11 @@ a:link{text-decoration: none;}
 .publicView .name{text-align: center;}
 .publicView .name span{font-size: 24px;}
 .publicView .name hr{margin-top: 5px;}
-.publicView .images .publicViewImage .magnify > img{height: 150px;}
+.publicView .images .publicViewImage .magnify > img{max-width: 100%; height: 150px;}
 .publicView .images .moreImages{margin: 0}
 .publicView .images .moreImages .thumbnail{height: 40px;}
 .publicView .images .moreImages .thumbnail > img{max-height: 40px;}
+.publicView .image .thumbnail > img{height: 150px;}
 .publicView .detail .info{height: 180px;}
 .publicView .detail .info .price{font-size: 25px; color: #FFA000;}
 .publicView .detail .info .line{font-size: 17px; color: #000000;}
