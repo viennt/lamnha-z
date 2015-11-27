@@ -4,7 +4,7 @@
 		<ul>
 			<?php foreach ($services as $service): ?>
 			<li style="width: 190px">
-			<div class="drag-item" style="width: 190px">
+			<div class="drag-item" style="width: 190px" data-id=<?php echo $service['Service']['id']?> data-type="service" >
 				<div class="inner">
 					<?php echo $this->Html->image(
 						'noimage.jpg',

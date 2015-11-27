@@ -58,7 +58,10 @@
 				</div>
 				<div class="row">
 					<div class="col-all-12">
-						<button class="btn btn-block btn-flat btn-warning">Thêm vào dự án</button>
+					<?php echo $this->Form->create('Cart', array('id'=>'add-form','url'=>array('controller'=>'carts','action'=>'addService')));
+						echo $this->Form->hidden('service_id',array('value'=>$service['Service']['id']));
+						echo $this->Form->submit('Add to cart',array('class'=>'btn btn-block btn-flat btn-warning'));
+						echo $this->Form->end(); ?>
 					</div>
 				</div>
 			</div>
@@ -90,15 +93,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- 
-<script src=<?php echo $this->webroot,'js/jquery.magnify.js'; ?>></script>
-<script type="text/javascript">
-$(document).ready(function () {
-var changeImage = function(subImg) {
-	console.log("a");
-	$("#mainImg").attr("src", $(subImg).attr("src"));
-	$("#mainImg").attr("data-magnify-src", $(subImg).attr("src"));
-	$("#mainImg").magnify();
-};
-</script> -->

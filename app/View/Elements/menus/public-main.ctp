@@ -33,7 +33,10 @@
 	echo '<li>';
 	echo $this->Html->link(__('Miễn phí'), array('controller' => 'mien-phi.html', 'manage' => false));
 	echo '</li>';
+
+	echo '<li class="active">';
+	echo $this->Html->link('Giỏ hàng '.' <span class="label label-danger" id="cart-counter">'.$count.'</span>', array('controller' => 'gio-hang.html', 'manage' => false), array('escape' => false, 'class' => 'active'));
+	echo '</li>';
 	
 	?>
-	<li class="active"><a href="#">Giỏ hàng [5]</a></li>
 </ul>

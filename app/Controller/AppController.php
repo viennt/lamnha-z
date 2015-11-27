@@ -49,6 +49,8 @@ class AppController extends Controller {
  * @return void
  */
     public function beforeFilter() {
+        $this->loadModel('Cart');
+        $this->set('count', $this->Cart->getCount());
         if($this->request->prefix == 'manage'):
             $this->layout = 'manage';
         else:

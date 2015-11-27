@@ -19,6 +19,16 @@ $(document).ready(function(){
         }
     });
 });
+// Cart
+$(document).ready(function(){
+    $('#add-form').submit(function(e){
+        e.preventDefault();
+        var tis = $(this);
+        $.post(tis.attr('action'), tis.serialize(), function(data){
+            $('#cart-counter').text(data);
+        });
+    });
+});
 // Drag drop item cart
 $(document).ready(function(){
     // Check if have drag or drop element
@@ -48,8 +58,20 @@ $(document).ready(function(){
         },
         onDrop:function(e, source){
             $(this).animate({'opacity': '1'});
-            var name = $(source).find('strong').html();
-            $('#cart-items').append('<li class="list-group-item" style="padding: 15px;">' + name + '</li>');
+
+            var id = $(source).attr('data-id');
+            var type = $(source).attr('data-type');
+            if(type == 'product'){
+                $('#product_id').val(id);
+                var tis = $('#add-form-product');
+            }
+            else if(type == 'service'){
+                $('#service_id').val(id);
+                var tis = $('#add-form-service');
+            }
+            $.post(tis.attr('action'), tis.serialize(), function(data){
+                $('#cart-counter').text(data);
+            });
         }
     });
 });

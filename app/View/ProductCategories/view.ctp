@@ -4,7 +4,7 @@
 		<ul>
  			<?php foreach ($products as $product): ?>
 			<li style="width: 190px">
-			<div class="drag-item" style="width: 190px">
+			<div class="drag-item" style="width: 190px" data-id=<?php echo $product['Product']['id']?> data-type="product" >
 				<div class="inner">
 					<?php echo $this->Html->image(
 						'noimage.jpg', 

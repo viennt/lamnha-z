@@ -70,8 +70,11 @@
 				</div>
 				<div class="row">
 					<div class="col-all-12">
-						<button class="btn btn-block btn-flat btn-warning">Thêm vào dự án</button>
-					</div>
+					<?php echo $this->Form->create('Cart', array('id'=>'add-form','url'=>array('controller'=>'carts','action'=>'addProduct')));
+						echo $this->Form->hidden('product_id',array('value'=>$product['Product']['id']));
+						echo $this->Form->submit('Add to cart',array('class'=>'btn btn-block btn-flat btn-warning'));
+						echo $this->Form->end(); ?>
+					</div>     
 				</div>
 			</div>
 			<div class="col-all-12">
