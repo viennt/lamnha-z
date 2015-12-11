@@ -18,15 +18,15 @@
                             <?php foreach ($services as $service):?>
                             <tr>
                                 <td><?php echo $service['Service']['name'];?></td>
-                                <td>$<?php echo '1000';?></td>
-                                <td>$<?php echo $service['Service']['count'] * 1000; ?></td>
-                                <td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'deleteService', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'confirm' => __('Xác nhận xóa khỏi giỏ hàng?'), 'escape' => false)); ?></td>
+                                <td><?php echo $this->Number->currency('1000', '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.'));?></td>
+                                <td><?php echo $this->Number->currency('1000', '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></td>
+                                <td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'deleteService', $service['Service']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'escape' => false)); ?></td>
                             </tr>
-                            <?php $totalService = $totalService + $service['Service']['count'] * 1000;?>
+                            <?php $totalService = $totalService + 1000;?>
                             <?php endforeach;?>
                             <tr>
                                 <td colspan=2></td>
-                                <td><?php echo $totalService;?> VNĐ</td>
+                                <td><?php echo $this->Number->currency($totalService, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.'));?></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -55,16 +55,16 @@
                                     <?php echo $this->Form->input('count.',array('type'=>'number', 'label'=>false,
                                     'class'=>'form-control input-sm', 'value'=>$product['Product']['count']));?>
                                 </td>
-                                <td>$<?php echo '1000';?></td>
-                                <td>$<?php echo $product['Product']['count'] * 1000; ?></td>
-                                <td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'deleteProduct', $product['Product']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'confirm' => __('Xác nhận xóa khỏi giỏ hàng?'), 'escape' => false)); ?></td>
+                                <td><?php echo $this->Number->currency('1000', '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.'));;?></td>
+                                <td><?php echo $this->Number->currency($product['Product']['count'] * 1000, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></td>
+                                <td><?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'deleteProduct', $product['Product']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'escape' => false)); ?></td>
                             </tr>
                             <?php $totalProduct = $totalProduct + $product['Product']['count'] * 1000;?>
                             <?php endforeach;?>
              
                             <tr>
                                 <td colspan=3></td>
-                                <td><?php echo $totalProduct;?> VNĐ</td>
+                                <td><?php echo $this->Number->currency($totalProduct, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.'));?></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -83,8 +83,8 @@
                 <div class="panel">
                     <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item row non-margin"><div class="col-all-6">Tạm tính:</div><div class="col-all-6"><?php echo $totalService + $totalProduct; ?> VNĐ</div></li>
-                        <li class="list-group-item row non-margin"><div class="col-all-6">Thành tiền:</div><div class="col-all-6"><?php echo $totalService + $totalProduct; ?> VNĐ</div></li>
+                        <li class="list-group-item row non-margin"><div class="col-all-6">Tạm tính:</div><div class="col-all-6"><?php echo $this->Number->currency($totalService + $totalProduct, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></div></li>
+                        <li class="list-group-item row non-margin"><div class="col-all-6">Thành tiền:</div><div class="col-all-6"><?php echo $this->Number->currency( $totalService + $totalProduct, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></div></li>
                         <a class="btn btn-flat btn-warning col-all-12" onclick="alert('Thực hiện thanh toán');">Thanh toán</a>
                     </ul>
                     </div>

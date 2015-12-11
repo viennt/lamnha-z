@@ -112,7 +112,7 @@
 		</article>
 		<footer class="contain">
 			<div class="cover">
-					<?php echo $this->element('footer/sponsor'); ?>
+					<?php //echo $this->element('footer/sponsor'); ?>
 					<?php echo $this->element('footer/about'); ?>
 					<div class="copyright">
 						<div class="container">

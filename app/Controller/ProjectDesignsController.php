@@ -87,6 +87,6 @@ class ProjectDesignsController extends AppController {
 		} else {
 			$this->Session->setFlash(__('The project design could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect($this->referer());
 	}
 }

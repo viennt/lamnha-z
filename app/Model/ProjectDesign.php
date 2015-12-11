@@ -85,6 +85,29 @@ class ProjectDesign extends AppModel {
 		
 		return parent::beforeSave($options);
 	}
+
+/**
+ * Before Delete Callback
+ * @param array $options
+ * @return boolean
+ */
+	public function beforeDelete($cascade = true) {
+		$this->image = $this->find('first', 
+			array('conditions' => array('ProjectDesign.id' => $this->id), 'recursive' => 0, 'fields' => 'ProjectDesign.name')
+			);
+	}
+
+/**
+ * After Delete Callback
+ * @param array $options
+ * @return boolean
+ */
+	public function afterDelete() {
+		var_dump($this->image);
+		if(isset($this->image['ProjectDesign']['name'])){
+	    	unlink(WWW_ROOT . $this->uploadDir . DS . $this->image['ProjectDesign']['name']);
+		}
+	}
 	
 /**
  * Process the Upload

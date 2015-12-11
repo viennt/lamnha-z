@@ -37,7 +37,7 @@
 				<h2><?php echo h($service['ServiceCategory']['name']); ?></h2>
 				<div class="info">
 					<div class="price col-sx-12">
-						<?php echo '200.000đ'; ?>
+						<?php echo $this->Number->currency('200000', '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?>
 					</div>
 					<div class="row">
 						<div class="line col-all-5">Nhà cung cấp:</div>

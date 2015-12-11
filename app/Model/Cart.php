@@ -64,22 +64,12 @@ class Cart extends AppModel {
         $allProducts = $this->readProduct();
         $allServices = $this->readService();
          
-        if (count($allProducts) < 1 && count($allServices) < 1) {
+        $count = count($allProducts) + count($allServices);
+
+        if ($count < 1) {
             return 0;
         }
-        
-        $count = 0;
-        if (count($allProducts) >= 1 ){
-            foreach ($allProducts as $i) {
-                $count = $count + $i;
-            }
-        }
-        if (count($allServices) >= 1 ){
-            foreach ($allServices as $i) {
-                $count = $count + $i;
-            }
-        }
-         
+
         return $count;
     }
 

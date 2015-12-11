@@ -28,7 +28,7 @@ class CartsController extends AppController {
 		if ($this->request->is('post')) {
 			if (!empty($this->request->data)) {
 				$cart = array();
-				foreach ($this->request->data['Cart']['count'] as $index=>$count) {
+				foreach ($this->request->data['Cart']['count'] as $index => $count) {
 					if ($count > 0) {
 						$productId = $this->request->data['Cart']['product_id'][$index];
 						$cart[$productId] = $count;
@@ -46,7 +46,9 @@ class CartsController extends AppController {
 			throw new NotFoundException(__('Invalid news'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		// Do something here
+		$carts = $this->Cart->readProduct();
+		unset($carts[$id]);
+		$this->Cart->saveProduct($carts);
 		$this->redirect(array('controller'=>'gio-hang.html'));
 	}
 
@@ -64,7 +66,9 @@ class CartsController extends AppController {
 			throw new NotFoundException(__('Invalid news'));
 		}
 		$this->request->allowMethod('post', 'delete');
-		// Do something here
+		$carts = $this->Cart->readService();
+		unset($carts[$id]);
+		$this->Cart->saveService($carts);
 		$this->redirect(array('controller'=>'gio-hang.html'));
 	}
 

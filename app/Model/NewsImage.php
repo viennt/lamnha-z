@@ -86,7 +86,6 @@ class NewsImage extends AppModel {
 		
 		return parent::beforeSave($options);
 	}
-	
 
 /**
  * Before Delete Callback

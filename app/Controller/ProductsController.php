@@ -64,6 +64,7 @@ class ProductsController extends AppController {
  *
  * @throws NotFoundException
  * @param string $id
+ * @param string $slug
  * @return void
  */
 	public function manage_view($id = null, $slug = null) {

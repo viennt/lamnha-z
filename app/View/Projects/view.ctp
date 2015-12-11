@@ -68,7 +68,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
 				<h2><?php echo h($product['ProductCategory']['name']); ?></h2>
 				<div class="info">
-					<div class="price col-sx-12"><?php echo h($project['Project']['budget']); ?></div>
+					<div class="price col-sx-12"><?php echo $this->Number->currency($project['Project']['budget'], '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></div>
 					<div class="row">
 						<div class="line col-all-5">Người tạo:</div>
 						<div class="line col-all-7"><?php echo h($project['User']['id']); ?></div>

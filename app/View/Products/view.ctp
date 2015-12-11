@@ -37,7 +37,7 @@
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
 				<h2><?php echo $product['ProductCategory']['name']; ?></h2>
 				<div class="info">
-					<div class="price col-sx-12">200.000đ</div>
+					<div class="price col-sx-12"><?php echo $this->Number->currency('200000', '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></div>
 					<div class="row">
 						<div class="line col-all-5">Nhà cung cấp:</div>
 						<div class="line col-all-7">Công ty ABC</div>
@@ -58,7 +58,7 @@
 						<div class="line col-all-5">Đánh giá:</div>
 						<div class="line col-all-7">* * * * *</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="line col-all-5">S.lượng (<?php echo h($product['Product']['unit']); ?>):</div>
 						<div class="line row col-all-7">
 							<div class="col-all-9">
@@ -66,7 +66,7 @@
 							</div>
 							<input id="quantityVal" class="form-control non-left non-right col-all-3" type="number" name="quantity" min="1" max="20" value="1">
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="row">
 					<div class="col-all-12">
@@ -78,7 +78,21 @@
 				</div>
 			</div>
 			<div class="col-all-12">
+			<hr>
 				<?php echo $product['Product']['description']; ?>
+			</div>
+			<div class="col-all-12">
+			<hr>
+				<div class="row">
+					<?php foreach ($product['ProductVideo'] as $productVideo): ?>
+						<div class="col-sx-12 col-sm-12 col-md-6 col-lg-6">
+							<div class="thumbnail ">
+								<div class="embed-responsive embed-responsive-16by9">
+								<iframe src=<?php echo 'https://www.youtube.com/embed/'.$productVideo['code'] ?> frameborder="0" allowfullscreen></iframe></div>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -125,38 +139,3 @@ var changeImage = function(subImg) {
 	$("#mainImg").magnify();
 };
 </script>
-
-
-<div class="related">
-	<h3><?php echo __('Related Product Videos'); ?></h3>
-	<?php if (!empty($product['ProductVideo'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Code'); ?></th>
-		<th><?php echo __('Description'); ?></th>
-		<th><?php echo __('Product Id'); ?></th>
-		<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($product['ProductVideo'] as $productVideo): ?>
-		<tr>
-			<td><?php echo $productVideo['id']; ?></td>
-			<td><?php echo $productVideo['code']; ?></td>
-			<td><?php echo $productVideo['description']; ?></td>
-			<td><?php echo $productVideo['product_id']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'product_videos', 'action' => 'view', $productVideo['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'product_videos', 'action' => 'edit', $productVideo['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'product_videos', 'action' => 'delete', $productVideo['id']), array(), __('Are you sure you want to delete # %s?', $productVideo['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-	<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Product Video'), array('controller' => 'product_videos', 'action' => 'add')); ?> </li>
-		</ul>
-	</div>
-</div>

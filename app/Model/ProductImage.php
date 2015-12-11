@@ -66,11 +66,6 @@ class ProductImage extends AppModel {
  * @return boolean
  */
 	public function beforeValidate($options = array()) {
-		// ignore empty file - causes issues with form validation when file is empty and optional
-		// if (!empty($this->data[$this->alias]['name']['error']) && $this->data[$this->alias]['name']['error']==4 && $this->data[$this->alias]['name']['size']==0) {
-		// 	unset($this->data[$this->alias]['name']);
-		// }
-
 		return parent::beforeValidate($options);
 	}
 
@@ -89,6 +84,29 @@ class ProductImage extends AppModel {
 		};
 		
 		return parent::beforeSave($options);
+	}
+
+/**
+ * Before Delete Callback
+ * @param array $options
+ * @return boolean
+ */
+	public function beforeDelete($cascade = true) {
+		$this->image = $this->find('first', 
+			array('conditions' => array('ProductImage.id' => $this->id), 'recursive' => 0, 'fields' => 'ProductImage.name')
+			);
+	}
+
+/**
+ * After Delete Callback
+ * @param array $options
+ * @return boolean
+ */
+	public function afterDelete() {
+		var_dump($this->image);
+		if(isset($this->image['ProductImage']['name'])){
+	    	unlink(WWW_ROOT . $this->uploadDir . DS . $this->image['ProductImage']['name']);
+		}
 	}
 	
 /**
