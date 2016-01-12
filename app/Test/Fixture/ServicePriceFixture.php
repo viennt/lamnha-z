@@ -32,8 +32,8 @@ class ServicePriceFixture extends CakeTestFixture {
 		array(
 			'id' => '',
 			'price' => 1,
-			'started' => '2015-09-14 17:46:48',
-			'finished' => '2015-09-14 17:46:48',
+			'started' => '2015-12-11 18:14:24',
+			'finished' => '2015-12-11 18:14:24',
 			'service_id' => ''
 		),
 	);

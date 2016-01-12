@@ -82,11 +82,14 @@ class ProjectsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->loadModel('ProjectsHasProduct');
 		if (!$this->Project->exists($id)) {
 			throw new NotFoundException(__('Invalid project'));
 		}
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
 		$this->set('project', $this->Project->find('first', $options));
+		$options = array('conditions' => array('ProjectsHasProduct.project_id' => $id));
+		$this->set('hasproducts', $this->ProjectsHasProduct->find('all', $options));
 	}
 
 /**

@@ -17,6 +17,11 @@
 				array('action' => 'edit', $service['Service']['id']),
 				array('class' => 'btn btn-sm btn-success btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Chỉnh sửa')
 				);?>
+			<?php echo $this->Html->link(
+				'<span class="glyphicon glyphicon-usd"></span>',
+				array('controller' => 'servicePrices', 'action' => 'index', $service['Service']['id']),
+				array('class' => 'btn btn-sm btn-info btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Giá')
+				);?>
 			<?php echo $this->Form->postLink(
 				'<span class="glyphicon glyphicon-remove"></span>',
 				array('action' => 'delete', $service['Service']['id']),

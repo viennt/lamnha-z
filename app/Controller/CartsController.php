@@ -14,7 +14,42 @@ App::uses('AppController', 'Controller');
  */
 class CartsController extends AppController {
 
-	public $uses = array('Product', 'Service', 'Cart');
+	public $uses = array('Product', 'ProductPrice', 'Service', 'Cart', 'Project', 'ProjectsHasProduct');
+
+/**
+ * addProduct Method
+ * @param int $productId
+ */
+    public function purchase() {
+		if ($this->request->is('post')) {
+			if (!empty($this->request->data)) {
+				$carts = $this->Cart->readProduct();
+				$projectId = $this->request->data['Cart']['project_id'];
+				if (null!=$carts) {
+					$ProjectsHasProduct = array();
+					foreach ($carts as $productId => $count) {
+						$price = $this->ProductPrice->find('first', array(
+							'conditions' => array('ProductPrice.product_id' => $productId, 'ProductPrice.finished IS NULL'),
+							'recursive' => -1,
+							));
+						$item['ProjectsHasProduct']['project_id'] = $projectId;
+						$item['ProjectsHasProduct']['product_id'] = $productId;
+						$item['ProjectsHasProduct']['quantity'] = $count;
+						$item['ProjectsHasProduct']['price'] = $price['ProductPrice']['price'];
+						$item['ProjectsHasProduct']['date'] = date("Y-n-j");
+						$ProjectsHasProduct[] = $item;
+			        }
+					if ($this->ProjectsHasProduct->saveMany($ProjectsHasProduct)) {
+						$this->Cart->saveProduct(null);
+						$this->Session->setFlash(__('Thanh toan thanh cong.'));
+						return $this->redirect(array('action' => 'view'));
+					} else {
+						$this->Session->setFlash(__('Thanh toan khong thanh cong.'));
+					}
+				}
+			}
+		}
+    }
 
 	public function addProduct() {
 		$this->autoRender = false;
@@ -91,6 +126,10 @@ class CartsController extends AppController {
 				$services[] = $service;
 	        }
 		}
-		$this->set(compact('products', 'services'));
+		$projects = $this->Project->find('list', array(
+			'conditions' => array('Project.user_id' => $this->Session->read('Auth.User.id')),
+			'recursive' => -1,
+			));
+		$this->set(compact('products', 'services', 'projects'));
 	}
 }

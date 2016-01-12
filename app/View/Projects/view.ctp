@@ -1,3 +1,4 @@
+<?php echo $this->Html->css('AdminLTE.min'); ?>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
 function initialize() {
@@ -181,6 +182,41 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		</div>
 	</div>
 	<div class="col-lg-4" style="border-left: 1px dashed #E5E5E5;">
+		<section class="content">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<!-- The time line -->
+					<ul class="timeline">
+						<li class="time-label">
+							<span class="bg-yellow">
+							Hoạt động
+							</span>
+						</li>
+						<?php foreach ($hasproducts as $product): ?>
+						<li>
+							<i class="glyphicon glyphicon-shopping-cart bg-aqua"></i>
+							<div class="timeline-item">
+								<span class="time"><i class="glyphicon glyphicon-time"></i><?php echo $product['ProjectsHasProduct']['date']; ?></span>
+								<h3 class="timeline-header no-border">Đã mua sản phẩm: 
+								<?php echo $this->Html->link($product['Product']['name'], array('controller' => 'products', 'action' => 'view', 'id' => $product['Product']['id'], 'slug' => $this->Common->convertViToEn($product['Product']['name'], true))); ?>
+								</h3>
+								<h3 class="timeline-header no-border">
+									Giá: <?php echo $this->Number->currency($product['ProjectsHasProduct']['price'], '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?><br>
+									Số lượng: <?php echo $product['ProjectsHasProduct']['quantity']; ?>
+								</h3>
+							</div>
+						</li>
+						<?php endforeach; ?>
+						<!-- END timeline item -->
+						<!-- timeline item -->
+						<li>
+							<i class="glyphicon glyphicon-time bg-gray"></i>
+						</li>
+					</ul>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</section>
 		<div class="comment">
 			<div class="row">
 				<div class="form-group col-all-12">

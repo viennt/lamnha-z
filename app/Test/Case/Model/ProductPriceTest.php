@@ -14,7 +14,7 @@ class ProductPriceTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.product_price',
-		'app.users_has_products'
+		'app.products'
 	);
 
 /**

@@ -103,6 +103,7 @@
 			<section class="content" id="load">
 				<?php echo $this->Session->flash(); ?>
 				<?php echo $this->fetch('content'); ?>
+				<?php //echo $this->element('sql_dump'); ?>
 			</section>
 		</div>
 		<!-- /.content-wrapper -->
@@ -114,7 +115,6 @@
 			<strong>Copyright © 2014-2015.</strong> All rights reserved.
 		</footer>
 	</div>
-	
 	<!-- Bootstrap 3.3.5 -->
 	<?php echo $this->Html->script('bootstrap.min.js'); ?>
 

@@ -85,7 +85,12 @@
                     <ul class="list-group">
                         <li class="list-group-item row non-margin"><div class="col-all-6">Tạm tính:</div><div class="col-all-6"><?php echo $this->Number->currency($totalService + $totalProduct, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></div></li>
                         <li class="list-group-item row non-margin"><div class="col-all-6">Thành tiền:</div><div class="col-all-6"><?php echo $this->Number->currency( $totalService + $totalProduct, '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?></div></li>
-                        <a class="btn btn-flat btn-warning col-all-12" onclick="alert('Thực hiện thanh toán');">Thanh toán</a>
+                        <?php echo $this->Form->create('Cart', array('url'=> array('action' => 'purchase')));?>
+                            <div class="box-body"><?php
+                                echo $this->Form->input('project_id', array('label'=>'', 'class'=>'form-control', 'options' => $projects));
+                            ?></div>
+                        <?php $options = array('label' => 'Thanh toán','class' => array('input' => 'btn btn-flat btn-warning col-all-12'));
+                        echo $this->Form->end($options); ?>
                     </ul>
                     </div>
                 </div>

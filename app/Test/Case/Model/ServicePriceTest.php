@@ -14,7 +14,23 @@ class ServicePriceTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.service_price',
-		'app.service'
+		'app.service',
+		'app.user',
+		'app.group',
+		'app.profile',
+		'app.contractor',
+		'app.news',
+		'app.news_category',
+		'app.news_image',
+		'app.project',
+		'app.project_category',
+		'app.project_design',
+		'app.project_image',
+		'app.product',
+		'app.product_category',
+		'app.product_image',
+		'app.product_video',
+		'app.service_category'
 	);
 
 /**

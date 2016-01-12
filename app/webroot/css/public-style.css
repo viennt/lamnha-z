@@ -70,8 +70,9 @@ a:link{text-decoration: none;}
 #cssmenu ul > li.has-sub.open > ul > li.has-sub.open > ul > li > a{background-color:#FCFCFC}
 #cssmenu ul > li.has-sub > a:before{position:absolute;right:22px;top:15px;display:block;content:"›";-webkit-transition:all 0.1s ease-out;-moz-transition:all 0.1s ease-out;-ms-transition:all 0.1s ease-out;-o-transition:all 0.1s ease-out;transition:all 0.1s ease-out}
 #cssmenu ul > li.has-sub.open > a:before{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg)}
-#cssmenu ul li a{padding:14px 22px;cursor:pointer;z-index:2;font-size:14px;text-decoration:none;color:#000000;background:#FFFFFF;border-bottom:1px solid #E5E5E5;-webkit-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease}
-
+#cssmenu ul li a{padding:12px 22px;cursor:pointer;z-index:2;font-size:14px;text-decoration:none;color:#000000;background:#FFFFFF;border-bottom:1px solid #E5E5E5;-webkit-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease}
+#cssmenu ul > li > ul > li a{padding:12px 36px}
+#cssmenu ul > li > ul > li > ul > li a{padding:12px 50px}
 
 /**************************** CONTENT ***************************/
 /****************************************************************/
