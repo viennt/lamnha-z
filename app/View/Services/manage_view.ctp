@@ -1,3 +1,10 @@
+<?php // pre process
+	foreach ($service["ServicePrice"] as $key => $value) {
+		if (!isset($value["finished"])) {
+			$service['Service']['price'] = $value["price"];
+		}
+	}
+?>
 <div class="view_page box box-primary flat" style="margin: 0">
 	<div class="box-header with-border">
 		<h3 class="box-title">Dịch vụ: <?php echo h($service['Service']['name']); ?></h3>
@@ -35,19 +42,42 @@
 				<div class="detail col-all-12">
 					<h4>THÔNG TIN DỊCH VỤ: </h4>
 					<div class="row">
-						<div class="col-all-5">Giá:</div>
-						<div class="col-all-7"><?php //echo $service['Service']['price']; ?></div>
-					</div>
-					<div class="row">
-						<div class="col-all-5">Nhà cung cấp:</div>
-						<div class="col-all-7">
-							<?php echo $this->Html->link($service['Service']['user_id'], array('controller' => 'users', 'action' => 'view', $service['Service']['user_id'])); ?>
-						</div>
+						<div class="col-all-5">Tình trạng:</div>
+						<div class="col-all-7"><?php 
+							if($service['Service']['published'] == '1'):
+								echo '<div class="label label-success">Công khai</div> ';
+								echo $this->Form->postLink('Ẩn dịch vụ',
+									array('action' => 'changePublished', $service['Service']['id'], $service['Service']['published']),
+									array('class' => 'label label-default', 'escape' => false)
+									);
+							else:
+								echo $this->Form->postLink('Công khai dịch vụ',
+									array('action' => 'changePublished', $service['Service']['id'], $service['Service']['published']),
+									array('class' => 'label label-default', 'escape' => false)
+									);
+								echo ' <div class="label label-danger">Đang ẩn</div>';
+							endif; 
+						?></div>
 					</div>
 					<div class="row">
 						<div class="col-all-5">Danh mục:</div>
 						<div class="col-all-7">
 							<?php echo $this->Html->link($service['ServiceCategory']['name'], array('controller' => 'productCategories', 'action' => 'view', $service['ServiceCategory']['id'])); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Giá bán:</div>
+						<div class="col-all-7"><?php 
+							if(!isset($service['Service']['price']))
+								echo '<span style="font-weight: bold; color: #D73925">', 'Chưa có giá', '</span>';
+							else
+								echo $this->Number->currency($service['Service']['price'], '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.'));
+						?></div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Nhà cung cấp:</div>
+						<div class="col-all-7">
+							<?php echo $this->Html->link($service['Service']['user_id'], array('controller' => 'users', 'action' => 'view', $service['Service']['user_id'])); ?>
 						</div>
 					</div>
 					<div class="row">

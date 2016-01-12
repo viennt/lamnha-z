@@ -11,6 +11,7 @@
 	array('#'),
 	array('class' => 'hid sidebar-toggle', 'id' => 'busy-indicator', 'escape' => false)
 	); ?>
+<?php $notifications = $this->requestAction('/menus/notifications'); ?>
 <!-- Navbar Right Menu -->
 <div class="navbar-custom-menu">
 	<ul class="nav navbar-nav">
@@ -18,59 +19,49 @@
 		<li class="dropdown notifications-menu">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<span class="glyphicon glyphicon-bell"></span>
-				<span class="label label-danger">3</span>
+				<span class="label label-danger"><?php echo count($notifications); ?></span>
 			</a>
 			<ul class="dropdown-menu">
-				<li class="header">Bạn có 3 thông báo</li>
+				<li class="header">Bạn có <?php echo count($notifications); ?> thông báo</li>
 				<li>
 				<!-- inner menu: contains the actual data -->
 				<ul class="menu">
-					<li>
-					<a href="#">
-						<i class="ion ion-ios-people info"></i> Hoàng Văn đã mua sản phẩn của bạn
-					</a>
-					</li>
-					<li>
-					<a href="#">
-						<i class="ion ion-ios-people info"></i> Hoàng Văn đã nhận xét sản phẩn của bạn
-					</a>
-					</li>
-					<li>
-					<a href="#">
-						<i class="ion ion-ios-people info"></i> Hoàng Văn đã nhận xét sản phẩn của bạn
-					</a>
-					</li>
+					<?php foreach($notifications as $notification): ?>
+						<li><a href="#" style="white-space: normal;">
+							<?php echo $notification["Notification"]["type"]; ?>
+						</a></li>
+					<?php endforeach; ?>
 				</ul>
 				</li>
-				<li class="footer"><a href="#">View all</a></li>
+				<!-- <li class="footer"><a href="#">View all</a></li> -->
 			</ul>
 		</li>
 		<!-- Tasks: style can be found in dropdown.less -->
 		<li class="dropdown tasks-menu">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<span class="glyphicon glyphicon-flag"></span>
-				<span class="label label-danger">1 </span>
+				<span class="label label-danger"></span>
 			</a>
 			<ul class="dropdown-menu">
 				<li class="header">You have 1 tasks</li>
 				<li>
-				<!-- inner menu: contains the actual data -->
-				<ul class="menu">
-				<li><!-- Task item -->
-				<a href="#">
-				<h3>
-				Design some buttons
-				<small class="pull-right">20%</small>
-				</h3>
-				<div class="progress xs">
-				<div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-				<span class="sr-only">20% Complete</span>
-				</div>
-				</div>
-				</a>
-				</li><!-- end task item -->
-				...
-				</ul>
+					<!-- inner menu: contains the actual data -->
+					<ul class="menu">
+					<li><!-- Task item -->
+						<a href="#">
+							<h3>
+							Design some buttons
+							<small class="pull-right">20%</small>
+							</h3>
+							<div class="progress xs">
+							<div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+							<span class="sr-only">20% Complete</span>
+							</div>
+							</div>
+						</a>
+					</li><!-- end task item -->
+					...
+					</ul>
 				</li>
 				<li class="footer">
 				<a href="#">View all tasks</a>

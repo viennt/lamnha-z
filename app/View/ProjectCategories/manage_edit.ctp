@@ -7,41 +7,10 @@
 		)); ?>
 		<div class="box-body"><?php
 			echo $this->Form->input('id', array('class'=>'form-control'));
-			echo $this->Form->input('name', array('class'=>'form-control'));
-			echo $this->Form->input('description', array('class'=>'form-control'));
-			echo $this->Form->input('parent_id', array('class'=>'form-control', 'options' => $parentProjectCategories));
+			echo $this->Form->input('name', array('class'=>'form-control', 'label' => 'Tên'));
+			echo $this->Form->input('description', array('class'=>'form-control', 'label' => 'Mô tả'));
+			echo $this->Form->input('parent_id', array('class'=>'form-control', 'options' => $parentProjectCategories, 'label' => 'Danh mục cha'));
 		?></div>
 	<?php $options = array('label' => 'Submit', 'div' => array('class' => 'box-footer'), 'class' => array('input' => 'btn btn-primary btn-flat btn-sm col-lg-12'));
 	echo $this->Form->end($options); ?>
 </div>
-
-<script type="text/javascript">
-$(document).ready(function () {
-	var actions = '<li class=\"header\">';
-	actions += '<?php echo __("ACTIONS"); ?>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Form->postLink("<i class=\"fa fa-circle-o text-red\"></i> <span>Delete</span>", array("action" => "delete", $this->Form->value("ProjectCategory.id")), array("escape" => false), __("Are you sure you want to delete # %s?", $this->Form->value("ProjectCategory.id"))); ?>';
-	actions += '</li>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Project Categories</span>", array("action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Project Categories</span>", array("controller" => "project_categories", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Parent Project Category</span>", array("controller" => "project_categories", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>List Projects</span>", array("controller" => "projects", "action" => "index"), array("escape" => false)); ?>';
-	actions += '</li>';
-	actions += '<li>';
-	actions += '<?php echo $this->Html->link("<i class=\"fa fa-circle-o text-aqua\"></i> <span>New Project</span>", array("controller" => "projects", "action" => "add"), array("escape" => false)); ?>';
-	actions += '</li>';
-	$("li#action")
-		.after(actions);
-
-});
-</script>

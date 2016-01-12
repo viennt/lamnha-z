@@ -1,4 +1,11 @@
-<!--<link rel="stylesheet" type="text/css" href=<?php echo $this->webroot.'css/magnify.css'; ?> media='all'> -->
+<?php // pre process
+	$service['Service']['price'] = '0';
+	foreach ($service["ServicePrice"] as $key => $value) {
+		if (!isset($value["finished"])) {
+			$service['Service']['price'] = $value["price"];
+		}
+	}
+?>
 <div class="publicView row" style="margin: 0">
 	<div class="name col-all-12"><h1><?php echo h($service['Service']['name']); ?></h1><hr></div>
 	<div class="col-lg-8" style="border-right: 1px dashed #E5E5E5">
@@ -36,9 +43,9 @@
 			<div class="detail col-sx-2 col-sm-12 col-md-7 col-lg-7">
 				<h2><?php echo h($service['ServiceCategory']['name']); ?></h2>
 				<div class="info">
-					<div class="price col-sx-12">
-						<?php echo $this->Number->currency('200000', '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); ?>
-					</div>
+					<div class="price col-sx-12"><?php 
+						echo $this->Number->currency($service['Service']['price'], '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); 
+					?></div>
 					<div class="row">
 						<div class="line col-all-5">Nhà cung cấp:</div>
 						<div class="line col-all-7">

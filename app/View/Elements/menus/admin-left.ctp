@@ -28,6 +28,12 @@
                     array('controller'=> 'serviceCategories', 'action' => 'index', 'manage' => true),
                     array('class' => 'sidebar-toggle', 'escape' => false)
                     );?></li>
+                <li <?php if(strtolower($this->request->controller) === 'contractorcategories') echo 'class="active"';?>>
+                <?php echo $this->Html->link(
+                    '<span class="glyphicon glyphicon-triangle-right"></span> Thầu',
+                    array('controller'=> 'contractorCategories', 'action' => 'index', 'manage' => true),
+                    array('class' => 'sidebar-toggle', 'escape' => false)
+                    );?></li>
                 <li <?php if(strtolower($this->request->controller) === 'newscategories') echo 'class="active"';?>>
                 <?php echo $this->Html->link(
                     '<span class="glyphicon glyphicon-triangle-right"></span> Tin tức',
@@ -69,9 +75,9 @@
         <li><a href="#">
             <span class="glyphicon glyphicon-check"></span> Phân quyền
             </a></li>
-        <li><a href="#">
+        <!-- <li><a href="#">
             <span class="glyphicon glyphicon-stats"></span> Thống kê
-            </a></li>
+            </a></li> -->
     </ul>
 </li>
 <li class="treeview">
@@ -79,10 +85,12 @@
         <span class="glyphicon glyphicon-home"></span>
         <span>Danh mục dự án</span>
     </a>
-    <ul class="treeview-menu">
-        <li><a href="#"><span class="glyphicon glyphicon-menu-right"></span> Menu v1</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-menu-right"></span> Menu v2</a></li>
-    </ul>
+    <?php 
+    $root_id = 1;
+    $categoryName = 'project';
+    $data = $this->requestAction('/menus/'.strtolower($categoryName).'Cats');
+    echo $this->Common->create_adminlte_menu($data, $root_id, $categoryName.'Category', strtolower($categoryName).'Categories', 'view');
+    ?>
 </li>
 <li class="treeview">
     <a href="#">
@@ -113,8 +121,10 @@
         <span class="glyphicon glyphicon-bullhorn"></span>
         <span>Danh mục tin tức</span>
     </a>
-    <ul class="treeview-menu">
-        <li><a href="#"><span class="glyphicon glyphicon-menu-right"></span> Menu v1</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-menu-right"></span> Menu v2</a></li>
-    </ul>
+    <?php 
+    $root_id = 1;
+    $categoryName = 'news';
+    $data = $this->requestAction('/menus/'.strtolower($categoryName).'Cats');
+    echo $this->Common->create_adminlte_menu($data, $root_id, $categoryName.'Category', strtolower($categoryName).'Categories', 'view');
+    ?>
 </li>

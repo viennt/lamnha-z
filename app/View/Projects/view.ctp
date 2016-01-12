@@ -80,15 +80,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					</div>
 					<div class="row">
 						<div class="line col-all-5">Ngày khởi công:</div>
-						<div class="line col-all-7"><?php echo date("d/m/y", strtotime($project['Project']['started'])); ?></div>
+						<div class="line col-all-7"><?php echo date("d-m-Y", strtotime($project['Project']['started'])); ?></div>
 					</div>
 					<div class="row">
 						<div class="line col-all-5">Dự kiến hoàn thành:</div>
-						<div class="line col-all-7"><?php echo date("d/m/y", strtotime($project['Project']['expected'])); ?></div>
+						<div class="line col-all-7"><?php echo date("d-m-Y", strtotime($project['Project']['expected'])); ?></div>
 					</div>
 					<div class="row">
 						<div class="line col-all-5">Ngày hoàn thành:</div>
-						<div class="line col-all-7"><?php echo date("d/m/y", strtotime($project['Project']['finished'])); ?></div>
+						<div class="line col-all-7"><?php echo date("d-m-Y", strtotime($project['Project']['finished'])); ?></div>
 					</div>
 					<div class="row">
 						<div class="line col-all-5">Tổng chi phí:</div>
@@ -189,15 +189,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					<!-- The time line -->
 					<ul class="timeline">
 						<li class="time-label">
-							<span class="bg-yellow">
-							Hoạt động
-							</span>
+							<span class="bg-yellow"> Hoạt động gần đây </span>
 						</li>
 						<?php foreach ($hasproducts as $product): ?>
 						<li>
 							<i class="glyphicon glyphicon-shopping-cart bg-aqua"></i>
 							<div class="timeline-item">
-								<span class="time"><i class="glyphicon glyphicon-time"></i><?php echo $product['ProjectsHasProduct']['date']; ?></span>
+								<span class="time"><i class="glyphicon glyphicon-time"></i> <?php echo date("d-m-Y", strtotime($product['ProjectsHasProduct']['date'])); ?> </span>
 								<h3 class="timeline-header no-border">Đã mua sản phẩm: 
 								<?php echo $this->Html->link($product['Product']['name'], array('controller' => 'products', 'action' => 'view', 'id' => $product['Product']['id'], 'slug' => $this->Common->convertViToEn($product['Product']['name'], true))); ?>
 								</h3>

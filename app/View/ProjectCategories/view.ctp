@@ -22,4 +22,3 @@
 		<?php endforeach; ?>
 	</div>
 </div>
-<script src=<?php echo $this->webroot,'plugins/easyui/jquery.easyui.min.js'; ?>></script>

@@ -123,6 +123,25 @@ class ProductsController extends AppController {
 	}
 
 /**
+ * change status method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function manage_changePublished($id = null, $published = null) {
+		if (!$this->Product->exists($id)) {
+			throw new NotFoundException(__('Invalid product'));
+		}
+		$this->request->allowMethod('post');
+		$this->Product->updateAll(
+			array('Product.published' => ($published + 1) % 2),
+			array('Product.id' => $id)
+		);
+		return $this->redirect(array('action' => 'view', $id));
+	}
+
+/**
  * delete method
  *
  * @throws NotFoundException
@@ -155,6 +174,10 @@ class ProductsController extends AppController {
 			throw new NotFoundException(__('Invalid product'));
 		}
 		$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
-		$this->set('product', $this->Product->find('first', $options));
+		$product = $this->Product->find('first', $options);
+		if ($product["Product"]["published"] == '0') {
+			throw new NotFoundException(__('Invalid product'));
+		}
+		$this->set('product', $product);
 	}
 }

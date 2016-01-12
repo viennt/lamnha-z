@@ -5,7 +5,7 @@
 			<?php echo $this->Html->link(
 				'<span class="glyphicon glyphicon-list-alt"></span>',
 				array('controller'=> 'news', 'action' => 'index'),
-				array('class' => 'btn btn-sm btn-default btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách sản phẩm')
+				array('class' => 'btn btn-sm btn-default btn-flat', 'escape' => false, 'data-toggle'=> 'tooltip', 'data-original-title'=> 'Danh sách tin tức')
 				);?>
 			<?php echo $this->Html->link(
 				'<span class="glyphicon glyphicon-eye-open"></span>',
@@ -30,21 +30,39 @@
 				<div class="detail col-all-12">
 					<h4>THÔNG TIN SẢN PHẨM: </h4>
 					<div class="row">
+						<div class="col-all-5">Tình trạng:</div>
+						<div class="col-all-7"><?php 
+							if($news['News']['published'] == '1'):
+								echo '<div class="label label-success">Công khai</div> ';
+								echo $this->Form->postLink('Ẩn tin tức',
+									array('action' => 'changePublished', $news['News']['id'], $news['News']['published']),
+									array('class' => 'label label-default', 'escape' => false)
+									);
+							else:
+								echo $this->Form->postLink('Công khai tin tức',
+									array('action' => 'changePublished', $news['News']['id'], $news['News']['published']),
+									array('class' => 'label label-default', 'escape' => false)
+									);
+								echo ' <div class="label label-danger">Đang ẩn</div>';
+							endif; 
+						?></div>
+					</div>
+					<div class="row">
 						<div class="col-all-5">Danh mục:</div>
 						<div class="col-all-7">
 							<?php echo $this->Html->link($news['NewsCategory']['name'], array('controller' => 'news_categories', 'action' => 'view', $news['NewsCategory']['id'])); ?>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-all-5">Ngày đăng:</div>
-						<div class="col-all-7">
-							<?php echo h($news['News']['created']); ?>
-						</div>
-					</div>
-					<div class="row">
 						<div class="col-all-5">Người đăng:</div>
 						<div class="col-all-7">
 							<?php echo h($news['News']['user_id']); ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Ngày đăng:</div>
+						<div class="col-all-7">
+							<?php echo h($news['News']['created']); ?>
 						</div>
 					</div>
 					<div class="row">

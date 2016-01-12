@@ -70,7 +70,7 @@ class NewsController extends AppController {
 		if (!$this->News->exists($id)) {
 			throw new NotFoundException(__('Invalid news'));
 		}
-		$options = array('conditions' => array('news.' . $this->News->primaryKey => $id));
+		$options = array('conditions' => array('News.' . $this->News->primaryKey => $id));
 		$this->set('news', $this->News->find('first', $options));
 	}
 
@@ -113,12 +113,32 @@ class NewsController extends AppController {
 				$this->Session->setFlash(__('The news could not be saved. Please, try again.'));
 			}
 		} else {
-			$options = array('conditions' => array('news.' . $this->News->primaryKey => $id));
+			$options = array('conditions' => array('News.' . $this->News->primaryKey => $id));
 			$this->request->data = $this->News->find('first', $options);
 		}
 		$user_id = $this->Auth->User('id');
 		$newsCategories = $this->News->NewsCategory->generateTreeList(null, null, null, '___');
 		$this->set(compact('user_id', 'newsCategories'));
+	}
+
+/**
+ * change status method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function manage_changePublished($id = null, $published = null) {
+		$this->News->id = $id;
+		if (!$this->News->exists()) {
+			throw new NotFoundException(__('Invalid news'));
+		}
+		$this->request->allowMethod('post');
+		$this->News->updateAll(
+			array('News.published' => ($published + 1) % 2),
+			array('News.id' => $id)
+		);
+		return $this->redirect(array('action' => 'view', $id));
 	}
 
 /**

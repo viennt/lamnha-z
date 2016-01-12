@@ -109,4 +109,25 @@ class MenusController extends AppController {
         $this->set('data', $NewsData);
         return $NewsData;
     }
+
+/**
+ * notifications method
+ *
+ * @return NotifyData
+ */
+    function notifications() {
+        if(!is_null($this->Session->read('Auth.User.id'))) {
+            $this->loadModel('Notification');
+            $NotifyData = $this->Notification->find('all', 
+                array(
+                    'conditions' => array('Notification.users_id' => $this->Session->read('Auth.User.id')),
+                    'recursive' => -1,
+                    'order' => array('Notification.id DESC'),
+                    )
+                );
+            return $NotifyData;
+        } else {
+            return 'null';
+        }
+    }
 }

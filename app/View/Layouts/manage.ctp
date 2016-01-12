@@ -1,25 +1,17 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Layouts
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
+/* -----------------------------------------------------------------------------------------
+   LamnhA-Z - http://www.lamnha-z.com
+   -----------------------------------------------------------------------------------------
+   Copyright (c) 2015 LamNhaZ Ltd.
+   License - http://www.lamnha-z.com/license.html
+   ---------------------------------------------------------------------------------------*/
+
 
 ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 	<meta charset="UTF-8">
-    <meta property="og:locale" content="vn_VN">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -29,8 +21,8 @@
 	<link rel="alternate" href="http://www.lamnha-z.com/" hreflang="vi-vn" />
 	<title>Home Builder - Xây nhà Trực tuyến Giá rẻ</title>
 
-	<?php echo $this->Html->meta('icon');?>
-	<?php echo $this->fetch('meta');?>
+	<link href="/lamnha-z/admin.ico" type="image/x-icon" rel="icon">
+	<link href="/lamnha-z/admin.ico" type="image/x-icon" rel="shortcut icon">
 
 	<!-- Bootstrap -->
 	<?php echo $this->Html->css('bootstrap.min'); ?>

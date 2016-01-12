@@ -32,6 +32,7 @@ class CartsController extends AppController {
 							'conditions' => array('ProductPrice.product_id' => $productId, 'ProductPrice.finished IS NULL'),
 							'recursive' => -1,
 							));
+						$this->Cart->query('INSERT INTO `notifications`(`type`, `item_id`, `users_id`) SELECT CONCAT("Yêu cầu mua sản phẩm: ", `name`), 0, `user_id` FROM `products` WHERE `id` = '.$productId);
 						$item['ProjectsHasProduct']['project_id'] = $projectId;
 						$item['ProjectsHasProduct']['product_id'] = $productId;
 						$item['ProjectsHasProduct']['quantity'] = $count;
@@ -41,10 +42,10 @@ class CartsController extends AppController {
 			        }
 					if ($this->ProjectsHasProduct->saveMany($ProjectsHasProduct)) {
 						$this->Cart->saveProduct(null);
-						$this->Session->setFlash(__('Thanh toan thanh cong.'));
+						$this->Session->setFlash(__('Thanh toán thành công.'));
 						return $this->redirect(array('action' => 'view'));
 					} else {
-						$this->Session->setFlash(__('Thanh toan khong thanh cong.'));
+						$this->Session->setFlash(__('Thanh toán không thành công.'));
 					}
 				}
 			}

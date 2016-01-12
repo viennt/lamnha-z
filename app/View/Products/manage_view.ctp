@@ -1,3 +1,10 @@
+<?php // pre process
+	foreach ($product["ProductPrice"] as $key => $value) {
+		if (!isset($value["finished"])) {
+			$product['Product']['price'] = $value["price"];
+		}
+	}
+?>
 <div class="view_page box box-primary flat" style="margin: 0">
 	<div class="box-header with-border">
 		<h3 class="box-title">Sản phẩm: <?php echo h($product['Product']['name']); ?></h3>
@@ -35,18 +42,41 @@
 				<div class="detail col-all-12">
 					<h4>THÔNG TIN SẢN PHẨM: </h4>
 					<div class="row">
-						<div class="col-all-5">Giá:</div>
-						<div class="col-all-7">200.000đ</div>
-					</div>
-					<div class="row">
-						<div class="col-all-5">Nhà cung cấp:</div>
-						<div class="col-all-7">Công ty ABC</div>
+						<div class="col-all-5">Tình trạng:</div>
+						<div class="col-all-7"><?php 
+							if($product['Product']['published'] == '1'):
+								echo '<div class="label label-success">Công khai</div> ';
+								echo $this->Form->postLink('Ẩn sản phẩm',
+									array('action' => 'changePublished', $product['Product']['id'], $product['Product']['published']),
+									array('class' => 'label label-default', 'escape' => false)
+									);
+							else:
+								echo $this->Form->postLink('Công khai sản phẩm',
+									array('action' => 'changePublished', $product['Product']['id'], $product['Product']['published']),
+									array('class' => 'label label-default', 'escape' => false)
+									);
+								echo ' <div class="label label-danger">Đang ẩn</div>';
+							endif; 
+						?></div>
 					</div>
 					<div class="row">
 						<div class="col-all-5">Danh mục:</div>
 						<div class="col-all-7">
 							<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
 						</div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Giá bán:</div>
+						<div class="col-all-7"><?php 
+							if(!isset($product['Product']['price']))
+								echo '<span style="font-weight: bold; color: #D73925">', 'Chưa có giá', '</span>';
+							else
+								echo $this->Number->currency($product['Product']['price'], '', array('wholeSymbol' => ' ₫', 'wholePosition' => 'after', 'places' => 0, 'thousands' => '.')); 
+						?></div>
+					</div>
+					<div class="row">
+						<div class="col-all-5">Nhà cung cấp:</div>
+						<div class="col-all-7">Công ty ABC</div>
 					</div>
 					<div class="row">
 						<div class="col-all-5">Đặc điểm:</div>

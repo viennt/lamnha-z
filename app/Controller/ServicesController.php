@@ -122,6 +122,26 @@ class ServicesController extends AppController {
 	}
 
 /**
+ * change status method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function manage_changePublished($id = null, $published = null) {
+		$this->Service->id = $id;
+		if (!$this->Service->exists()) {
+			throw new NotFoundException(__('Invalid service'));
+		}
+		$this->request->allowMethod('post');
+		$this->Service->updateAll(
+			array('Service.published' => ($published + 1) % 2),
+			array('Service.id' => $id)
+		);
+		return $this->redirect(array('action' => 'view', $id));
+	}
+
+/**
  * delete method
  *
  * @throws NotFoundException
@@ -151,7 +171,7 @@ class ServicesController extends AppController {
  */
 	public function view($id = null, $slug = null) {
 		if (!$this->Service->exists($id)) {
-			throw new NotFoundException(__('Invalid product'));
+			throw new NotFoundException(__('Invalid service'));
 		}
 		$options = array('conditions' => array('Service.' . $this->Service->primaryKey => $id));
 		$this->set('service', $this->Service->find('first', $options));

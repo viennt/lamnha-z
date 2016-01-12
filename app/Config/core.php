@@ -389,3 +389,4 @@ Cache::config('_cake_model_', array(
  * Creating manage interfaces with scaffolding
  */
 Configure::write('Routing.prefixes', array('manage'));
+// Configure::write('App.baseUrl', env('SCRIPT_NAME'));

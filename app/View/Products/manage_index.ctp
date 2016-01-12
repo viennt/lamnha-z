@@ -22,7 +22,7 @@
 		<thead>
 		<tr>
 					<th><?php echo $this->Paginator->sort('id', '#'); ?></th>
-					<th><?php echo $this->Paginator->sort('name', 'Tên'); ?></th>
+					<th width="20%"><?php echo $this->Paginator->sort('name', 'Tên'); ?></th>
 					<th><?php echo $this->Paginator->sort('specification', 'Đặc điểm'); ?></th>
 					<th><?php echo $this->Paginator->sort('unit', 'Đơn vị'); ?></th>
 					<th><?php echo $this->Paginator->sort('quantity', 'Số lượng'); ?></th>
@@ -41,14 +41,20 @@
 			<td><?php echo h($product['Product']['unit']); ?>&nbsp;</td>
 			<td><?php echo h($product['Product']['quantity']); ?>&nbsp;</td>
 			<td><?php echo h($product['Product']['commision']), '%'; ?>&nbsp;</td>
-			<td><?php echo h($product['Product']['published']); ?>&nbsp;</td>
+			<td><?php 
+				if($product['Product']['published'] == '1')
+					echo '<span class="label label-success">', 'Công khai', '</span>';
+				else
+					echo '<span class="label label-danger">', 'Đang ẩn', '</span>';
+
+			?></td>
 			<td>
 				<?php echo $this->Html->link($product['ProductCategory']['name'], array('controller' => 'product_categories', 'action' => 'view', $product['ProductCategory']['id'])); ?>
 			</td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('action' => 'view', $product['Product']['id']), array('class' => 'btn btn-block btn-xs btn-info btn-flat')); ?>
-				<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $product['Product']['id']), array('class' => 'btn btn-block btn-xs btn-success btn-flat')); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $product['Product']['id']), array('class' => 'btn btn-block btn-xs btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $product['Product']['id']))); ?>
+				<?php echo $this->Html->link(__('Xem'), array('action' => 'view', $product['Product']['id']), array('class' => 'btn btn-xs btn-info btn-flat')); ?>
+				<?php echo $this->Html->link(__('Sửa'), array('action' => 'edit', $product['Product']['id']), array('class' => 'btn btn-xs btn-success btn-flat')); ?>
+				<?php echo $this->Form->postLink(__('Xóa'), array('action' => 'delete', $product['Product']['id']), array('class' => 'btn btn-xs btn-danger btn-flat', 'confirm' => __('Bạn có chắc chắn muốn xóa # %s?', $product['Product']['id']))); ?>
 			</td>
 		</tr>
 		<?php endforeach; ?>

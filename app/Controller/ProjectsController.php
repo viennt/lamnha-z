@@ -88,7 +88,7 @@ class ProjectsController extends AppController {
 		}
 		$options = array('conditions' => array('Project.' . $this->Project->primaryKey => $id));
 		$this->set('project', $this->Project->find('first', $options));
-		$options = array('conditions' => array('ProjectsHasProduct.project_id' => $id));
+		$options = array('conditions' => array('ProjectsHasProduct.project_id' => $id), 'order' => array('ProjectsHasProduct.date DESC'), 'limit' => 5);
 		$this->set('hasproducts', $this->ProjectsHasProduct->find('all', $options));
 	}
 

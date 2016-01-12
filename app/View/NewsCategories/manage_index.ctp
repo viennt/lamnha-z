@@ -1,6 +1,6 @@
 <div class="newsCategories box box-primary">
 	<div class="box-header with-border">
-		<?php echo $this->Html->link(__(' Add '),
+		<?php echo $this->Html->link(__(' Thêm danh mục mới '),
 			array('controller' => 'newsCategories', 'action' => 'add'),
 			array('class'=>'btn btn-xm btn-primary btn-flat col-lg-12')
 			); ?>
@@ -9,13 +9,13 @@
 		<table class="table table-hover" cellpadding="0" cellspacing="0">
 		<thead>
 		<tr>
-					<th><?php echo $this->Paginator->sort('id'); ?></th>
-					<th><?php echo $this->Paginator->sort('name'); ?></th>
-					<th><?php echo $this->Paginator->sort('description'); ?></th>
-					<th><?php echo $this->Paginator->sort('parent_id'); ?></th>
+					<th><?php echo $this->Paginator->sort('id', '#'); ?></th>
+					<th><?php echo $this->Paginator->sort('name', 'Tên'); ?></th>
+					<th><?php echo $this->Paginator->sort('description', 'Mô tả'); ?></th>
+					<th><?php echo $this->Paginator->sort('parent_id', 'Danh mục cha'); ?></th>
 					<th><?php echo $this->Paginator->sort('lft'); ?></th>
 					<th><?php echo $this->Paginator->sort('rght'); ?></th>
-					<th class="actions"><?php echo __('Actions'); ?></th>
+					<th class="actions"><?php echo __('Điều khiển', '#'); ?></th>
 		</tr>
 		</thead>
 		<tbody>
@@ -30,9 +30,9 @@
 		<td><?php echo h($newsCategory['NewsCategory']['lft']); ?>&nbsp;</td>
 		<td><?php echo h($newsCategory['NewsCategory']['rght']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $newsCategory['NewsCategory']['id']), array('class' => 'btn tn-block btn-xs btn-info btn-flat')); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $newsCategory['NewsCategory']['id']), array('class' => 'btn tn-block btn-xs btn-success btn-flat')); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $newsCategory['NewsCategory']['id']), array('class' => 'btn tn-block btn-xs btn-danger btn-flat', 'confirm' => __('Are you sure you want to delete # %s?', $newsCategory['NewsCategory']['id']))); ?>
+			<?php //echo $this->Html->link(__('Xem'), array('action' => 'view', $newsCategory['NewsCategory']['id']), array('class' => 'btn btn-xs btn-info btn-flat')); ?>
+			<?php echo $this->Html->link(__('Sửa'), array('action' => 'edit', $newsCategory['NewsCategory']['id']), array('class' => 'btn btn-xs btn-success btn-flat')); ?>
+			<?php echo $this->Form->postLink(__('Xóa'), array('action' => 'delete', $newsCategory['NewsCategory']['id']), array('class' => 'btn btn-xs btn-danger btn-flat', 'confirm' => __('Bạn có chắc chắn muốn xóa # %s?', $newsCategory['NewsCategory']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
