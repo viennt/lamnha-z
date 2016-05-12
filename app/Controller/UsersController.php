@@ -65,14 +65,13 @@ class UsersController extends AppController {
  * @return void
  */
 	public function login() {
-		$this->layout = 'ajax';
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirectUrl());
 			}
 			$this->Session->setFlash(__('Invalid username or password, try again'));
 		}
-		$this->render('login_private');
+		$this->render('login');
 	}
 
 /**

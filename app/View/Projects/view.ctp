@@ -95,11 +95,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 						<div class="line col-all-7"><?php echo h($project['Project']['total_amount']); ?></div>
 					</div>
 				</div>
-				<div class="row">
+<!-- 				<div class="row">
 					<div class="col-all-12">
 						<button class="btn btn-block btn-flat btn-warning">Chọn dự án này</button>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-sx-2 col-sm-12 col-md-5 col-lg-5">
 				<div id="googleMap" style="width: 100%;height: 215px;"></div>
@@ -113,10 +113,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<div class="row">
 			<div class="image col-all-12"><hr>
 				<h4>BẢN THIẾT KẾ DỰ ÁN: </h4>
+				<?php if($this->Session->read('Auth.User.Group.id') == '6'): ?>
 				<?php echo $this->Html->link(__(' Thêm bản thiết kế '),
 					array('controller' => 'projectDesigns', 'action' => 'add', $project['Project']['id']),
 					array('class'=>'btn btn-sm btn-warning btn-flat col-lg-12')
 					); ?>
+				<?php endif; ?>
 				<div class="row">
 					<?php foreach ($project['ProjectDesign'] as $projectDesign): ?>
 					<div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
@@ -125,6 +127,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 								'uploads/projects/designs/'.$projectDesign['name'], 
 								array('alt' => 'name')
 								); ?>
+							<?php if($this->Session->read('Auth.User.Group.id') == '6'): ?>
 							<div class="caption">
 								<p>
 								<?php echo $this->Html->link(
@@ -139,6 +142,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 									);?>
 								</p>
 							</div>
+							<?php endif; ?>
 						</div>
 					</div>
 					<?php endforeach; ?>
@@ -148,10 +152,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<div class="row">
 			<div class="image col-all-12"><hr>
 				<h4>HÌNH ẢNH DỰ ÁN: </h4>
+				<?php if($this->Session->read('Auth.User.Group.id') == '6'): ?>
 				<?php echo $this->Html->link(__(' Thêm bản thiết kế '),
 					array('controller' => 'projectImages', 'action' => 'add', $project['Project']['id']),
 					array('class'=>'btn btn-sm btn-warning btn-flat col-lg-12')
 					); ?>
+				<?php endif; ?>
 				<div class="row">
 					<?php foreach ($project['ProjectImage'] as $projectImage): ?>
 					<div class="col-sx-12 col-sm-6 col-md-4 col-lg-4">
@@ -160,6 +166,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 								'uploads/projects/images/'.$projectImage['name'], 
 								array('alt' => 'name')
 								); ?>
+							<?php if($this->Session->read('Auth.User.Group.id') == '6'): ?>
 							<div class="caption">
 								<p>
 								<?php echo $this->Html->link(
@@ -174,6 +181,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 									);?>
 								</p>
 							</div>
+							<?php endif; ?>
 						</div>
 					</div>
 					<?php endforeach; ?>

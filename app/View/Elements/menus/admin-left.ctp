@@ -5,6 +5,8 @@
         <span class="glyphicon glyphicon-option-horizontal pull-right"></span>
     </a>
     <ul class="treeview-menu">
+        <?php if(($this->Session->read('Auth.User.Group.id') == '1') 
+            || ($this->Session->read('Auth.User.Group.id') == '2')): ?>
         <li <?php if(strtolower(substr($this->request->controller, -10)) === 'categories') echo 'class="active"'?>>
             <a href="#">
                 <span class="glyphicon glyphicon-folder-open"></span> Quản lý danh mục
@@ -41,13 +43,17 @@
                     array('class' => 'sidebar-toggle', 'escape' => false)
                     );?></li>
             </ul>
-            </li>
+        </li>
+        <?php endif; ?>
+        <?php if(($this->Session->read('Auth.User.Group.id') == '1') 
+            || ($this->Session->read('Auth.User.Group.id') == '2')): ?>
         <li <?php if(strtolower($this->request->controller) === 'projects') echo 'class="active"';?>>
         <?php echo $this->Html->link(
             '<span class="glyphicon glyphicon-home"></span> Quản lý dự án',
             array('controller'=> 'projects', 'action' => 'index', 'manage' => true),
             array('class' => 'sidebar-toggle', 'escape' => false)
             );?></li>
+        <?php endif; ?>
         <li <?php if(strtolower($this->request->controller) === 'products') echo 'class="active"';?>>
         <?php echo $this->Html->link(
             '<span class="glyphicon glyphicon-shopping-cart"></span> Quản lý sản phẩm',
@@ -60,27 +66,33 @@
             array('controller'=> 'services', 'action' => 'index', 'manage' => true),
             array('class' => 'sidebar-toggle', 'escape' => false)
             );?></li>
+        <?php if(($this->Session->read('Auth.User.Group.id') == '1') 
+            || ($this->Session->read('Auth.User.Group.id') == '2')): ?>
         <li <?php if(strtolower($this->request->controller) === 'news') echo 'class="active"';?>>
         <?php echo $this->Html->link(
             '<span class="glyphicon glyphicon-bullhorn"></span> Quản lý tin tức',
             array('controller'=> 'news', 'action' => 'index', 'manage' => true),
             array('class' => 'sidebar-toggle', 'escape' => false)
             );?></li>
+        <?php endif; ?>
+        <?php if(($this->Session->read('Auth.User.Group.id') == '1') 
+            || ($this->Session->read('Auth.User.Group.id') == '2')): ?>
         <li <?php if(strtolower($this->request->controller) === 'users') echo 'class="active"';?>>
         <?php echo $this->Html->link(
             '<span class="glyphicon glyphicon-user"></span> Quản lý người dùng',
             array('controller'=> 'users', 'action' => 'index', 'manage' => true),
             array('class' => 'sidebar-toggle', 'escape' => false)
             );?></li>
-        <li><a href="#">
+        <?php endif; ?>
+        <!-- <li><a href="#">
             <span class="glyphicon glyphicon-check"></span> Phân quyền
-            </a></li>
+            </a></li> -->
         <!-- <li><a href="#">
             <span class="glyphicon glyphicon-stats"></span> Thống kê
             </a></li> -->
     </ul>
 </li>
-<li class="treeview">
+<!-- <li class="treeview">
     <a href="#">
         <span class="glyphicon glyphicon-home"></span>
         <span>Danh mục dự án</span>
@@ -127,4 +139,4 @@
     $data = $this->requestAction('/menus/'.strtolower($categoryName).'Cats');
     echo $this->Common->create_adminlte_menu($data, $root_id, $categoryName.'Category', strtolower($categoryName).'Categories', 'view');
     ?>
-</li>
+</li> -->
